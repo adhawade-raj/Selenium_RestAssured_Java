@@ -1,0 +1,30 @@
+package com.qa.opecart.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.qa.opencart.pages.LoginPage;
+
+public class LoginPageTest extends BaseTest {
+
+	@Test(priority =1)
+	public void LoginPageTitleTest()
+	{
+		String actTitle=loginpage.getLoginPageTitle();
+		System.out.println("Page Title:"+actTitle);	
+		Assert.assertEquals(actTitle, "OpenCart-Account Login");
+	}
+	
+	@Test(priority=2)
+	public void LoginPageUrlTest()
+	{
+		String actUrl=loginpage.getLoginUrl();
+		System.out.println("Page Url:"+actUrl);
+		Assert.assertEquals(actUrl, "route=account/login");
+	}
+	@Test(priority=3, enabled=false)
+	public void forgotPwdLinkText()
+	{
+		 Assert.assertTrue(loginpage.isForgotPwdLinkExist());
+	}
+}

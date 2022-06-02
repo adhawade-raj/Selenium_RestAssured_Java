@@ -1,0 +1,55 @@
+package com.qa.opencart.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class LoginPage {
+
+	//1.declare private driver;
+	private WebDriver driver;
+	
+	//2.Page Constructor
+	public LoginPage(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	//3.By Locator
+	private By emailId= By.xpath("//input[@name='email' and @type='text']");
+	private By password= By.xpath("//input[@name='password' and @type='password']");
+	private By loginBtn= By.xpath("(//button[@type='submit' and text()='Login'])[1]");
+	private By RegisterLink= By.xpath("//a[text()='Register'])[2]]");
+	private By forgotPwdLink= By.xpath("(//a[text()='Forgot your password?'])");
+	
+	
+	//4.PageActions
+	public String getLoginPageTitle()
+	{
+		return driver.getTitle();
+	}
+	public String getLoginUrl()
+	{
+		return driver.getCurrentUrl();
+	}
+	
+	public boolean isForgotPwdLinkExist()
+	{
+		return driver.findElement(forgotPwdLink).isDisplayed();
+	}
+	
+	public boolean isRegisterLinkexist()
+	{
+		return driver.findElement(RegisterLink).isDisplayed();
+	}
+	public void doLogin(String un, String pwd)
+	{
+		System.out.println("Login With:" +un+":" +pwd);
+		driver.findElement(emailId);
+		driver.findElement(password);
+		driver.findElement(loginBtn).click();
+	}
+	
+	
+	
+}

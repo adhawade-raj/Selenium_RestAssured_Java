@@ -1,0 +1,28 @@
+package Practise;
+
+public class OnlyPractise {
+
+	public static void main(String[] args) {
+	
+		int i=2, j=4, k=6;
+		
+		switch(j)
+		{
+		case 1 :
+			System.out.println("mon");
+		
+		
+		case 2 : System.out.println("tue");
+		break;
+		
+		case 3: System.out.println("wed");
+		
+		
+		
+		
+		
+		}	
+
+	}
+
+}

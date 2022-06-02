@@ -1,0 +1,80 @@
+package com.qa.opencart.utils;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ElementUtil {
+
+	private WebDriver driver;
+	
+	public ElementUtil(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	public WebElement getElement(By Locator)
+	{
+		return driver.findElement(Locator);
+	}
+	
+	public void doClick(By Locator)
+	{
+		getElement(Locator).click();
+	}
+	public void doSendKeys(By Locator, String Value)
+	{
+		getElement(Locator).sendKeys(Value);
+	}
+	
+	public boolean doIsDisplayed(By Locator)
+	{
+		return getElement(Locator).isDisplayed();
+	}
+	
+	public String doGetText(By Locator)
+	{
+		return getElement(Locator).getText();
+	}
+	
+	public boolean waitForTitleContains(String titleFraction, int timeOut) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
+		return wait.until(ExpectedConditions.titleContains(titleFraction));
+	}
+	
+	public boolean waitForURLToBe(String url, int timeOut) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
+		return wait.until(ExpectedConditions.urlToBe(url));
+	}
+	public String doGetTitle(String title, int timeOut) {
+		if (waitForURLToBe(title, timeOut)) {
+			return driver.getTitle();
+		}
+		return null;
+	}
+	
+	public boolean waitForURLToContain(String urlFraction, int timeOut) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
+		return wait.until(ExpectedConditions.urlContains(urlFraction));
+	}
+	
+	public List<WebElement> WaitForeElementsToBePresent(By Locator, int TimeOut)
+	{
+		List<WebElement> element = driver.findElements(Locator);
+		for(int i=0; i<element.size(); i++)
+		{
+			String text =element.get(i).getText();
+		}
+		return element;
+		
+	}
+	
+	
+	
+}
+

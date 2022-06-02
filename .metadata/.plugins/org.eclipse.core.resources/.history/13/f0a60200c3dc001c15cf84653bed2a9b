@@ -1,0 +1,16 @@
+package TestNG1;
+
+import org.testng.annotations.Test;
+
+public class ExpectedExceptionConcept {
+
+	@Test
+	public void LoginTest()
+	{
+		System.out.println("Login test---starting");
+		int i=9/0;
+		System.out.println("Login Test---Ending");
+	}
+	
+	
+}

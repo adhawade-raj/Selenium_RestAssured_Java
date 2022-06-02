@@ -1,0 +1,17 @@
+package com.qa.opecart.tests;
+
+import org.testng.annotations.Test;
+
+import com.qa.opencart.pages.LoginPage;
+
+public class LoginPageTest extends BaseTest {
+
+	@Test(priority =1)
+	public void LoginPageTitleTest()
+	{
+		String actTitle=loginpage.getLoginPageTitle();
+		System.out.println("Page Title:"+actTitle);
+		
+	}
+	
+}

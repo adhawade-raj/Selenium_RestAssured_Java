@@ -1,0 +1,38 @@
+package com.qa.opencart.factory;
+
+public class DriverFactory {
+
+//	public WebDriver driver;
+	
+	public WebDriver setup(String browserName)
+	{
+		System.out.println("Browser name :" +browserName);
+		
+		if(browserName.equals("chrome"))
+		{
+			WebDriverManager.
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

@@ -1,0 +1,18 @@
+package com.qa.opencart.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.qa.opencart.utils.ElementUtil;
+
+public class AccountsPage {
+
+	private WebDriver driver;
+	private ElementUtil eleUtil;
+	
+	private By header =By.cssSelector("div#logo a");
+	private By accountsSections = By.cssSelector("div#content h2");
+	private By SearchFiled = By.name("Search");
+	private By accountsSections = By.cssSelector("div#content h2");
+	
+}

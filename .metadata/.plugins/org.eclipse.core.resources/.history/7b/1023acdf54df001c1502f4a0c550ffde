@@ -1,0 +1,17 @@
+package com.qa.opencart.pages;
+
+import org.openqa.selenium.WebDriver;
+
+public class LoginPage {
+
+	//1.declare private driver;
+	private WebDriver driver;
+	
+	//2.Page Constructor
+	public LoginPage(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	
+}

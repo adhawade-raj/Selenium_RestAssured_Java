@@ -1,0 +1,14 @@
+package com.qa.opecart.tests;
+
+import org.testng.annotations.BeforeTest;
+
+public class AccountsPageTest {
+
+	@BeforeTest
+	public void accPageSetup()
+	{
+		
+	}
+	
+	
+}

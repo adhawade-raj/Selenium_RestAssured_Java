@@ -1,0 +1,12 @@
+package TestNG1;
+
+public class InvocationConcept {
+
+	@Test(invocationCount=10)
+	public void createUSer()
+	{
+		System.out.println("Create User");
+		
+	}
+	
+}

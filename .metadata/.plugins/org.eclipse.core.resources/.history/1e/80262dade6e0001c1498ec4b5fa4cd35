@@ -1,0 +1,30 @@
+package com.qa.opecart.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class ProductInfoPageTest extends BaseTest {
+
+	
+	@BeforeClass
+	public void productInfoSetup()
+	{
+		accountPage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+	}
+	
+	@Test(priority=1)
+	public void ProductHeaaderTest()
+	{
+		searchResultsPage = accountPage.doSearch("MacBook");
+		productInfoPage = searchResultsPage.selectProduct("MacBook Pro");
+		Assert.assertEquals(productInfoPage.getProductHeader(), "MacBookPro");
+	}
+//	PEnding at line mo28
+	@Test(priority=2)
+	public void ProductImageCountTest()
+	{
+		searchResultsPage = accountPage.doSearch("iMac");
+		Assert.assertEquals(productInfoPage.ge, IMAC_IMAGE_COUNT);
+	}
+}

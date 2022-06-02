@@ -1,0 +1,34 @@
+package com.qa.opecart.tests;
+
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.qa.opencart.pages.LoginPage;
+import com.qa.opencart.utils.Constants;
+
+public class AccountsPageTest extends BaseTest {
+
+	@BeforeTest
+	public void accPageSetup()
+	{
+	accountPage =loginpage.doLogin(prop.getProperty("username"), prop.getProperty("passwword"));
+	}
+	
+	@Test
+	public void accPageTitleTest()
+	{
+	String actTitle	= accountPage.getAccountPageTitle();
+	System.out.println(actTitle);
+	
+	Assert.assertEquals(actTitle, Constants.ACCOUNT_PAGE_TITLE);
+	}
+	
+	@Test
+	public void accPageHeaderTest()
+	{
+		String Header = accountPage.getAccountsPageHeader();
+		System.out.println(Header);
+	}
+	
+}

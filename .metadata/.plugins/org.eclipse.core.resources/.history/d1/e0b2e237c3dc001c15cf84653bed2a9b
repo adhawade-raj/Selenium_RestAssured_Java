@@ -1,0 +1,24 @@
+package TestNG1;
+
+import org.testng.annotations.Test;
+
+public class ExpectedExceptionConcept {
+
+//	Case1:Exception
+	@Test
+	public void LoginTest()
+	{
+		System.out.println("Login test---starting");
+		int i=9/0;
+		System.out.println("Login Test---Ending");
+	}
+//	@Test
+//	public void LoginTest(expectedExceptions=ArithmeticException.class)
+//	{
+//		System.out.println("Login test---starting");
+//		int i=9/0;
+//		System.out.println("Login Test---Ending");
+//	}
+	
+	
+}

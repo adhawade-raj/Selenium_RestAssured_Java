@@ -1,0 +1,35 @@
+package TestNG1;
+
+import org.testng.annotations.Test;
+
+public class ExpectedExceptionConcept {
+
+//	Case1:Exception---Test Failed.. Not Handled
+//	@Test
+//	public void LoginTest()
+//	{
+//		System.out.println("Login test---starting");
+//		int i=9/0;
+//		System.out.println("Login Test---Ending");
+//	}
+	
+//-------------------------------------------------------------------	
+	
+//	Case2:Exception---Test Passed.. Execyution Handled
+//	@Test(expectedExceptions=ArithmeticException.class)
+//	public void LoginTest()
+//	{
+//		System.out.println("Login test---starting");
+//		int i=9/0;
+//		System.out.println("Login Test---Ending");
+//	}
+//-------------------------------------------------------------------	
+	@Test(expectedExceptions=NullPointerException.class)
+	public void LoginTest()
+	{
+		System.out.println("Login test---starting");
+		int i=9/0;
+		System.out.println("Login Test---Ending");
+	}
+	
+}

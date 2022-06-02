@@ -1,0 +1,14 @@
+package TestNG1;
+
+import org.testng.annotations.BeforeSuite;
+
+public class PractiseOfSequence {
+	
+      @BeforeSuite
+	public void BeforeSuite()
+	{
+		System.out.println("Before Suite");
+	}
+	
+	
+}

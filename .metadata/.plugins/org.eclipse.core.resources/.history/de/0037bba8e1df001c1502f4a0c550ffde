@@ -1,0 +1,8 @@
+package com.qa.opencart.utils;
+
+public class Constants {
+
+	public static final String LOGINPAGE_PAGE_TITLE="OpenCart - Account Login";
+	public static final String LOGIN_PAGE_URL_FRACTION="https://www.opencart.com/index.php?route=account/login";
+	
+}

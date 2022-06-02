@@ -1,0 +1,15 @@
+package com.qa.opencart.utils;
+
+import org.openqa.selenium.WebDriver;
+
+public class Utility {
+
+	WebDriver driver;
+	
+	
+	
+	
+	
+	
+	
+}

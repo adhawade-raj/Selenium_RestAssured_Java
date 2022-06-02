@@ -1,0 +1,28 @@
+package com.qa.opencart.utils;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class Utility {
+
+	WebDriver driver;
+	
+	public Utility(WebDriver driver)
+	{
+		this.driver=driver;
+	}
+	
+	public WebElement getElement(By Locator)
+	{
+		return driver.findElement(Locator);
+	}
+	
+	public WebElement doClick(By Locator)
+	{
+		getElement(Locator).click();
+	}
+	
+	
+	
+}

@@ -1,0 +1,11 @@
+package com.qa.opencart.pages;
+
+import org.openqa.selenium.By;
+
+public class RegistrationPage {
+
+	
+	private By userName = By.xpath("//input[@name='username']");
+	private By firstName = By.xpath("//input[@name='firstname']");
+	private By lastName = By.xpath("//input[@name='lastname']");
+}

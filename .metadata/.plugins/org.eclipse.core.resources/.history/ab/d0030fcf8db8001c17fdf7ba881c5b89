@@ -1,0 +1,33 @@
+package Practise;
+
+public class OnlyPractise {
+
+	public static void main(String[] args) {
+	
+		byte b=125;
+		
+		switch(b)
+		{
+		case 124 :
+			System.out.println("mon");
+		break;
+		
+		case 125 : System.out.println("tue");
+		break;
+		
+		case 126: System.out.println("wed");
+		break;
+		
+		case 127: System.out.println("thu");
+		break;
+		
+		case 128: System.out.println("fri");
+		break;
+		
+		
+		
+		}	
+
+	}
+
+}

@@ -1,0 +1,15 @@
+package InterviewPrograms;
+
+public class ReverseString {
+
+	public static void main(String[] args) {
+
+		String s= "MOM1";
+		
+		StringBuffer sb =new StringBuffer(String.valueOf(s));
+		
+		StringBuffer b=sb.reverse();
+		System.out.println(b);
+	}
+
+}

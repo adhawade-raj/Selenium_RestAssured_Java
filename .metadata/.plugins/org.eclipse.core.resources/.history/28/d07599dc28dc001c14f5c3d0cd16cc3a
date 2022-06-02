@@ -1,0 +1,10 @@
+package FromSelenium_19;
+
+public class BrowserWindowIterator {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

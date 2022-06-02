@@ -1,0 +1,11 @@
+package InterviewPrograms;
+
+public class FactorialNo {
+
+	public static void main(String[] args) {
+int number =5;
+int factorial =1;
+System.out.println("Number is :" +number);
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.qa.opecart.tests;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import com.qa.opencart.factory.DriverFactory;
+
+public class BaseTest {
+
+	DriverFactory df;
+	WebDriver driver;
+	LoginPage loginpage;
+	
+	@BeforeTest
+	public void setup()
+	{
+	df = new DriverFactory();
+	driver=df.setup("chrome");
+	loginpage = new loginpage(driver);
+	}
+	
+	@AfterTest
+	public void tearDown()
+	{
+		
+	}
+}

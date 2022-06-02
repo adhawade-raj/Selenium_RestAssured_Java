@@ -1,0 +1,31 @@
+package Practise;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class RandomPractise2 {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com");		
+		driver.findElement(By.xpath("//a[@data-testid='open-registration-form-button']")).click();
+		
+		WebElement DayList= driver.findElement(By.xpath("//select[@id='day'and @title='Day']"));
+		Thread.sleep(5000);
+		
+		Select select = new Select(DayList);
+		select.selectByValue("24");
+		
+		
+		
+	}
+
+}

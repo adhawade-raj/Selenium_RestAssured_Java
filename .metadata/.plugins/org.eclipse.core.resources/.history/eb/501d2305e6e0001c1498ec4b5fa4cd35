@@ -1,0 +1,13 @@
+package com.qa.opecart.tests;
+
+import org.testng.annotations.BeforeClass;
+
+public class ProductInfoPageTest extends BaseTest {
+
+	
+	@BeforeClass
+	public void productInfoSetup()
+	{
+		accountPage = loginpage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+	}
+}

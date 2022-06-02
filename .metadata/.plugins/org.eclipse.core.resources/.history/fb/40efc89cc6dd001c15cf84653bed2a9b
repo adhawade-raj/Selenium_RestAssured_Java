@@ -1,0 +1,12 @@
+package TestNG1;
+
+public class PractiseOfSequence {
+
+	@BeforeSuite
+	public void BeforeSuite()
+	{
+		
+	}
+	
+	
+}

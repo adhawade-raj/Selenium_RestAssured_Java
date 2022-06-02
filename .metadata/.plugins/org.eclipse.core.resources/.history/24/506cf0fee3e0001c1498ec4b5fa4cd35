@@ -1,0 +1,36 @@
+package com.qa.opencart.pages;
+
+import java.util.Map;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.qa.opencart.utils.ElementUtil;
+
+public class ProductInfoPage {
+
+	private WebDriver driver;
+	private ElementUtil eleUtil;
+	private By ProductImages = By.cssSelector("ul.thumbnails.img");
+	private By ProductMetaData =By.cssSelector("div#content ul.list-unstled:nth-of-type(1)li");
+	private By ProductMetaData2 =By.cssSelector("div#content ul.list-unstled:nth-of-type(2)li");
+	private By qty = By.id("input-quantity");
+	private By addToCartBtn = By.id("button-cart");
+	
+	private Map <String, String> productInfoMap;
+	
+	private By ProductHeader = By.xpath("//div[@id='content']//h1");
+	
+	public ProductInfoPage(WebDriver driver)
+	{
+		this.driver=driver;
+		eleUtil = new ElementUtil(driver);
+	}
+	
+	public String getProductHeader()
+	{
+		String header = eleUtil.doGetText(ProductHeader);
+		System.out.println("product header is:" +header);
+		return header;
+	}
+	}

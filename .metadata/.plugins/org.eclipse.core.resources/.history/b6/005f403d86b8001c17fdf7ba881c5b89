@@ -1,0 +1,27 @@
+package Practise;
+
+public class OnlyPractise {
+
+	public static void main(String[] args) {
+	
+		
+		final int a=20;
+		System.out.println(a);
+		
+		if(a==10)
+		{
+			System.out.println(a);
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
