@@ -1,9 +1,0 @@
-browser = FireFox
-url = https://www.opencart.com/index.php?route=account/login
-username = abccc
-password = abbc
-
-headless = false
-incognito = false
-
-highlight =true

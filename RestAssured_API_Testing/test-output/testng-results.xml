@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-06-08T16:27:55Z" name="Default suite" finished-at="2022-06-08T16:28:01Z" duration-ms="6046">
+    <groups>
+    </groups>
+    <test started-at="2022-06-08T16:27:55Z" name="Default test" finished-at="2022-06-08T16:28:01Z" duration-ms="6046">
+      <class name="sampleRestAssured.TC003_GET_Request">
+        <test-method signature="googleMapTest()[pri:0, instance:sampleRestAssured.TC003_GET_Request@4988d8b8]" started-at="2022-06-08T16:27:55Z" name="googleMapTest" finished-at="2022-06-08T16:28:01Z" duration-ms="5930" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleMapTest -->
+      </class> <!-- sampleRestAssured.TC003_GET_Request -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

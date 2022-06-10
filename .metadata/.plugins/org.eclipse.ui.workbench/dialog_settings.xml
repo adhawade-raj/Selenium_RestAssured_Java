@@ -8,18 +8,22 @@
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_SIZE" value="true"/>
 		<item key="org.eclipse.ui.internal.quickaccess.QuickAccessDialogDIALOG_USE_PERSISTED_LOCATION" value="false"/>
 		<list key="orderedElements">
+			<item value="org.eclipse.egit.ui.RepositoriesView"/>
 			<item value="org.eclipse.ui.edit.text.zoomOut"/>
 			<item value="org.eclipse.ui.edit.text.zoomIn"/>
 		</list>
 		<list key="orderedProviders">
+			<item value="org.eclipse.e4.ui.parts"/>
 			<item value="org.eclipse.ui.commands"/>
 			<item value="org.eclipse.ui.commands"/>
 		</list>
 		<list key="textEntries">
 			<item value="1"/>
 			<item value="1"/>
+			<item value="1"/>
 		</list>
 		<list key="textArray">
+			<item value="git"/>
 			<item value="zoom out"/>
 			<item value="text size"/>
 		</list>
@@ -41,5 +45,10 @@
 		<list key="WizardFileSystemResourceExportPage1.STORE_DESTINATION_NAMES_ID">
 			<item value="C:\SampelRepo"/>
 		</list>
+	</section>
+	<section name="EditorSelectionDialog">
+		<item key="EditorSelectionDialog.STORE_ID_FILE_EXTENSION" value=".xlsx"/>
+		<item key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL" value="true"/>
+		<item key="EditorSelectionDialog.STORE_ID_DESCR" value="Microsoft Excel Worksheet"/>
 	</section>
 </section>

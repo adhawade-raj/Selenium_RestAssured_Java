@@ -1,9 +1,0 @@
-browser = chrome
-url = https://www.opencart.com/index.php?route=account/login
-username = abccc
-password = abbc
-
-headles = false
-incognito = false
-
-highlight =true
