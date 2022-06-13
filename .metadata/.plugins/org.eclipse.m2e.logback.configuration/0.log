@@ -10085,3 +10085,7 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.github.ra
 2022-06-10 20:49:43,970 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Eclipse\WorkSpace\LatestCucumber6WithPOM\src\main\resources
 2022-06-10 20:49:43,971 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2022-06-10 20:49:43,990 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2022-06-10 21:04:22,969 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-10 21:04:22,970 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Eclipse\WorkSpace\MyAutomation\src\main\resources
+2022-06-10 21:04:22,972 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2022-06-10 21:04:22,973 [Worker-68: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
