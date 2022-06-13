@@ -4,7 +4,7 @@ public class Array3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+//Commenting for git push practise
 		
 		int a[][]= {{20,10},{25,35}};
 		
