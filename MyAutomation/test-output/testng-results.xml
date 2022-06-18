@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-05-27T14:58:24Z" name="Default suite" finished-at="2022-05-27T14:58:39Z" duration-ms="15149">
+  <suite started-at="2022-06-18T07:20:43Z" name="Default suite" finished-at="2022-06-18T07:21:08Z" duration-ms="25605">
     <groups>
     </groups>
-    <test started-at="2022-05-27T14:58:24Z" name="Default test" finished-at="2022-05-27T14:58:39Z" duration-ms="15149">
-      <class name="TestNG1.TestNG_Practise03_DependantMethod">
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestNG1.TestNG_Practise03_DependantMethod@1fb700ee]" started-at="2022-05-27T14:58:24Z" name="setup" finished-at="2022-05-27T14:58:32Z" duration-ms="7973" status="PASS">
+    <test started-at="2022-06-18T07:20:43Z" name="Default test" finished-at="2022-06-18T07:21:08Z" duration-ms="25605">
+      <class name="TestNG1.SampleTest1">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestNG1.SampleTest1@4e268090]" started-at="2022-06-18T07:20:43Z" name="setup" finished-at="2022-06-18T07:21:07Z" duration-ms="24621" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="LoginPageTest()[pri:1, instance:TestNG1.TestNG_Practise03_DependantMethod@1fb700ee]" started-at="2022-05-27T14:58:32Z" name="LoginPageTest" finished-at="2022-05-27T14:58:32Z" duration-ms="40" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="SearchTest()[pri:0, instance:TestNG1.SampleTest1@4e268090]" started-at="2022-06-18T07:21:07Z" name="SearchTest" finished-at="2022-06-18T07:21:08Z" duration-ms="179" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchTest -->
+        <test-method signature="UrlTest()[pri:0, instance:TestNG1.SampleTest1@4e268090]" started-at="2022-06-18T07:21:08Z" name="UrlTest" finished-at="2022-06-18T07:21:08Z" duration-ms="13" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Cannot invoke "org.testng.asserts.SoftAssert.assertEquals(String, String)" because "this.softAssert" is null]]>
+              <![CDATA[expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.testng.asserts.SoftAssert.assertEquals(String, String)" because "this.softAssert" is null
-at TestNG1.TestNG_Practise03_DependantMethod.LoginPageTest(TestNG_Practise03_DependantMethod.java:33)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at org.testng.Assert.assertTrue(Assert.java:54)
+at TestNG1.SampleTest1.UrlTest(SampleTest1.java:39)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -46,62 +54,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- LoginPageTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG1.TestNG_Practise03_DependantMethod@1fb700ee]" started-at="2022-05-27T14:58:32Z" name="tearDown" finished-at="2022-05-27T14:58:33Z" duration-ms="350" status="PASS">
+        </test-method> <!-- UrlTest -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:TestNG1.SampleTest1@4e268090]" started-at="2022-06-18T07:21:08Z" name="TearDown" finished-at="2022-06-18T07:21:08Z" duration-ms="697" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:TestNG1.TestNG_Practise03_DependantMethod@1fb700ee]" started-at="2022-05-27T14:58:33Z" name="setup" finished-at="2022-05-27T14:58:38Z" duration-ms="5780" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="LoginTest()[pri:2, instance:TestNG1.TestNG_Practise03_DependantMethod@1fb700ee]" started-at="2022-05-27T14:58:38Z" name="LoginTest" finished-at="2022-05-27T14:58:39Z" duration-ms="599" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.testng.asserts.SoftAssert.assertEquals(String, String)" because "this.softAssert" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.testng.asserts.SoftAssert.assertEquals(String, String)" because "this.softAssert" is null
-at TestNG1.TestNG_Practise03_DependantMethod.LoginTest(TestNG_Practise03_DependantMethod.java:44)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoginTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestNG1.TestNG_Practise03_DependantMethod@1fb700ee]" started-at="2022-05-27T14:58:39Z" name="tearDown" finished-at="2022-05-27T14:58:39Z" duration-ms="366" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- TestNG1.TestNG_Practise03_DependantMethod -->
+        </test-method> <!-- TearDown -->
+      </class> <!-- TestNG1.SampleTest1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

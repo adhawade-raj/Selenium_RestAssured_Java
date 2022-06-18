@@ -1,7 +1,6 @@
 package TestNG1;
 
-import java.util.concurrent.TimeUnit;
-
+import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,7 +20,7 @@ public void setup()
 {
 	WebDriverManager.chromedriver().setup();
 	driver = new ChromeDriver();
-	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	driver.manage().window().maximize();
 	driver.manage().deleteAllCookies();
 	driver.get("https://www.google.com");
