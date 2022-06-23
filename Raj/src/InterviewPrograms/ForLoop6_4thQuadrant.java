@@ -6,7 +6,7 @@ public class ForLoop6_4thQuadrant {
 
 		for(int i=0; i<5; i++)
 		{
-			for(int j=0; j<(4-i); j++)
+			for(int j=0; j<=(4-i); j++)
 			{
 				System.out.print("*");
 			}
