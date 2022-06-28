@@ -13,7 +13,8 @@ public class AditionOfArray {
 			
 			
 		}
-		System.out.print(" Sum is " +sum);
+		System.out.println("Sum is " +sum);
+		
 		
 		
 	}
