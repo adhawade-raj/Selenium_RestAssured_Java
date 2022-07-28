@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -16,8 +17,11 @@ public class Part09_BootStrapDropDown_WithoutUtility {
 		
 		public static void main(String[] args) throws InterruptedException {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-			Thread.sleep(10000);
+			ChromeOptions co = new ChromeOptions();
+			co.addArguments("--disable-notifications");
+			
+			driver = new ChromeDriver(co);
+			Thread.sleep(5000);
 			driver.get("https://www.hdfcbank.com/");
 			
 //			

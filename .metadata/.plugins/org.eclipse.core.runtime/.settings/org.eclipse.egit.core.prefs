@@ -1,4 +1,5 @@
-GitRepositoriesView.GitDirectories=C\:\\GitHubCourse\\.git;E\:\\Eclipse\\WorkSpace\\.git;E\:\\Eclipse\\WorkSpace\\LatestCucumber6WithPOM\\.git;C\:\\Users\\LENOVO\\git\\GitHubCourse\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\GitHubCourse\\.git;.git;LatestCucumber6WithPOM\\.git;C\:\\Users\\LENOVO\\git\\GitHubCourse\\.git;
+GitRepositoriesView.GitDirectories=E\:\\Eclipse\\WorkSpace\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;
+RepositoryGroups.uuids=
 RepositorySearchDialogSearchPath=C\:\\GIT Clone
 eclipse.preferences.version=1

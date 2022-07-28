@@ -20,9 +20,7 @@ static WebDriver driver;
 			driver.get("https://www.hdfcbank.com/");
 			
 			List<WebElement> ProdType = driver.findElements(By.xpath("//ul[contains(@Class,'dropdown1 dropdown-menu')]//li"));
-			SelectBootStrapDropDown(ProdType,"Cards");
-			
-		
+			SelectBootStrapDropDown(ProdType,"Cards");	
 	}
 		
 		public static void SelectBootStrapDropDown(List<WebElement> ele, String value)

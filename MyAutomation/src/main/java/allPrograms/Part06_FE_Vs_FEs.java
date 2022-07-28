@@ -23,7 +23,7 @@ public class Part06_FE_Vs_FEs {
 		List <WebElement> LinksList = driver.findElements(By.tagName("a"));
 		System.out.println(LinksList.size());
 		
-//       NoElement still not thrown exceptions... returned empty array
+//       NoElement still not thrown any exceptions... returned an empty array
 		List <WebElement> LinksList2 = driver.findElements(By.xpath("//input[@type='text123']"));
 		System.out.println(LinksList2);
 	}

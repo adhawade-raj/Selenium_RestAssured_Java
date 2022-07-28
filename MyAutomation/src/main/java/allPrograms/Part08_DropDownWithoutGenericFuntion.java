@@ -18,8 +18,8 @@ public class Part08_DropDownWithoutGenericFuntion {
 	
 		WebElement List = driver.findElement(By.xpath("//select[contains(@name,'country_id')]"));
 		Select select = new Select(List);
-//		select.selectByVisibleText("India");
-		
+		select.selectByVisibleText("India");
+//		select.selectByValue(15);
 //		select.selectByIndex(13);
 		
 		

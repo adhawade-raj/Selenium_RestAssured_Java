@@ -4,7 +4,7 @@ public class PrimeNumber {
 
 	public static void main(String[] args) {
 
-		int number = 17;
+		int number = 3;
 		int count =0;
 		
 		for(int i=2; i<number; i++)
@@ -14,13 +14,13 @@ public class PrimeNumber {
 				count=count+1;
 			}
 		}
-		if(count==0)
+		if(count>0)
 		{
-			System.out.println("Number is prime");
+			System.out.println("Number is not prime");
 		}
 		else
 		{
-			System.out.println("Number is not prime");
+			System.out.println("Number is prime");
 		}
 		
 		

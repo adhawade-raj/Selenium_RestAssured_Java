@@ -20,9 +20,7 @@ public class Part07_getText_Vs_getAttribute {
 		System.out.println(email.getAttribute("id"));
 		
 		System.out.println(email.getText());
-		
-		
-		
+			
 	}
 
 }

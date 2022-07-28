@@ -16,5 +16,4 @@ public class JavaScriptExecutor_Raj {
 		JavaScriptUtil_Raj js = new JavaScriptUtil_Raj(driver);
 	System.out.println(js.getTitleByJS());
 	}
-
 }
