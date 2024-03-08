@@ -17355,3 +17355,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact junit:junit:j
 2024-03-08 20:16:38,858 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory E:\Eclipse\WorkSpace\Selenium2024\src\test\resources
 2024-03-08 20:24:08,419 [Worker-17: Fetching remote refs from git@github.com:adhawade-raj/SeleniumFramework.git] INFO  o.a.s.c.u.s.e.EdDSASecurityProviderRegistrar - getOrCreateProvider(EdDSA) created instance of net.i2p.crypto.eddsa.EdDSASecurityProvider
 2024-03-08 20:24:08,734 [Worker-17: Fetching remote refs from git@github.com:adhawade-raj/SeleniumFramework.git] INFO  o.a.s.c.i.DefaultIoServiceFactoryFactory - No detected/configured IoServiceFactoryFactory using Nio2ServiceFactoryFactory
+2024-03-08 20:39:00,468 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
