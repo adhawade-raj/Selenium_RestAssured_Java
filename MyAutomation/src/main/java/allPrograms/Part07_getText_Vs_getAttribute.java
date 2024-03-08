@@ -15,7 +15,7 @@ public class Part07_getText_Vs_getAttribute {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://demo.nopcommerce.com/");
 		
-//		error coming in x-path... becz of some site issue maybe... becz xpath is fine
+//		error coming in x-path... becz of some site issue maybe... xpath is fine
 		WebElement email = driver.findElement(By.xpath("//input[@id='Password']"));
 		System.out.println(email.getAttribute("id"));
 		

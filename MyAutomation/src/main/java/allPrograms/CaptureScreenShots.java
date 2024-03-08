@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -39,5 +40,7 @@ public class CaptureScreenShots {
 		FileUtils.copyFile(src2, Target2);
 		
 	}
-
+	
+	
+	
 }

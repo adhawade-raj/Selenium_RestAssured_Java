@@ -14,7 +14,17 @@ public class CountOccurences {
 		  }
 		  
 		  System.out.println("The Character '"+search+"' appears "+count+" times.");
-		  }
+		  System.out.println("========================================================");
+	
+//	Approach 2 
+	String input2 = "aaaabbccAAdd";
+	
+	int input2_Length = input2.length();
+	int input2_Removal = input2.replace("a", "").length();	
+	int count2 = input2_Length - input2_Removal;
+	System.out.println("The count of character " +count2);
+
 	}
+}
 
 

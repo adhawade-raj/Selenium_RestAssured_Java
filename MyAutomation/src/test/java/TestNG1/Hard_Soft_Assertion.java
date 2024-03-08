@@ -45,6 +45,7 @@ public class Hard_Soft_Assertion {
 			String Title=driver.getTitle();
 			System.out.println("Page title is :"+Title);
 			Assert.assertEquals(Title, "HubSpot Login");	
+		
 			
 			String Title2 = driver.getTitle();
 			Assert.assertEquals(Title2, "HubSpot Login123");

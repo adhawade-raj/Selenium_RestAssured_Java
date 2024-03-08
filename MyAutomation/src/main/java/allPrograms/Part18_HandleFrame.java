@@ -3,6 +3,7 @@ package allPrograms;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -13,7 +14,9 @@ public class Part18_HandleFrame {
 	
 	public static void main(String[] args) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions co = new ChromeOptions();
+		co.addArguments("--remote-allow-origins=*");
+		WebDriver driver = new ChromeDriver(co);
 		driver.get("https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary_html");
 		
 		Thread.sleep(3000);

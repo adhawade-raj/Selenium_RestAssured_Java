@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\Eclipse\WorkSpace\Cucumber_Practise"/>
 			<item value="E:\Eclipse\WorkSpace\Raj"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -26,17 +27,29 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="SeleniumTrials2024.SeleniumTrials2024"/>
+			<item value="ForDemoPurpose.ForDemoPurpose"/>
+			<item value="CucumberTraining.CucumberTraining"/>
+			<item value="Framework_Setup.Framework_Setup"/>
 			<item value="CucumberSession.Cucumber_Practise"/>
 			<item value="RestAssured_API_Testing.RestAssured_API_Testing"/>
 			<item value="MyAutomation.FrameWork"/>
 			<item value="MyAutomation.MyAutomation"/>
 		</list>
 		<list key="groupId">
+			<item value="SeleniumTrials2024"/>
+			<item value="ForDemoPurpose"/>
+			<item value="CucumberTraining"/>
+			<item value="Framework_Setup"/>
 			<item value="CucumberSession"/>
 			<item value="RestAssured_API_Testing"/>
 			<item value="MyAutomation"/>
 		</list>
 		<list key="artifactId">
+			<item value="SeleniumTrials2024"/>
+			<item value="ForDemoPurpose"/>
+			<item value="CucumberTraining"/>
+			<item value="Framework_Setup"/>
 			<item value="Cucumber_Practise"/>
 			<item value="RestAssured_API_Testing"/>
 			<item value="FrameWork"/>
