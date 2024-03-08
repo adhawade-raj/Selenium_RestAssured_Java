@@ -1,0 +1,10 @@
+package FromSelenium06;
+
+public class AuthenticationPopUp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,30 @@
+package Practise;
+
+public class OnlyPractise {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	
+		int i=10;
+		byte b=(byte)i;
+		
+		int a=10;
+		long c=a;
+		System.out.println(c);
+		
+		
+		int d=130;
+		byte x=(byte)d;
+		System.out.println(x);
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Raj Adhawade Automation Suit" thread-count ="2" parallel="tests">
+  <test name="LoginTest" verbose="2">
+    
+    <classes>
+      <class name="TestNG1.LoginPage"/>   
+    </classes>
+  </test>
+  
+   <test name="SigUp Test" verbose="2">
+           <classes>
+           <class name="TestNG1.SignUp"/> 
+     </classes>
+  </test>
+</suite> 

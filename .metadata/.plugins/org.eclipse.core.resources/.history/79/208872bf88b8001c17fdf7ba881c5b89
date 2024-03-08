@@ -1,0 +1,22 @@
+package Practise;
+
+public class OnlyPractise {
+
+	public static void main(String[] args) {
+	
+		int i=2;
+		
+		switch(i)
+		{
+		Case1 :	System.out.println("mon");
+		break;
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

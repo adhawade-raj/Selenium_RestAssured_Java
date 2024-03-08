@@ -1,0 +1,26 @@
+package Practise;
+
+public class OnlyPractise {
+
+	public static void main(String[] args) {
+	
+		
+		int a;
+		System.out.println(a);
+		
+		void m1()
+		{
+			int j=10;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

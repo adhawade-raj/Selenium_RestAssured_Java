@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Raj Adhawade Automation Suit]" guice-stage="DEVELOPMENT">
+  <test thread-count="2" parallel="tests" name="SigUp Test(failed)">
+    <parameter name="browser" value="firefox"/>
+    <parameter name="url" value="https://app.hubspot.com/login"/>
+    <classes>
+      <class name="TestNG1.SignUp">
+        <methods>
+          <include name="TearDown"/>
+          <include name="setup"/>
+          <include name="VerifyAccountTest"/>
+        </methods>
+      </class> <!-- TestNG1.SignUp -->
+    </classes>
+  </test> <!-- SigUp Test(failed) -->
+</suite> <!-- Failed suite [Raj Adhawade Automation Suit] -->

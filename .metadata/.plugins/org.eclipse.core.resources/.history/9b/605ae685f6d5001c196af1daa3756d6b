@@ -1,0 +1,58 @@
+package FromSelenium10;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class xpath_CricInfo {
+
+	public static void main(String[] args) {
+
+		WebDriverManager.chromedriver().setup();
+		WebDriver  driver = new ChromeDriver();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.get("https://www.espncricinfo.com/series/indian-premier-league-2022-1298423/punjab-kings-vs-delhi-capitals-64th-match-1304110/full-scorecard");
+		
+		String tex=xpath_CricInfo.SelectPlayer(driver, "Sarfaraz Khan");
+		System.out.println(tex);
+//		List<WebElement> Test = (driver.findElements(By.xpath("//a[@title='David Warner']//following :: td[(@class='ds-min-w-max ds-text-right')]")));
+//		System.out.println(Test.size());
+		
+		//a[@title='David Warner']//parent::span//following :: td[(@class='ds-min-w-max ds-text-right ds-hidden')]
+		//a[@title='David Warner']//following :: td[(@class='ds-min-w-max ds-text-right ds-hidden')]
+//		/span[contains(class, 'ds-inline)]//following::span[contains(class, 'ds-text-tight-s')]//following :: td[(@class='ds-min-w-max ds-text-right ds-hidden')]
+		//span[contains(@class, 'ds-inline)]//following::a[contains(title, "David Warner")]
+		//a[contains(@title,'David Warner')]//parent::span//following::td[1]
+		
+	}
+		
+		WebDriver driver;
+		public xpath_CricInfo(WebDriver driver)
+		{
+			this.driver=driver;
+		}
+		
+		
+		public static String SelectPlayer(WebDriver driver, String Player)
+		{
+		List<WebElement> Test = (driver.findElements(By.xpath("//a[contains(@title,'"+Player+"')]//parent::span//following::td[1]")));
+		System.out.println(Test.size());
+		
+		for(int i=0; i<Test.size(); i++)
+		{
+			String text = Test.get(i).getText();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			System.out.print(text);
+		}
+		return Player;
+	}
+	}
+
