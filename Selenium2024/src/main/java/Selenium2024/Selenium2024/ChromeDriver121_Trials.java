@@ -8,12 +8,14 @@ public class ChromeDriver121_Trials {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver","E:\\Eclipse\\WorkSpace\\chromedriver 121\\chromedriver.exe");  
+		System.setProperty("webdriver.chrome.driver","E:\\Eclipse\\WorkSpace\\chromedriver 121g\\chromedriver.exe");  
 	    
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
+//		options.addArguments("headless");
 		WebDriver driver = (WebDriver) new ChromeDriver();	
 		driver.get("https://www.google.com");
+		
 	}
 
 }

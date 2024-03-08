@@ -222,9 +222,10 @@
           <tags>persp.showIn:org.eclipse.tm.terminal.view.ui.TerminalsView</tags>
           <tags>persp.viewSC:org.eclipse.jdt.junit.ResultView</tags>
           <tags>persp.viewSC:org.eclipse.ant.ui.views.AntView</tags>
-          <children xsi:type="basic:PartSashContainer" xmi:id="_ZaD0ddPmEe6Hbe5rNmbOKA" selectedElement="_ZaD0e9PmEe6Hbe5rNmbOKA" horizontal="true">
+          <children xsi:type="basic:PartSashContainer" xmi:id="_ZaD0ddPmEe6Hbe5rNmbOKA" selectedElement="_ZaD0dtPmEe6Hbe5rNmbOKA" horizontal="true">
             <children xsi:type="basic:PartStack" xmi:id="_ZaD0dtPmEe6Hbe5rNmbOKA" elementId="org.eclipse.debug.internal.ui.NavigatorFolderView" containerData="2904" selectedElement="_ZaD0eNPmEe6Hbe5rNmbOKA">
               <tags>org.eclipse.e4.primaryNavigationStack</tags>
+              <tags>active</tags>
               <children xsi:type="advanced:Placeholder" xmi:id="_ZaD0d9PmEe6Hbe5rNmbOKA" elementId="org.eclipse.debug.ui.DebugView" toBeRendered="false" ref="_ZaIF6NPmEe6Hbe5rNmbOKA" closeable="true">
                 <tags>View</tags>
                 <tags>categoryTag:Debug</tags>
@@ -278,9 +279,8 @@
                   </children>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_ZaD0htPmEe6Hbe5rNmbOKA" elementId="org.eclipse.debug.internal.ui.ToolsFolderView" containerData="3170" selectedElement="_ZaD0h9PmEe6Hbe5rNmbOKA">
+              <children xsi:type="basic:PartStack" xmi:id="_ZaD0htPmEe6Hbe5rNmbOKA" elementId="org.eclipse.debug.internal.ui.ToolsFolderView" containerData="3170" selectedElement="_ZaD0i9PmEe6Hbe5rNmbOKA">
                 <tags>Java</tags>
-                <tags>noFocus</tags>
                 <children xsi:type="advanced:Placeholder" xmi:id="_ZaD0h9PmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.console.ConsoleView" ref="_ZaFqE9PmEe6Hbe5rNmbOKA" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:General</tags>
@@ -297,7 +297,7 @@
                   <tags>View</tags>
                   <tags>categoryTag:General</tags>
                 </children>
-                <children xsi:type="advanced:Placeholder" xmi:id="_ZaD0i9PmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.views.ProgressView" toBeRendered="false" ref="_ZaFqJtPmEe6Hbe5rNmbOKA" closeable="true">
+                <children xsi:type="advanced:Placeholder" xmi:id="_ZaD0i9PmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.views.ProgressView" ref="_ZaFqJtPmEe6Hbe5rNmbOKA" closeable="true">
                   <tags>View</tags>
                   <tags>categoryTag:General</tags>
                 </children>
@@ -378,14 +378,11 @@
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_ZaFDadPmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.editorss" selectedElement="_ZaFDatPmEe6Hbe5rNmbOKA">
       <children xsi:type="basic:PartStack" xmi:id="_ZaFDatPmEe6Hbe5rNmbOKA" elementId="PartStack@39ec4ae5" selectedElement="_q-8M8NfvEe6M2d8pJiOhLw">
-        <tags>active</tags>
         <children xsi:type="basic:Part" xmi:id="_q-8M8NfvEe6M2d8pJiOhLw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ChromeDriver121_Trials.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ChromeDriver121_Trials.java&quot; partName=&quot;ChromeDriver121_Trials.java&quot; title=&quot;ChromeDriver121_Trials.java&quot; tooltip=&quot;Selenium2024/src/main/java/Selenium2024/Selenium2024/ChromeDriver121_Trials.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Selenium2024/src/main/java/Selenium2024/Selenium2024/ChromeDriver121_Trials.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;179&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;388&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;ChromeDriver121_Trials.java&quot; partName=&quot;ChromeDriver121_Trials.java&quot; title=&quot;ChromeDriver121_Trials.java&quot; tooltip=&quot;Selenium2024/src/main/java/Selenium2024/Selenium2024/ChromeDriver121_Trials.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Selenium2024/src/main/java/Selenium2024/Selenium2024/ChromeDriver121_Trials.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;556&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>removeOnHide</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
-          <tags>active</tags>
-          <tags>activeOnClose</tags>
         </children>
       </children>
     </sharedElements>
@@ -413,6 +410,8 @@
       <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1648022048974&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;1&quot;>&#xD;&#xA;&lt;lastRecentlyUsedFilters/>&#xD;&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <tags>active</tags>
+      <tags>activeOnClose</tags>
       <menus xmi:id="_ZaFpidPmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.navigator.ProjectExplorer">
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
@@ -488,8 +487,14 @@
     <sharedElements xsi:type="basic:Part" xmi:id="_ZaFqJtPmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.views.ProgressView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.internal.progress.ProgressView"/>
       <persistedState key="originalCompatibilityViewBundle" value="org.eclipse.ui.ide"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
+      <menus xmi:id="_1r0ysN1bEe6Rw6DKFSt9Qw" elementId="org.eclipse.ui.views.ProgressView">
+        <tags>ViewMenu</tags>
+        <tags>menuContribution:menu</tags>
+      </menus>
+      <toolbar xmi:id="_1r0ysd1bEe6Rw6DKFSt9Qw" elementId="org.eclipse.ui.views.ProgressView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_ZaFqJ9PmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.views.ContentOutline" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Outline" iconURI="platform:/plugin/org.eclipse.ui.views/icons/full/eview16/outline_co.png" tooltip="" closeable="true">
       <persistedState key="originalCompatibilityViewClass" value="org.eclipse.ui.views.contentoutline.ContentOutline"/>
@@ -703,7 +708,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZaIF_dPmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BKS8MNftEe6M2d8pJiOhLw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_ZaMXddPmEe6Hbe5rNmbOKA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_1M47UN1YEe6Rw6DKFSt9Qw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_ZaMXddPmEe6Hbe5rNmbOKA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZaIGCtPmEe6Hbe5rNmbOKA" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -734,7 +739,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZaIGS9PmEe6Hbe5rNmbOKA" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_BKcGKNftEe6M2d8pJiOhLw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_ZaLxr9PmEe6Hbe5rNmbOKA"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_1NAQEN1YEe6Rw6DKFSt9Qw" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_ZaLxr9PmEe6Hbe5rNmbOKA"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZaIGVtPmEe6Hbe5rNmbOKA" elementId="org.eclipse.jdt.ui.PropertiesFileEditor" visible="false">
         <tags>Draggable</tags>
