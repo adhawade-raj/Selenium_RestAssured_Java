@@ -6,6 +6,8 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import Selenium2024.Selenium2024.ExcelHandling;
+
 public class DataDrivenTest {
 
 	ExcelHandling excelHandling;
@@ -20,6 +22,6 @@ public class DataDrivenTest {
 	@Test(dataProvider="getRegistrationData")
 	public void getData(String UserName, String Password) {
 		
-		System.out.println(UserName);
+		System.out.println(UserName+ " "+Password);
 	}
 }

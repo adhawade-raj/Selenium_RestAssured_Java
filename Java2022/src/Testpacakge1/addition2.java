@@ -1,0 +1,16 @@
+package Testpacakge1;
+
+public class addition2 {
+	public static void main(String[] args) {
+
+	int a=10;
+	int b=20;
+	int c=a*b;
+	
+	
+	
+	System.out.print("multiplication is" +c);
+	
+}
+}
+

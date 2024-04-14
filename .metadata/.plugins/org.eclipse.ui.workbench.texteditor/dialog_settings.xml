@@ -8,6 +8,8 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="border"/>
+			<item value="make"/>
 			<item value="choice"/>
 		</list>
 		<list key="replacehistory">
