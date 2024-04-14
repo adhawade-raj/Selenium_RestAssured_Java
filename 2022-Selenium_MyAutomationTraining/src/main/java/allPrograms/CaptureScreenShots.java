@@ -23,8 +23,7 @@ public class CaptureScreenShots {
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
 		
-//		Full page ScreenShot
-		
+//		To capture Full page ScreenShot
 //		TakesScreenshot ts = (TakesScreenshot) driver;
 //		File src = ts.getScreenshotAs(OutputType.FILE);
 //		File Target = new File(".\\src\\main\\java\\allPrograms\\Screenshots.png");
