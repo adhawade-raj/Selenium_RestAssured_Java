@@ -1573,3 +1573,8 @@ java.io.EOFException: no more data available - expected end tag </project> to cl
 	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:161)
 	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:255)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 2 2 2024-04-14 12:54:32.897
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2024-04-14 12:54:32.897
+!MESSAGE The project description file (.project) for '2022-Selenium_MyAutomationTraining' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
