@@ -10,9 +10,7 @@ public class DemoSwitchCase {
 		Scanner sc=new Scanner(System.in);
 	
 			char ch='2';
-			
-			
-			Scanner sc= new Scanner(System.in); 
+		
 			
 			switch(ch)
 			{
