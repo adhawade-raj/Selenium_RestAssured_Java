@@ -1,4 +1,4 @@
-package JavaPrograms_Tricky_2024;
+package Int_JavaPrograms_Tricky_2024;
 
 import java.util.stream.IntStream;
 

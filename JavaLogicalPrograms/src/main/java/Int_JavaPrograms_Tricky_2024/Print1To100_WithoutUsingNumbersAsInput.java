@@ -1,4 +1,4 @@
-package JavaPrograms_Tricky_2024;
+package Int_JavaPrograms_Tricky_2024;
 
 public class Print1To100_WithoutUsingNumbersAsInput {
 
