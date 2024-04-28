@@ -1,6 +1,6 @@
 package Int_JavaPrograms_2024;
 
-public class FindMissingNoFromArray {
+public class Array_FindMissing {
 
 	public static void main(String[] args) {
 	

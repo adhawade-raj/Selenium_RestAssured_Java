@@ -1,6 +1,6 @@
 package Int_JavaPrograms_2024;
 
-public class CountFrequencyOfSingleCharactersInString {
+public class String_CountFrequencyOfSingleCharacters {
 
 	public static void main(String[] args) {
 		

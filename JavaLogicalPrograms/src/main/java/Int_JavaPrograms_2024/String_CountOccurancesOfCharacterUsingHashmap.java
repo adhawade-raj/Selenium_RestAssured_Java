@@ -2,7 +2,7 @@ package Int_JavaPrograms_2024;
 
 import java.util.HashMap;
 
-public class CountOccurancesOfCharacterUsingHashmap {
+public class String_CountOccurancesOfCharacterUsingHashmap {
 
 	public static void main(String[] args) {
 	String str = "adhawade";

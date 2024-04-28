@@ -2,7 +2,7 @@ package Int_JavaPrograms_2024;
 
 import java.util.Scanner;
 
-public class ScannerFunction1 {
+public class ScannerFunction {
 
 //		i/p:10
 //    o/p:1,2,3,4,5,6,7,8,9,10

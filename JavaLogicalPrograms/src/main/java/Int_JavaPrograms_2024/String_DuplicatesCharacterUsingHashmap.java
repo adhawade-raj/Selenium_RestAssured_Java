@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class DuplicatesCharacterFromString_Hashmap {
+public class String_DuplicatesCharacterUsingHashmap {
 
 	public static void main(String[] args) {
 		

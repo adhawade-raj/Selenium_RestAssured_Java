@@ -1,6 +1,6 @@
 package Int_JavaPrograms_2024;
 
-public class AlphaNumericString_CountOfWords {
+public class String_AlphaNumeric_CountOfWords {
 
 	public static void main(String[] args)
 	{

@@ -2,7 +2,7 @@ package Int_JavaPrograms_2024;
 
 import java.util.ArrayList;
 
-public class CountVowelsFromString {
+public class String_CountVowels {
 
 	public static void main(String[] args) {
 	

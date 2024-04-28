@@ -2,7 +2,7 @@ package Int_JavaPrograms_2024;
 
 import javax.print.attribute.standard.Destination;
 
-public class StringReverse_everyalternative_word1 {
+public class String_ReverseEveryAlternative_Word {
 
 	public static void main(String[] args) {
 		String a = "my name is raj";
