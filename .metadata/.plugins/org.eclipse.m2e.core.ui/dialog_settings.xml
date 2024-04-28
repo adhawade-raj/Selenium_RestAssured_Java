@@ -124,4 +124,25 @@
 			<item value=""/>
 		</list>
 	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_Cucumber_Practise"/>
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_CucumberTraining"/>
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_EcommerceFramework"/>
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_MyAutomationTraining"/>
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2024-Rest Assured"/>
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2024-RestAssured_Training"/>
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2024-RestAssuredFramework"/>
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2024-Selenium"/>
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\JavaLogicalPrograms"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
 </section>

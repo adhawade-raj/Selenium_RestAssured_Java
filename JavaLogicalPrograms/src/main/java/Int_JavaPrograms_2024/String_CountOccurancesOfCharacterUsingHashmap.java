@@ -18,7 +18,8 @@ public class String_CountOccurancesOfCharacterUsingHashmap {
 			charCountMap.put(c, 1);
 		}
 	}
-	System.out.println("Input String : "+str+" "+charCountMap);
+	System.out.println("Input String = "+str);
+	System.out.println("Word Count = "+charCountMap);
 
 	}
 
