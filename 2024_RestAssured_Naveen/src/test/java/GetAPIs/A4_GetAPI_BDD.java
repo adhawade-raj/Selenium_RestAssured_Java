@@ -1,14 +1,10 @@
 package GetAPIs;
 
+import static io.restassured.RestAssured.given;
 import org.testng.annotations.Test;
-
 import io.restassured.http.ContentType;
 
-import static io.restassured.RestAssured.*;
-
 public class A4_GetAPI_BDD {
-
-	
 	@Test()
 	public void getProductsTest() {
 		//Here nothing will be printed on console

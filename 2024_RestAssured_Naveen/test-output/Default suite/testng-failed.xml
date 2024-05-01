@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="GetAPIs.A5_GetAPI_AssertBody_BDD">
+      <class name="GetAPIs.B5_USerDataAPI_ExtractBody_SingleJson">
         <methods>
-          <include name="getProducts_WithLogsTest"/>
+          <include name="getProductDataAPI_WIthExtractBodyTest3"/>
         </methods>
-      </class> <!-- GetAPIs.A5_GetAPI_AssertBody_BDD -->
+      </class> <!-- GetAPIs.B5_USerDataAPI_ExtractBody_SingleJson -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
