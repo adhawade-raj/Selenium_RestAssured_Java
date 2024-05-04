@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace"/>
 			<item value="E:\Eclipse\WorkSpace\Cucumber_Practise"/>
 			<item value="E:\Eclipse\WorkSpace\Raj"/>
 		</list>
@@ -27,6 +28,7 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="_RestAssuredNaveen._RestAssuredNaveen"/>
 			<item value="SeleniumTrials2024.SeleniumTrials2024"/>
 			<item value="ForDemoPurpose.ForDemoPurpose"/>
 			<item value="CucumberTraining.CucumberTraining"/>
@@ -37,6 +39,7 @@
 			<item value="MyAutomation.MyAutomation"/>
 		</list>
 		<list key="groupId">
+			<item value="2024_RestAssuredNaveen"/>
 			<item value="SeleniumTrials2024"/>
 			<item value="ForDemoPurpose"/>
 			<item value="CucumberTraining"/>
@@ -46,6 +49,7 @@
 			<item value="MyAutomation"/>
 		</list>
 		<list key="artifactId">
+			<item value="2024_RestAssuredNaveen"/>
 			<item value="SeleniumTrials2024"/>
 			<item value="ForDemoPurpose"/>
 			<item value="CucumberTraining"/>
