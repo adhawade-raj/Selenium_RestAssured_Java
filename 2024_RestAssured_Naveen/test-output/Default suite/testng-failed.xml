@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RA_03_PostAPIs.C3_Post_BookingAuth_Approach1Test">
+      <class name="RA_03_PostAPIs.C5_Post_Get_BookingAuthTest">
         <methods>
-          <include name="getBookingAuthTest"/>
+          <include name="addUserTest"/>
         </methods>
-      </class> <!-- RA_03_PostAPIs.C3_Post_BookingAuth_Approach1Test -->
+      </class> <!-- RA_03_PostAPIs.C5_Post_Get_BookingAuthTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

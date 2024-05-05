@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-04T19:10:21 IST" name="Default suite" finished-at="2024-05-04T19:10:27 IST" duration-ms="6602">
+  <suite started-at="2024-05-05T10:53:39 IST" name="Default suite" finished-at="2024-05-05T10:54:08 IST" duration-ms="28591">
     <groups>
     </groups>
-    <test started-at="2024-05-04T19:10:21 IST" name="Default test" finished-at="2024-05-04T19:10:27 IST" duration-ms="6602">
-      <class name="RA_03_PostAPIs.C4_Post_BookingAuth_Approach2Test">
-        <test-method signature="getBookingAuthTest()[pri:0, instance:RA_03_PostAPIs.C4_Post_BookingAuth_Approach2Test@28f2a10f]" started-at="2024-05-04T19:10:21 IST" name="getBookingAuthTest" finished-at="2024-05-04T19:10:27 IST" duration-ms="6518" status="PASS">
+    <test started-at="2024-05-05T10:53:39 IST" name="Default test" finished-at="2024-05-05T10:54:08 IST" duration-ms="28591">
+      <class name="RA_03_PostAPIs.C5_Post_Get_BookingAuthTest">
+        <test-method signature="addUserTest()[pri:0, instance:RA_03_PostAPIs.C5_Post_Get_BookingAuthTest@f736069]" started-at="2024-05-05T10:53:39 IST" name="addUserTest" finished-at="2024-05-05T10:54:08 IST" duration-ms="28506" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getBookingAuthTest -->
-      </class> <!-- RA_03_PostAPIs.C4_Post_BookingAuth_Approach2Test -->
+        </test-method> <!-- addUserTest -->
+      </class> <!-- RA_03_PostAPIs.C5_Post_Get_BookingAuthTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
