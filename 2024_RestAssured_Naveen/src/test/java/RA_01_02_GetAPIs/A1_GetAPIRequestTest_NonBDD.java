@@ -19,7 +19,7 @@ public class A1_GetAPIRequestTest_NonBDD {
 		RestAssured.baseURI = "https://gorest.co.in";
 		RequestSpecification request = RestAssured.given();
 		
-//		request.headers("Authorization", "Bearer ");
+		request.headers("Authorization", "4d5ca2826ef627bc6b000b82bb7df8c26831266a1b936e701a3c06f3f1e9bf77");
 		
 		Response response = request.get("/public/v2/users");
 		

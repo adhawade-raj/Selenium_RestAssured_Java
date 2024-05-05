@@ -1,4 +1,4 @@
-package RA_03_PostAPIs;
+package RA_03_04_PostAPIs;
 
 import static io.restassured.RestAssured.given;
 

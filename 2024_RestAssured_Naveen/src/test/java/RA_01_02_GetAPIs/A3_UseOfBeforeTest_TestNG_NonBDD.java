@@ -22,7 +22,7 @@ public class A3_UseOfBeforeTest_TestNG_NonBDD {
 		
 		RestAssured.baseURI = "https://gorest.co.in";
 		 request = RestAssured.given();
-//		 request.header("Authorization", "Bearer ");
+		 request.header("Authorization", "4d5ca2826ef627bc6b000b82bb7df8c26831266a1b936e701a3c06f3f1e9bf77");
 	}
 	
 	@Test(priority =1)
