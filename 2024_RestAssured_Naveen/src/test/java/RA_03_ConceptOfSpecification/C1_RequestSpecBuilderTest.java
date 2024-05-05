@@ -1,4 +1,4 @@
-package RA_03_SpecificationConcept;
+package RA_03_ConceptOfSpecification;
 
 import org.testng.annotations.Test;
 
