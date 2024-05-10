@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-05T19:49:23 IST" name="Default suite" finished-at="2024-05-05T19:49:30 IST" duration-ms="7626">
+  <suite started-at="2024-05-10T22:03:21 IST" name="Default suite" finished-at="2024-05-10T22:03:26 IST" duration-ms="5433">
     <groups>
     </groups>
-    <test started-at="2024-05-05T19:49:23 IST" name="Default test" finished-at="2024-05-05T19:49:30 IST" duration-ms="7626">
-      <class name="RA_03_04_PostAPIs.D3_CreateUserWithPojo_RandomMailGenerationTest">
-        <test-method signature="postGetCallwitjhPojoTest()[pri:0, instance:RA_03_04_PostAPIs.D3_CreateUserWithPojo_RandomMailGenerationTest@3b6ddd1d]" started-at="2024-05-05T19:49:23 IST" name="postGetCallwitjhPojoTest" finished-at="2024-05-05T19:49:30 IST" duration-ms="7543" status="PASS">
+    <test started-at="2024-05-10T22:03:21 IST" name="Default test" finished-at="2024-05-10T22:03:26 IST" duration-ms="5433">
+      <class name="RA_05_com.product.api.E3_ProductAPIPojo_WithLombokTest">
+        <test-method signature="getProduct_WithLobokPojoTest()[pri:0, instance:RA_05_com.product.api.E3_ProductAPIPojo_WithLombokTest@7c24b813]" started-at="2024-05-10T22:03:21 IST" name="getProduct_WithLobokPojoTest" finished-at="2024-05-10T22:03:26 IST" duration-ms="5328" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- postGetCallwitjhPojoTest -->
-      </class> <!-- RA_03_04_PostAPIs.D3_CreateUserWithPojo_RandomMailGenerationTest -->
+        </test-method> <!-- getProduct_WithLobokPojoTest -->
+      </class> <!-- RA_05_com.product.api.E3_ProductAPIPojo_WithLombokTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RA_03_04_PostAPIs.D1_Post_BookingAuth_WithPojoTest">
+      <class name="RA_05_JsonPathValidator.D1_JsonPathTest">
         <methods>
-          <include name="postBookingAuth_WithPojoTest"/>
+          <include name="getProductsTest"/>
         </methods>
-      </class> <!-- RA_03_04_PostAPIs.D1_Post_BookingAuth_WithPojoTest -->
+      </class> <!-- RA_05_JsonPathValidator.D1_JsonPathTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
