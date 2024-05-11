@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RA_05_JsonPathValidator.D1_JsonPathTest">
+      <class name="RA_06_com.gorest.in.api.F1_UserTest">
         <methods>
-          <include name="getProductsTest"/>
+          <include name="getProduct_WithLobokPojoTest_WithBuilder"/>
         </methods>
-      </class> <!-- RA_05_JsonPathValidator.D1_JsonPathTest -->
+      </class> <!-- RA_06_com.gorest.in.api.F1_UserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
