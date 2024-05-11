@@ -2,15 +2,15 @@
 <testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-11T13:41:18 IST" name="Default suite" finished-at="2024-05-11T13:41:25 IST" duration-ms="7360">
+  <suite started-at="2024-05-11T18:13:51 IST" name="Default suite" finished-at="2024-05-11T18:14:00 IST" duration-ms="9043">
     <groups>
     </groups>
-    <test started-at="2024-05-11T13:41:18 IST" name="Default test" finished-at="2024-05-11T13:41:25 IST" duration-ms="7360">
+    <test started-at="2024-05-11T18:13:51 IST" name="Default test" finished-at="2024-05-11T18:14:00 IST" duration-ms="9043">
       <class name="RA_06_com.gorest.in.api.F1_UserTest">
-        <test-method signature="getProduct_WithLobokPojoTest_WithBuilder()[pri:0, instance:RA_06_com.gorest.in.api.F1_UserTest@3ab6678b]" started-at="2024-05-11T13:41:18 IST" name="getProduct_WithLobokPojoTest_WithBuilder" finished-at="2024-05-11T13:41:25 IST" duration-ms="7280" status="PASS">
+        <test-method signature="getProduct_WithLobokPojoTest_WithoutBuilder()[pri:0, instance:RA_06_com.gorest.in.api.F1_UserTest@3ab6678b]" started-at="2024-05-11T18:13:51 IST" name="getProduct_WithLobokPojoTest_WithoutBuilder" finished-at="2024-05-11T18:14:00 IST" duration-ms="8972" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- getProduct_WithLobokPojoTest_WithBuilder -->
+        </test-method> <!-- getProduct_WithLobokPojoTest_WithoutBuilder -->
       </class> <!-- RA_06_com.gorest.in.api.F1_UserTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
