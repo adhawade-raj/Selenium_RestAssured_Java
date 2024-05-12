@@ -60,7 +60,6 @@ INDEX VERSION 1.131+E:\Eclipse_VSCode\SeleniumJava_Workspace\.metadata\.plugins\
 3709261482.index
 3177264001.index
 2245193360.index
-1043264832.index
 3063903237.index
 146893380.index
 3630483354.index
