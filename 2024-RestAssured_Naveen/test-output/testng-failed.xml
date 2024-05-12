@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RA_06_com.gorest.in.api.F1_UserTest">
+      <class name="RA_07_MultiBody.G9_BodyWithBinaryTest">
         <methods>
-          <include name="getProduct_WithLobokPojoTest_WithBuilder"/>
+          <include name="bodyWithText"/>
         </methods>
-      </class> <!-- RA_06_com.gorest.in.api.F1_UserTest -->
+      </class> <!-- RA_07_MultiBody.G9_BodyWithBinaryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
