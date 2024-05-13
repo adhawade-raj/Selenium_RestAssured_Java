@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="RA_08B_AuthAPIs.H6_APIKey_AuthTest">
+      <class name="RA_01A_02_GetAPIs.B6_UserDataAPI_ExtractBody_Extract">
         <methods>
-          <include name="basicAuthTest"/>
+          <include name="getProductDataAPI_WIthExtractBodyTest3"/>
         </methods>
-      </class> <!-- RA_08B_AuthAPIs.H6_APIKey_AuthTest -->
+      </class> <!-- RA_01A_02_GetAPIs.B6_UserDataAPI_ExtractBody_Extract -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-13T14:43:57Z" name="Default suite" finished-at="2024-05-13T14:44:10Z" duration-ms="12982">
+    <groups>
+    </groups>
+    <test started-at="2024-05-13T14:43:57Z" name="Default test" finished-at="2024-05-13T14:44:10Z" duration-ms="12982">
+      <class name="com.gorest.in.GET_05_User_PathParam_DataProvider_DataDrivenTesting">
+        <test-method signature="getUsersWithPathPara_DataProviderTest(java.lang.String, java.lang.String)[pri:0, instance:com.gorest.in.GET_05_User_PathParam_DataProvider_DataDrivenTesting@727eb8cb]" started-at="2024-05-13T14:43:57Z" name="getUsersWithPathPara_DataProviderTest" data-provider="pathParamData" finished-at="2024-05-13T14:44:09Z" duration-ms="11407" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[male]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[active]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUsersWithPathPara_DataProviderTest -->
+        <test-method signature="getUsersWithPathPara_DataProviderTest(java.lang.String, java.lang.String)[pri:0, instance:com.gorest.in.GET_05_User_PathParam_DataProvider_DataDrivenTesting@727eb8cb]" started-at="2024-05-13T14:44:09Z" name="getUsersWithPathPara_DataProviderTest" data-provider="pathParamData" finished-at="2024-05-13T14:44:10Z" duration-ms="1040" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[female]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[active]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUsersWithPathPara_DataProviderTest -->
+      </class> <!-- com.gorest.in.GET_05_User_PathParam_DataProvider_DataDrivenTesting -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
