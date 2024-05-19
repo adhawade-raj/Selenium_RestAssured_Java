@@ -4,6 +4,6 @@ public class StringUtils {
 
 	
 	public static String getRandomEmailId() {
-		return "api"+System.currentTimeMillis()+"@pi.com";
+		return "api"+System.currentTimeMillis()+"@api.com";
 	}
 }
