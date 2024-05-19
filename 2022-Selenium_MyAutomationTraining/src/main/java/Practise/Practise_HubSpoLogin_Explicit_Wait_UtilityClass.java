@@ -1,5 +1,7 @@
 package Practise;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,7 +22,7 @@ public class Practise_HubSpoLogin_Explicit_Wait_UtilityClass {
 		return element;	
 	}
 	
-	public void ExplicitWait(By Locator, int timeout)
+	public void ExplicitWait(By Locator, Duration timeout)
 	{
 		WebDriverWait wait = new WebDriverWait(driver,timeout);
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(Locator));	

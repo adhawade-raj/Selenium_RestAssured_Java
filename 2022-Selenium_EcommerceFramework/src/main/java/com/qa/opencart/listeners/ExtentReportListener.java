@@ -115,5 +115,17 @@ package com.qa.opencart.listeners;
 			return calendar.getTime();
 		}
 
+		@Override
+		public void onTestFailure(ITestResult result) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onTestSkipped(ITestResult result) {
+			// TODO Auto-generated method stub
+			
+		}
+
 	}
 

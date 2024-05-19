@@ -1,5 +1,7 @@
 package Selenium;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,9 +26,9 @@ public class Expl_Impl_Wait_UsingUtility {
 		utility.DoSendKeys(Email, "Abc@gmail.com");
 		utility.DoSendKeys(PassWord, "123456");
 //		utility.doClick(LoginButton);
-		utility.ClickWhenReady(LoginButton, 5);
+		utility.ClickWhenReady(LoginButton,Duration.ofSeconds(5));
 		
-		utility.WaitforElemenetToBePresent(Email, 5);
+		utility.WaitforElemenetToBePresent(Email, Duration.ofSeconds(5));
 //		utility.WaitfortitleToBePresent(null, 0)
 	}
 

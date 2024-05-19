@@ -16,6 +16,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
 
+import io.netty.util.Timeout;
+
 public class Utility {
 
 	WebDriver driver;
@@ -82,9 +84,9 @@ public class Utility {
 	 * @param Timeout
 	 * @return
 	 */
-	public WebElement WaitforElemenetToBePresent(By Locator, int Timeout)
+	public WebElement WaitforElemenetToBePresent(By Locator, Duration timeout)
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Timeout);
+		WebDriverWait wait = new WebDriverWait(driver, timeout);
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(Locator));
 		return getElement(Locator);
 	
@@ -95,7 +97,7 @@ public class Utility {
 	 * @param Timeout
 	 * @return
 	 */
-	public String WaitfortitleToBePresent(String Title, int Timeout)
+	public String WaitfortitleToBePresent(String Title, Duration Timeout)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, Timeout);
 		wait.until(ExpectedConditions.titleContains(Title));
@@ -107,7 +109,7 @@ public class Utility {
 	 * @param Timeout
 	 * @return
 	 */
-	public WebElement WaitforElementToBEClickable(By Locator, int Timeout)
+	public WebElement WaitforElementToBEClickable(By Locator, Duration Timeout)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, Timeout);
 		wait.until(ExpectedConditions.elementToBeClickable(Locator));
@@ -118,7 +120,7 @@ public class Utility {
 	 * @param Locator
 	 * @param Timeout
 	 */
-	public void ClickWhenReady(By Locator, int Timeout)
+	public void ClickWhenReady(By Locator, Duration Timeout)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, Timeout);
 		wait.until(ExpectedConditions.elementToBeClickable(Locator));
@@ -130,7 +132,7 @@ public class Utility {
 	 * @param Timeout
 	 * @return
 	 */
-	public WebElement WaitforElementTobeVisible(By Locator, int Timeout)
+	public WebElement WaitforElementTobeVisible(By Locator, Duration Timeout)
 	{
 		WebElement element=getElement(Locator);
 		WebDriverWait wait = new WebDriverWait(driver, Timeout);
@@ -143,7 +145,7 @@ public class Utility {
 	 * @param Timeout
 	 * @return
 	 */
-	public String WaitforUrl(String Url, int Timeout)
+	public String WaitforUrl(String Url, Duration Timeout)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, Timeout);
 		wait.until(ExpectedConditions.urlContains(Url));
@@ -155,7 +157,7 @@ public class Utility {
 	 * @param Timeout
 	 * @return
 	 */
-	public boolean WaitforAlertToBePresent(String Url, int Timeout)
+	public boolean WaitforAlertToBePresent(String Url, Duration Timeout)
 	{
 		WebDriverWait wait = new WebDriverWait(driver, Timeout);
 		wait.until(ExpectedConditions.alertIsPresent());

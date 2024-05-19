@@ -48,7 +48,7 @@ public class F1_UserTest {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 		F1_UserPojo f1_ResponseUserPojo = mapper.readValue(getResponse.getBody().asString(), F1_UserPojo.class);
-	
+		
 		System.out.println("ID :" +f1_ResponseUserPojo.getId());
 		System.out.println("Name : "+f1_ResponseUserPojo.getName());
 		System.out.println("Email : "+f1_ResponseUserPojo.getEmail());

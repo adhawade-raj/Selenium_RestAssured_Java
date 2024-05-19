@@ -35,5 +35,4 @@ public static String base_url  ="https://petstore.swagger.io/v2";
     	//Here you can add Pet url's
 }
 	
-	
-}
+

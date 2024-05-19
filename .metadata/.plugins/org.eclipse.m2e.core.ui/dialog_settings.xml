@@ -28,36 +28,13 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="_RestAssuredNaveen._RestAssuredNaveen"/>
-			<item value="SeleniumTrials2024.SeleniumTrials2024"/>
-			<item value="ForDemoPurpose.ForDemoPurpose"/>
-			<item value="CucumberTraining.CucumberTraining"/>
-			<item value="Framework_Setup.Framework_Setup"/>
-			<item value="CucumberSession.Cucumber_Practise"/>
-			<item value="RestAssured_API_Testing.RestAssured_API_Testing"/>
-			<item value="MyAutomation.FrameWork"/>
-			<item value="MyAutomation.MyAutomation"/>
+			<item value="_RestAssured_Framework_GoRest._RestAssured_Framework_GoRest"/>
 		</list>
 		<list key="groupId">
-			<item value="2024_RestAssuredNaveen"/>
-			<item value="SeleniumTrials2024"/>
-			<item value="ForDemoPurpose"/>
-			<item value="CucumberTraining"/>
-			<item value="Framework_Setup"/>
-			<item value="CucumberSession"/>
-			<item value="RestAssured_API_Testing"/>
-			<item value="MyAutomation"/>
+			<item value="2024-RestAssured_Framework_GoRest"/>
 		</list>
 		<list key="artifactId">
-			<item value="2024_RestAssuredNaveen"/>
-			<item value="SeleniumTrials2024"/>
-			<item value="ForDemoPurpose"/>
-			<item value="CucumberTraining"/>
-			<item value="Framework_Setup"/>
-			<item value="Cucumber_Practise"/>
-			<item value="RestAssured_API_Testing"/>
-			<item value="FrameWork"/>
-			<item value="MyAutomation"/>
+			<item value="2024-RestAssured_Framework_GoRest"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

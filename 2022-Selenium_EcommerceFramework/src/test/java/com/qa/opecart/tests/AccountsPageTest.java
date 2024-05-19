@@ -21,16 +21,18 @@ public class AccountsPageTest extends BaseTest {
 
 	@Test(priority = 1)
 	public void accPageTitleTest() {
-		String actTitle = accountPage.getAccountPageTitle();
-		System.out.println("acc page title: " + actTitle);
-		Assert.assertEquals(actTitle, Constants.ACCOUNT_PAGE_TITLE);
+//		String actTitle = accountPage.getAccountPageTitle();
+//		System.out.println("acc page title: " + actTitle);
+//		Assert.assertEquals(actTitle, Constants.ACCOUNT_PAGE_TITLE);
+		Assert.assertTrue(accountPage.getAccountPageTitle());
 	}
 
 	@Test(priority = 2,enabled=false)
 	public void accPageHeaderTest() {
-		String header = accountPage.getAccountsPageHeader();
-		System.out.println("acc page header is: " + header);
-		Assert.assertEquals(header, Constants.ACCOUNT_PAGE_HEADER);
+//		String header = accountPage.getAccountsPageHeader();
+//		System.out.println("acc page header is: " + header);
+//		Assert.assertEquals(header, Constants.ACCOUNT_PAGE_HEADER);
+		Assert.assertTrue(accountPage.getAccountsPageHeader());
 	}
 
 	@Test(priority = 3)

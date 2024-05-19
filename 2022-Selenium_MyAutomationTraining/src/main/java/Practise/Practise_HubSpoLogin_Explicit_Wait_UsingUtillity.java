@@ -1,5 +1,7 @@
 package Practise;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,7 +24,7 @@ public class Practise_HubSpoLogin_Explicit_Wait_UsingUtillity {
 		WebElement text = test.getElement(mail);
 		text.sendKeys("128795");
 		
-		test.ExplicitWait(mail, 5);
+		test.ExplicitWait(mail, Duration.ofSeconds(5));
 		
 		
 		
