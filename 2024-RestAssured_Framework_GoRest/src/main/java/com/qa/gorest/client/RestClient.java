@@ -4,9 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.qa.gorest.frameworkException.APIFrameworkException;
-
+import io.restassured.response.Response;
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
+
 import io.restassured.specification.RequestSpecification;
 
 public class RestClient {
@@ -26,7 +28,7 @@ public class RestClient {
 	 * To set bearer token
 	 * @return 
 	 */
-	public RequestSpecification addAuthorizationHeader() {
+	private RequestSpecification addAuthorizationHeader() {
 		specBuilder.addHeader("Authorization", BEARER_TOKEN);
 		return specBuilder.build();
 	}
@@ -61,13 +63,24 @@ public class RestClient {
 	}
 	
 	/**
+	 * 
+	 * @return
+	 */
+	 private RequestSpecification createRequestSpec() {
+		 specBuilder.setBaseUri(BASE_URI);
+		 addAuthorizationHeader();
+		return specBuilder.build();
+	}
+	
+	/**
 	 * 1
 	 * if we want to pass multiple headers along with bearer token
 	 * @param headersMap
 	 * @return
 	 */
-	public RequestSpecification addAuthorizationHeader(HashMap<String, String> headersMap) {
-		specBuilder.addHeader("Authorization", BEARER_TOKEN);
+	 private RequestSpecification createRequestSpec(Map<String, String> headersMap) {
+		 specBuilder.setBaseUri(BASE_URI);
+		 specBuilder.addHeader("Authorization", BEARER_TOKEN);
 		if(headersMap!=null) {
 			specBuilder.addHeaders(headersMap);
 		}
@@ -81,8 +94,9 @@ public class RestClient {
 	 * @param querParams
 	 * @return
 	 */
-	public RequestSpecification addAuthorizationHeader(HashMap<String, String> headersMap,
+	private RequestSpecification createRequestSpec(Map<String, String> headersMap,
 														Map<String, String> querParams) {
+		specBuilder.setBaseUri(BASE_URI);
 		specBuilder.addHeader("Authorization", BEARER_TOKEN);
 		if(headersMap!=null) {
 			specBuilder.addHeaders(headersMap);
@@ -100,8 +114,7 @@ public class RestClient {
 	 * @param contentType
 	 * @return
 	 */
-	public RequestSpecification addAuthorizationHeader(Object requestBody, String contentType) {
-		
+	private RequestSpecification createRequestSpec(Object requestBody, String contentType) {
 		specBuilder.setBaseUri(BASE_URI);
 		addAuthorizationHeader();
 		setRequestContentType(contentType);
@@ -120,9 +133,9 @@ public class RestClient {
 	 * @param headersMap
 	 * @return
 	 */
-public RequestSpecification addAuthorizationHeader(Object requestBody, 
+	private RequestSpecification createRequestSpec(Object requestBody, 
 													String contentType,
-													HashMap<String, String> headersMap) {
+													Map<String, String> headersMap) {
 		
 		specBuilder.setBaseUri(BASE_URI);
 		addAuthorizationHeader();
@@ -137,6 +150,234 @@ public RequestSpecification addAuthorizationHeader(Object requestBody,
 		return specBuilder.build();
 	}
 
+	/**GET Call Methods*/
+	 
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param log
+	 * @return
+	 */
+	public Response get(String seriveUrl, boolean log) {
+		
+		if(log) {
+			return RestAssured.given(createRequestSpec()).log().all()
+			.when()
+			.get(seriveUrl);
+		}
+		return RestAssured.given(createRequestSpec())
+		.when()
+		.get(seriveUrl);
+	}
+	
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param headersMap
+	 * @param log
+	 * @return
+	 */
+	public Response get(String seriveUrl, Map<String, String> headersMap, boolean log) {
+		
+		if(log) {
+			return RestAssured.given(createRequestSpec(headersMap)).log().all()
+			.when()
+			.get(seriveUrl);
+		}
+		return RestAssured.given(createRequestSpec(headersMap))
+				.when()
+				.get(seriveUrl);
+	}
 
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param headersMap
+	 * @param queryParams
+	 * @param log
+	 * @return
+	 */
+	public Response get(String seriveUrl, 
+						Map<String, String> headersMap, 
+						Map<String, String> queryParams, 
+						boolean log) {
+		
+		if(log) {
+			return RestAssured.given(createRequestSpec(headersMap, queryParams)).log().all()
+			.when()
+			.get(seriveUrl);
+		}
+		return RestAssured.given(createRequestSpec(headersMap, queryParams))
+				.when()
+				.get(seriveUrl);
+	}
 
+				/**POST Call Methods*/
+
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param contentType
+	 * @param requestBody
+	 * @param log
+	 * @return
+	 */
+	public Response post(String seriveUrl, 
+			String contentType, 
+			Object requestBody,
+			boolean log) {
+
+	if(log) {
+		return RestAssured.given(createRequestSpec(requestBody,contentType)).log().all()
+	.when()
+	.post(seriveUrl);
+  }
+		return RestAssured.given(createRequestSpec(requestBody,contentType)).log().all()
+		.when()
+		.post(seriveUrl);
+  }
+	
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param contentType
+	 * @param headersMap
+	 * @param requestBody
+	 * @param log
+	 * @return
+	 */
+	public Response post(String seriveUrl, 
+						String contentType,
+					Map<String, String> headersMap, 
+					Object requestBody,
+					boolean log) {
+		
+		if(log) {
+			return RestAssured.given(createRequestSpec(requestBody,contentType,headersMap)).log().all()
+			.when()
+			.post(seriveUrl);
+		}
+		return RestAssured.given(createRequestSpec(requestBody,contentType,headersMap)).log().all()
+				.when()
+				.post(seriveUrl);
+	}
+	
+	/**PUT Call Methods*/
+	
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param contentType
+	 * @param requestBody
+	 * @param log
+	 * @return
+	 */
+	public Response put(String seriveUrl, 
+			String contentType, 
+			Object requestBody,
+			boolean log) {
+
+	if(log) {
+		return RestAssured.given(createRequestSpec(requestBody,contentType)).log().all()
+	.when()
+	.put(seriveUrl);
+  }
+		return RestAssured.given(createRequestSpec(requestBody,contentType)).log().all()
+		.when()
+		.put(seriveUrl);
+  }
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param contentType
+	 * @param headersMap
+	 * @param requestBody
+	 * @param log
+	 * @return
+	 */
+	public Response put(String seriveUrl, 
+						String contentType,
+						Map<String, String> headersMap, 
+						Object requestBody,
+		boolean log) {
+
+		if(log) {
+			return RestAssured.given(createRequestSpec(requestBody,contentType,headersMap)).log().all()
+					.when()
+					.put(seriveUrl);
+		}
+		return RestAssured.given(createRequestSpec(requestBody,contentType,headersMap)).log().all()
+	.when()
+	.put(seriveUrl);
+	}
+	
+	/**PATCH Methods*/
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param contentType
+	 * @param requestBody
+	 * @param log
+	 * @return
+	 */
+	public Response patch(String seriveUrl, 
+			String contentType, 
+			Object requestBody,
+			boolean log) {
+
+	if(log) {
+		return RestAssured.given(createRequestSpec(requestBody,contentType)).log().all()
+	.when()
+	.patch(seriveUrl);
+  }
+		return RestAssured.given(createRequestSpec(requestBody,contentType)).log().all()
+		.when()
+		.patch(seriveUrl);
+  }
+	
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param contentType
+	 * @param headersMap
+	 * @param requestBody
+	 * @param log
+	 * @return
+	 */
+	public Response patch(String seriveUrl, 
+			String contentType,
+			Map<String, String> headersMap, 
+			Object requestBody,
+			boolean log) {
+
+		if(log) {
+			return RestAssured.given(createRequestSpec(requestBody,contentType,headersMap)).log().all()
+		.when()
+		.patch(seriveUrl);
+		}
+		return RestAssured.given(createRequestSpec(requestBody,contentType,headersMap)).log().all()
+				.when()
+				.patch(seriveUrl);
+	}
+	
+	/**PUT Call Methods*/
+	
+	/**
+	 * 
+	 * @param seriveUrl
+	 * @param log
+	 * @return
+	 */
+	public Response delete(String seriveUrl, boolean log) {
+		
+		if(log) {
+			return RestAssured.given(addAuthorizationHeader()).log().all()
+			.when()
+			.delete(seriveUrl);
+		}
+		return RestAssured.given(addAuthorizationHeader())
+		.when()
+		.delete(seriveUrl);
+	}
+	
 }
