@@ -18,6 +18,10 @@ public class BaseTest {
 	protected RestClient restClient;
 	protected String baseURI;
 	
+	//ServiceUrl
+	public static final String GOREST_ENDPOINT="/public/v2/users";
+	public static final String CIRCUIT_ENDPOINT="/api/f1";
+	
 	/** This is to run diff baseURI from testng.xml*/
 //	@Parameters({"baseURI"})
 //	@BeforeTest

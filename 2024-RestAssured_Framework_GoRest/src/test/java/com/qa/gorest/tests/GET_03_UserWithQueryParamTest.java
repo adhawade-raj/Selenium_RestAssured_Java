@@ -6,6 +6,7 @@ import java.util.Map;
 import org.testng.annotations.Test;
 
 import com.qa.gorest.base.BaseTest;
+import com.qa.gorest.constants.APIHttpStatus;
 
 public class GET_03_UserWithQueryParamTest extends BaseTest {
 
@@ -16,9 +17,9 @@ public class GET_03_UserWithQueryParamTest extends BaseTest {
 		queryparams.put("name", "Soma");
 		queryparams.put("status", "inactive");
 		
-		restClient.get("/public/v2/users", null, queryparams, true,true)
+		restClient.get(GOREST_ENDPOINT, null, queryparams, true,true)
 		.then().log().all()
-		.assertThat().statusCode(200);
+		.assertThat().statusCode(APIHttpStatus.OK_200.getCode());
 		
 	}
 	

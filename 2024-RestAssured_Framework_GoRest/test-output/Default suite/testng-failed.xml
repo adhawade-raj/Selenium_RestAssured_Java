@@ -8,8 +8,6 @@
           <include name="getOneUserTest2"/>
           <include name="setup"/>
           <include name="getUserSetup"/>
-          <include name="getUserWithQueryParamTest3"/>
-          <include name="getAllUserTest1"/>
         </methods>
       </class> <!-- com.qa.gorest.tests.GET_01_AllUserTest -->
     </classes>

@@ -406,4 +406,25 @@ public class RestClient {
 		.delete(seriveUrl);
 	}
 	
+//	public String getAccessToken(String serviceURL, String grantType, String clientId, String clientSecret  ) {
+//		//1. POST - get the access token
+//				RestAssured.baseURI = "https://test.api.amadeus.com";
+//				
+//				String accessToken = given().log().all()
+//					.contentType(ContentType.URLENC)
+//					.formParam("grant_type", grantType)
+//					.formParam("client_id", clientId)
+//					.formParam("client_secret", clientSecret)
+//				.when()
+//					.post(serviceURL)
+//				.then().log().all()
+//					.assertThat()
+//						.statusCode(APIHttpStatus.OK_200.getCode())
+//						.extract().path("access_token");
+//					
+//				System.out.println("access token: " + accessToken);
+//			return 	accessToken;
+//				
+//	}
+	
 }
