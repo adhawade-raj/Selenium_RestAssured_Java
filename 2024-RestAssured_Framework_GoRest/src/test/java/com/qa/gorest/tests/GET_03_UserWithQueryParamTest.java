@@ -10,7 +10,7 @@ import com.qa.gorest.base.BaseTest;
 public class GET_03_UserWithQueryParamTest extends BaseTest {
 
 	@Test
-	public void getAlluserTest() {
+	public void getUserWithQueryParamTest() {
 
 		Map<String, String> queryparams = new HashMap<String, String>();
 		queryparams.put("name", "Soma");
