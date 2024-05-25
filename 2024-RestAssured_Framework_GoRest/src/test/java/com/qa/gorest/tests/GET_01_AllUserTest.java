@@ -20,7 +20,7 @@ public class GET_01_AllUserTest extends BaseTest {
 	@Test(priority=2)
 	public void getOneUserTest2() {
 		restClient = new RestClient(prop, baseURI);
-		restClient.get("/public/v2/users/6914496",true, true)
+		restClient.get("/public/v2/users/6927848",true, true)
 		.then().log().all()
 		.assertThat().statusCode(200);
 		

@@ -19,25 +19,24 @@ public class BaseTest {
 	protected String baseURI;
 	
 	/** This is to run diff baseURI from testng.xml*/
-	@Parameters({"baseURI"})
+//	@Parameters({"baseURI"})
+//	@BeforeTest
+//	public void setup(String baseURI) {
+//		RestAssured.filters(new AllureRestAssured());
+//		config = new ConfigurationManager();
+//		prop = config.initProp();
+//		restClient = new RestClient(prop, baseURI);
+//	}
+	
+	/** This is to run same single baseURI from config.properties file*/
 	@BeforeTest
-	public void setup(String baseURI) {
-		RestAssured.filters(new AllureRestAssured());
+	public void setup() {
+	RestAssured.filters(new AllureRestAssured());
 		config = new ConfigurationManager();
 		prop = config.initProp();
+		String baseURI=prop.getProperty("baseURI");
 		this.baseURI=baseURI;
 		restClient = new RestClient(prop, baseURI);
 	}
-	
-	/** This is to run same single baseURI from config.properties file*/
-//	@BeforeTest
-//	public void setup() {
-//	RestAssured.filters(new AllureRestAssured());
-//		config = new ConfigurationManager();
-//		prop = config.initProp();
-//		String baseURI=prop.getProperty("baseURI");
-//		this.baseURI=baseURI;
-//		restClient = new RestClient(prop, baseURI);
-//	}
 	
 }

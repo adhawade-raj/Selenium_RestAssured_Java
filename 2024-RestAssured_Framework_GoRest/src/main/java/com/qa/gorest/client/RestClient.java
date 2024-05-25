@@ -17,6 +17,7 @@ public class RestClient {
 	private RequestSpecBuilder specBuilder;
 	private Properties prop;
 	private String baseURI;
+	private boolean isAuthorizationHeaderAdded;
 	
 	public RestClient(Properties prop, String baseURI) {
 		specBuilder = new RequestSpecBuilder();
@@ -29,9 +30,12 @@ public class RestClient {
 	 * To set bearer token
 	 * @return 
 	 */
-	private RequestSpecification addAuthorizationHeader() {
+	private void addAuthorizationHeader() {
+		if(!isAuthorizationHeaderAdded) {
 		specBuilder.addHeader("Authorization", prop.getProperty("tokenID"));
-		return specBuilder.build();
+		isAuthorizationHeaderAdded = true;
+		
+	}
 	}
 	
 	private void setRequestContentType(String contentType) {
@@ -390,14 +394,14 @@ public class RestClient {
 	 * @param log
 	 * @return
 	 */
-	public Response delete(String seriveUrl, boolean log) {
+	public Response delete(String seriveUrl, boolean includeAuth, boolean log) {
 		
 		if(log) {
-			return RestAssured.given(addAuthorizationHeader()).log().all()
+			return RestAssured.given(createRequestSpec(includeAuth)).log().all()
 			.when()
 			.delete(seriveUrl);
 		}
-		return RestAssured.given(addAuthorizationHeader())
+		return RestAssured.given(createRequestSpec(includeAuth))
 		.when()
 		.delete(seriveUrl);
 	}
