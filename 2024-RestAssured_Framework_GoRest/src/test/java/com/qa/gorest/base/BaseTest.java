@@ -23,14 +23,15 @@ public class BaseTest {
 	public static final String CIRCUIT_ENDPOINT="/api/f1";
 	
 	/** This is to run diff baseURI from testng.xml*/
-//	@Parameters({"baseURI"})
-//	@BeforeTest
-//	public void setup(String baseURI) {
-//		RestAssured.filters(new AllureRestAssured());
-//		config = new ConfigurationManager();
-//		prop = config.initProp();
+	@Parameters({"baseURI"})
+	@BeforeTest
+	public void setup(String baseURI) {
+		RestAssured.filters(new AllureRestAssured());
+		config = new ConfigurationManager();
+		prop = config.initProp();
+		this.baseURI=baseURI;
 //		restClient = new RestClient(prop, baseURI);
-//	}
+	}
 	
 	/** This is to run same single baseURI from config.properties file*/
 	@BeforeTest
@@ -42,5 +43,6 @@ public class BaseTest {
 		this.baseURI=baseURI;
 //		restClient = new RestClient(prop, baseURI);
 	}
+	
 	
 }

@@ -8,12 +8,11 @@ import com.qa.gorest.base.BaseTest;
 import com.qa.gorest.client.RestClient;
 import com.qa.gorest.constants.APIHttpStatus;
 import com.qa.gorest.pojo.User;
+import com.qa.gorest.utils.ExcelUtil;
 import com.qa.gorest.utils.StringUtils;
 import static org.hamcrest.Matchers.*;
 
 public class POST_01_CreateUserTest extends BaseTest {
-	
-	
 	
 	@DataProvider
 	public Object[][] getUserData() {
@@ -24,8 +23,13 @@ public class POST_01_CreateUserTest extends BaseTest {
 		};
 	}
 	
+	@DataProvider
+	public Object[][] getUserData_FromExcel() {
+			return ExcelUtil.getTestData("User");
+	}
 	
-	@Test(dataProvider="getUserData")
+//	@Test(dataProvider="getUserData")
+	@Test(dataProvider="getUserData_FromExcel")
 	public void createUserTest(String name, String gender, String status) {
 		User user = new User(name, StringUtils.getRandomEmailId(), gender, status);
 		
@@ -46,7 +50,6 @@ public class POST_01_CreateUserTest extends BaseTest {
 		.assertThat()
 		.statusCode(APIHttpStatus.OK_200.getCode())
 		.body("id", equalTo(userId));
-		
 	}
 	
 }

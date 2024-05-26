@@ -30,7 +30,7 @@ public class GET_01_AllUserTest extends BaseTest {
 	@Test(priority=2)
 	public void getOneUserTest2() {
 		restClient = new RestClient(prop, baseURI);
-		restClient.get(GOREST_ENDPOINT+"/"+6927845,true, true)
+		restClient.get(GOREST_ENDPOINT+"/"+6919719,true, true)
 		.then().log().all()
 		.assertThat().statusCode(APIHttpStatus.OK_200.getCode());
 		

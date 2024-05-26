@@ -107,6 +107,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="E:\Software Testing\API\Naveen - Rest Assured\June2023RestAssuredFramework"/>
 			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_Cucumber_Practise"/>
 			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_CucumberTraining"/>
 			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_EcommerceFramework"/>

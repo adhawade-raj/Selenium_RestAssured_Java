@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="1" parallel="tests" name="Failed suite [API Regression Suite]" guice-stage="DEVELOPMENT" verbose="4">
+  <listeners>
+    <listener class-name="com.qa.gorest.listeners.ExtentReportListener"/>
+  </listeners>
   <test thread-count="1" parallel="tests" name="F1 Circuits API Test(failed)" verbose="4">
     <parameter name="baseURI" value="https://ergast.com"/>
     <classes>
-      <class name="com.qa.gorest.tests.GET_04_GetCircuits">
+      <class name="com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest">
         <methods>
           <include name="setup"/>
-          <include name="setup"/>
-          <include name="getAlluserTest"/>
+          <include name="getCircuits_JsonPathValidatorTest"/>
+          <include name="getUserSetup"/>
         </methods>
-      </class> <!-- com.qa.gorest.tests.GET_04_GetCircuits -->
+      </class> <!-- com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest -->
     </classes>
   </test> <!-- F1 Circuits API Test(failed) -->
 </suite> <!-- Failed suite [API Regression Suite] -->
