@@ -1,80 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="4" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-26T13:06:44 IST" name="Default suite" finished-at="2024-05-26T13:07:04 IST" duration-ms="20404">
+  <suite started-at="2024-05-26T20:40:08 IST" name="API Regression Suite" finished-at="2024-05-26T20:40:43 IST" duration-ms="34667">
     <groups>
     </groups>
-    <test started-at="2024-05-26T13:06:44 IST" name="Default test" finished-at="2024-05-26T13:07:04 IST" duration-ms="20404">
-      <class name="com.qa.gorest.tests.POST_01_CreateUserTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.gorest.tests.POST_01_CreateUserTest@65b104b9]" started-at="2024-05-26T13:06:44 IST" name="setup" finished-at="2024-05-26T13:06:45 IST" duration-ms="846" status="PASS">
+    <test started-at="2024-05-26T20:40:08 IST" name="Go Rest API Test" finished-at="2024-05-26T20:40:40 IST" duration-ms="31901">
+      <class name="com.qa.gorest.tests.GET_01_AllUserTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@5b43fbf6]" started-at="2024-05-26T20:40:08 IST" name="setup" finished-at="2024-05-26T20:40:09 IST" duration-ms="687" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[https://gorest.co.in]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.gorest.tests.POST_01_CreateUserTest@65b104b9]" started-at="2024-05-26T13:06:46 IST" name="createUserTest" data-provider="getUserData_FromExcel" finished-at="2024-05-26T13:06:58 IST" duration-ms="12221" status="PASS">
+        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@5b43fbf6]" started-at="2024-05-26T20:40:09 IST" name="getUserSetup" finished-at="2024-05-26T20:40:09 IST" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserSetup -->
+        <test-method signature="getUserWithQueryParamTest3()[pri:1, instance:com.qa.gorest.tests.GET_01_AllUserTest@5b43fbf6]" started-at="2024-05-26T20:40:09 IST" name="getUserWithQueryParamTest3" finished-at="2024-05-26T20:40:21 IST" duration-ms="12277" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserWithQueryParamTest3 -->
+        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@5b43fbf6]" started-at="2024-05-26T20:40:21 IST" name="getUserSetup" finished-at="2024-05-26T20:40:21 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserSetup -->
+        <test-method signature="getOneUserTest2()[pri:2, instance:com.qa.gorest.tests.GET_01_AllUserTest@5b43fbf6]" started-at="2024-05-26T20:40:21 IST" name="getOneUserTest2" finished-at="2024-05-26T20:40:24 IST" duration-ms="2164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getOneUserTest2 -->
+        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@5b43fbf6]" started-at="2024-05-26T20:40:24 IST" name="getUserSetup" finished-at="2024-05-26T20:40:24 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserSetup -->
+        <test-method signature="getAllUserTest1()[pri:3, instance:com.qa.gorest.tests.GET_01_AllUserTest@5b43fbf6]" started-at="2024-05-26T20:40:24 IST" name="getAllUserTest1" finished-at="2024-05-26T20:40:40 IST" duration-ms="16316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllUserTest1 -->
+      </class> <!-- com.qa.gorest.tests.GET_01_AllUserTest -->
+    </test> <!-- Go Rest API Test -->
+    <test started-at="2024-05-26T20:40:40 IST" name="F1 Circuits API Test" finished-at="2024-05-26T20:40:42 IST" duration-ms="1169">
+      <class name="com.qa.gorest.tests.GET_04_GetCircuitsTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.qa.gorest.tests.GET_04_GetCircuitsTest@12dae582]" started-at="2024-05-26T20:40:40 IST" name="setup" finished-at="2024-05-26T20:40:40 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Raj14]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[male]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[active]]>
+                <![CDATA[https://ergast.com]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createUserTest -->
-        <test-method signature="createUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.gorest.tests.POST_01_CreateUserTest@65b104b9]" started-at="2024-05-26T13:06:59 IST" name="createUserTest" data-provider="getUserData_FromExcel" finished-at="2024-05-26T13:07:01 IST" duration-ms="2574" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_04_GetCircuitsTest@12dae582]" started-at="2024-05-26T20:40:40 IST" name="getUserSetup" finished-at="2024-05-26T20:40:40 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserSetup -->
+        <test-method signature="getCircuitsTest()[pri:0, instance:com.qa.gorest.tests.GET_04_GetCircuitsTest@12dae582]" started-at="2024-05-26T20:40:40 IST" name="getCircuitsTest" finished-at="2024-05-26T20:40:42 IST" duration-ms="1122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCircuitsTest -->
+      </class> <!-- com.qa.gorest.tests.GET_04_GetCircuitsTest -->
+    </test> <!-- F1 Circuits API Test -->
+    <test started-at="2024-05-26T20:40:42 IST" name="F1 Circuits API Test2" finished-at="2024-05-26T20:40:43 IST" duration-ms="1043">
+      <class name="com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest@2bef51f2]" started-at="2024-05-26T20:40:42 IST" name="setup" finished-at="2024-05-26T20:40:42 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Raj15]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[male]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[active]]>
+                <![CDATA[https://ergast.com]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createUserTest -->
-        <test-method signature="createUserTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.gorest.tests.POST_01_CreateUserTest@65b104b9]" started-at="2024-05-26T13:07:01 IST" name="createUserTest" data-provider="getUserData_FromExcel" finished-at="2024-05-26T13:07:04 IST" duration-ms="2872" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Raj16]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[male]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[active]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest@2bef51f2]" started-at="2024-05-26T20:40:42 IST" name="getUserSetup" finished-at="2024-05-26T20:40:42 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createUserTest -->
-      </class> <!-- com.qa.gorest.tests.POST_01_CreateUserTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- getUserSetup -->
+        <test-method signature="getCircuits_JsonPathValidatorTest()[pri:0, instance:com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest@2bef51f2]" started-at="2024-05-26T20:40:42 IST" name="getCircuits_JsonPathValidatorTest" finished-at="2024-05-26T20:40:43 IST" duration-ms="1027" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCircuits_JsonPathValidatorTest -->
+      </class> <!-- com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest -->
+    </test> <!-- F1 Circuits API Test2 -->
+  </suite> <!-- API Regression Suite -->
 </testng-results>

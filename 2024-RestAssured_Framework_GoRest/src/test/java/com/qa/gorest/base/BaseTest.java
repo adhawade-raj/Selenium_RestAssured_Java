@@ -34,15 +34,15 @@ public class BaseTest {
 	}
 	
 	/** This is to run same single baseURI from config.properties file*/
-	@BeforeTest
-	public void setup() {
-	RestAssured.filters(new AllureRestAssured());
-		config = new ConfigurationManager();
-		prop = config.initProp();
-		String baseURI=prop.getProperty("baseURI");
-		this.baseURI=baseURI;
-//		restClient = new RestClient(prop, baseURI);
-	}
+//	@BeforeTest
+//	public void setup() {
+//	RestAssured.filters(new AllureRestAssured());
+//		config = new ConfigurationManager();
+//		prop = config.initProp();
+//		String baseURI=prop.getProperty("baseURI");
+//		this.baseURI=baseURI;
+////		restClient = new RestClient(prop, baseURI);
+//	}
 	
 	
 }

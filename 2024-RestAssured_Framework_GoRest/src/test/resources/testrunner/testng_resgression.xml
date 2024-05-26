@@ -7,20 +7,27 @@
 			class-name="com.qa.gorest.listeners.ExtentReportListener" />
 	</listeners>
  
-  
-  <test name ="Go Rest API Test">
+ 
+ <test name ="Go Rest API Test">
   	<parameter name ="baseURI" value="https://gorest.co.in" />
   	  <classes>
      	 <class name="com.qa.gorest.tests.GET_01_AllUserTest" />
       </classes>
-    </test>
+    </test> 
+     
     
    <test name ="F1 Circuits API Test">
   	<parameter name ="baseURI" value="https://ergast.com" />
   	  <classes>
      	 <class name="com.qa.gorest.tests.GET_04_GetCircuitsTest" />
+      </classes>
+    </test>	
+    
+    <test name ="F1 Circuits API Test2">
+  	<parameter name ="baseURI" value="https://ergast.com" />
+  	  <classes>
      	 <class name="com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest" />
       </classes>
-    </test>		
-  
+    </test>
+    	  
 </suite> <!-- Suite -->
