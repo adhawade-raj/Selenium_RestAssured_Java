@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.gorest.in.DELETE01_DeletUser_PojoTest">
+      <class name="com.gorest.in.POST_06_SchemaValidation">
         <methods>
-          <include name="updateUserTest"/>
+          <include name="getUserSchemaTest"/>
         </methods>
-      </class> <!-- com.gorest.in.DELETE01_DeletUser_PojoTest -->
+      </class> <!-- com.gorest.in.POST_06_SchemaValidation -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

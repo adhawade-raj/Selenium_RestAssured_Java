@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-18T13:09:39 IST" name="Default suite" finished-at="2024-05-18T13:09:55 IST" duration-ms="16218">
+  <suite started-at="2024-06-16T11:31:45 IST" name="Default suite" finished-at="2024-06-16T11:31:51 IST" duration-ms="5687">
     <groups>
     </groups>
-    <test started-at="2024-05-18T13:09:39 IST" name="Default test" finished-at="2024-05-18T13:09:55 IST" duration-ms="16218">
-      <class name="com.gorest.in.DELETE01_DeletUser_PojoTest">
-        <test-method signature="updateUserTest()[pri:0, instance:com.gorest.in.DELETE01_DeletUser_PojoTest@3a66e67e]" started-at="2024-05-18T13:09:39 IST" name="updateUserTest" finished-at="2024-05-18T13:09:55 IST" duration-ms="15814" status="PASS">
+    <test started-at="2024-06-16T11:31:45 IST" name="Default test" finished-at="2024-06-16T11:31:51 IST" duration-ms="5687">
+      <class name="com.gorest.in.POST_07_MultiBody_Text">
+        <test-method signature="bodyWithText()[pri:0, instance:com.gorest.in.POST_07_MultiBody_Text@1efe439d]" started-at="2024-06-16T11:31:45 IST" name="bodyWithText" finished-at="2024-06-16T11:31:51 IST" duration-ms="5358" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- updateUserTest -->
-      </class> <!-- com.gorest.in.DELETE01_DeletUser_PojoTest -->
+        </test-method> <!-- bodyWithText -->
+      </class> <!-- com.gorest.in.POST_07_MultiBody_Text -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
