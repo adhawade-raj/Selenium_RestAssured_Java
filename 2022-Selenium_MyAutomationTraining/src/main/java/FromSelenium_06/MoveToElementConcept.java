@@ -1,5 +1,8 @@
-package FromSelenium06;
+package FromSelenium_06;
 
+import java.awt.Desktop.Action;
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,20 +11,29 @@ import org.openqa.selenium.interactions.Actions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ActionSendKeys {
+public class MoveToElementConcept {
 
 	public static void main(String[] args) throws InterruptedException {
-	
+
+		
+		
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://app.hubspot.com/login");
 		
-		Thread.sleep(5000);
-		WebElement emailId= driver.findElement(By.id("username"));
+		driver.get("http://mrbool.com/");
+
 		
 		Actions action = new Actions(driver);
-		action.sendKeys(emailId, "Test@gmail.com").build().perform();
-			
+		
+WebElement contentlink = driver.findElement(By.className("menulink"));	
+		action.moveToElement(contentlink).build().perform();
+		
+		Thread.sleep(2000);
+		driver.findElement(By.linkText("COURSES")).click();
+		
+		
+		
+
 	}
 
 }

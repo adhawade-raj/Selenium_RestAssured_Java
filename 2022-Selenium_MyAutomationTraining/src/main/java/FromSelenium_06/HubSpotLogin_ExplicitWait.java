@@ -1,4 +1,4 @@
-package FromSelenium06;
+package FromSelenium_06;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;

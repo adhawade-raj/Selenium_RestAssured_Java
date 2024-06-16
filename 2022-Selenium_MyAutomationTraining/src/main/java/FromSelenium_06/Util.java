@@ -1,4 +1,4 @@
-package FromSelenium06;
+package FromSelenium_06;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
