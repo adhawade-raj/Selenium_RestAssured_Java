@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API Regression Suite" thread-count="1" parallel="tests" verbose="4">
+  
+  <listeners>
+		<listener
+			class-name="com.qa.ergast.listeners.ExtentReportListener" />
+	</listeners>
+
+   <test name ="F1 Circuits API Test">
+  	<parameter name ="baseURI" value="https://ergast.com" />
+  	  <classes>
+     	 <class name="com.qa.ergast.tests.GET_01_GetCircuits_Test" />
+      </classes>
+    </test>	
+    
+    <test name ="F1 Circuits API Test2">
+  	<parameter name ="baseURI" value="https://ergast.com" />
+  	  <classes>
+     	 <class name="com.qa.ergast.tests.GET_02_GetCircuitID_JsonPath_Test" />
+      </classes>
+    </test>	
+    
+    <test name ="F1 Circuits API Test3">
+  	<parameter name ="baseURI" value="https://ergast.com" />
+  	  <classes>
+     	 <class name="com.qa.ergast.tests.GET_03_GetCircuitID_JsonPathValidator_Test" />
+      </classes>
+    </test>	
+      	  
+</suite> <!-- Suite -->

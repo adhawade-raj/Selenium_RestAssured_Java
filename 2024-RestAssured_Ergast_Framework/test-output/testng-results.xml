@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-06-23T11:23:32 IST" name="API Regression Suite" finished-at="2024-06-23T11:23:45 IST" duration-ms="12910">
+    <groups>
+    </groups>
+    <test started-at="2024-06-23T11:23:32 IST" name="F1 Circuits API Test" finished-at="2024-06-23T11:23:39 IST" duration-ms="6395">
+      <class name="com.qa.ergast.tests.GET_01_GetCircuits_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.ergast.tests.GET_01_GetCircuits_Test@4678a2eb]" started-at="2024-06-23T11:23:32 IST" name="setup" finished-at="2024-06-23T11:23:33 IST" duration-ms="919" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setupSuite()[pri:0, instance:com.qa.ergast.tests.GET_01_GetCircuits_Test@4678a2eb]" started-at="2024-06-23T11:23:33 IST" name="setupSuite" finished-at="2024-06-23T11:23:33 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSuite -->
+        <test-method is-config="true" signature="getCircuitsSetup()[pri:0, instance:com.qa.ergast.tests.GET_01_GetCircuits_Test@4678a2eb]" started-at="2024-06-23T11:23:33 IST" name="getCircuitsSetup" finished-at="2024-06-23T11:23:33 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getCircuitsSetup -->
+        <test-method signature="getAllCicrcuiteDetailsTest()[pri:0, instance:com.qa.ergast.tests.GET_01_GetCircuits_Test@4678a2eb]" started-at="2024-06-23T11:23:33 IST" name="getAllCicrcuiteDetailsTest" finished-at="2024-06-23T11:23:38 IST" duration-ms="5196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllCicrcuiteDetailsTest -->
+      </class> <!-- com.qa.ergast.tests.GET_01_GetCircuits_Test -->
+    </test> <!-- F1 Circuits API Test -->
+    <test started-at="2024-06-23T11:23:39 IST" name="F1 Circuits API Test2" finished-at="2024-06-23T11:23:43 IST" duration-ms="4244">
+      <class name="com.qa.ergast.tests.GET_02_GetCircuitID_JsonPath_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.ergast.tests.GET_02_GetCircuitID_JsonPath_Test@5827af16]" started-at="2024-06-23T11:23:39 IST" name="setup" finished-at="2024-06-23T11:23:39 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setupSuite()[pri:0, instance:com.qa.ergast.tests.GET_02_GetCircuitID_JsonPath_Test@5827af16]" started-at="2024-06-23T11:23:39 IST" name="setupSuite" finished-at="2024-06-23T11:23:39 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSuite -->
+        <test-method is-config="true" signature="circuitSetup()[pri:0, instance:com.qa.ergast.tests.GET_02_GetCircuitID_JsonPath_Test@5827af16]" started-at="2024-06-23T11:23:39 IST" name="circuitSetup" finished-at="2024-06-23T11:23:39 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- circuitSetup -->
+        <test-method signature="validateCircuitDataTest()[pri:0, instance:com.qa.ergast.tests.GET_02_GetCircuitID_JsonPath_Test@5827af16]" started-at="2024-06-23T11:23:39 IST" name="validateCircuitDataTest" finished-at="2024-06-23T11:23:43 IST" duration-ms="4200" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateCircuitDataTest -->
+      </class> <!-- com.qa.ergast.tests.GET_02_GetCircuitID_JsonPath_Test -->
+    </test> <!-- F1 Circuits API Test2 -->
+    <test started-at="2024-06-23T11:23:44 IST" name="F1 Circuits API Test3" finished-at="2024-06-23T11:23:45 IST" duration-ms="1571">
+      <class name="com.qa.ergast.tests.GET_03_GetCircuitID_JsonPathValidator_Test">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.ergast.tests.GET_03_GetCircuitID_JsonPathValidator_Test@14f5da2c]" started-at="2024-06-23T11:23:44 IST" name="setup" finished-at="2024-06-23T11:23:44 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="setupSuite()[pri:0, instance:com.qa.ergast.tests.GET_03_GetCircuitID_JsonPathValidator_Test@14f5da2c]" started-at="2024-06-23T11:23:44 IST" name="setupSuite" finished-at="2024-06-23T11:23:44 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupSuite -->
+        <test-method is-config="true" signature="circuitSetup()[pri:0, instance:com.qa.ergast.tests.GET_03_GetCircuitID_JsonPathValidator_Test@14f5da2c]" started-at="2024-06-23T11:23:44 IST" name="circuitSetup" finished-at="2024-06-23T11:23:44 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- circuitSetup -->
+        <test-method signature="validateCircuitDataTest()[pri:0, instance:com.qa.ergast.tests.GET_03_GetCircuitID_JsonPathValidator_Test@14f5da2c]" started-at="2024-06-23T11:23:44 IST" name="validateCircuitDataTest" finished-at="2024-06-23T11:23:45 IST" duration-ms="1553" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateCircuitDataTest -->
+      </class> <!-- com.qa.ergast.tests.GET_03_GetCircuitID_JsonPathValidator_Test -->
+    </test> <!-- F1 Circuits API Test3 -->
+  </suite> <!-- API Regression Suite -->
+</testng-results>
