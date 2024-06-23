@@ -6,7 +6,6 @@
       <class name="com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest">
         <methods>
           <include name="setup"/>
-          <include name="setup"/>
           <include name="getCircuits_JsonPathValidatorTest"/>
           <include name="getUserSetup"/>
         </methods>

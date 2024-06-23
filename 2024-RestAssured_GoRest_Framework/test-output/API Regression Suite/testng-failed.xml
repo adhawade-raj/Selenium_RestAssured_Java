@@ -4,16 +4,16 @@
   <listeners>
     <listener class-name="com.qa.gorest.listeners.ExtentReportListener"/>
   </listeners>
-  <test thread-count="1" parallel="tests" name="F1 Circuits API Test(failed)" verbose="4">
-    <parameter name="baseURI" value="https://ergast.com"/>
+  <test thread-count="1" parallel="tests" name="Go Rest API Test(failed)" verbose="4">
+    <parameter name="baseURI" value="https://gorest.co.in"/>
     <classes>
-      <class name="com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest">
+      <class name="com.qa.gorest.tests.GET_01_AllUserTest">
         <methods>
+          <include name="getOneUserTest2"/>
           <include name="setup"/>
-          <include name="getCircuits_JsonPathValidatorTest"/>
           <include name="getUserSetup"/>
         </methods>
-      </class> <!-- com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest -->
+      </class> <!-- com.qa.gorest.tests.GET_01_AllUserTest -->
     </classes>
-  </test> <!-- F1 Circuits API Test(failed) -->
+  </test> <!-- Go Rest API Test(failed) -->
 </suite> <!-- Failed suite [API Regression Suite] -->
