@@ -7,6 +7,7 @@ public class CheckBinaryNumber {
 		isBinaryNumber(1011);
 		isBinaryNumber(2011);
 		isBinNum(10111);
+		isBinNum(10151);
 	
 	}
 
@@ -46,4 +47,5 @@ public class CheckBinaryNumber {
 			System.out.println(num+ " : is not a Binary Number");	
 		}
 	}
+	
 }
