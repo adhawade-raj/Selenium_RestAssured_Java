@@ -19,6 +19,10 @@ public class HashMap_CountDigitFrequency {
 		number = number/10;
 	}
 	
+	System.out.println("====Printing Map Approach 1=====");
+	System.out.println(map);
+	
+	System.out.println("====Printing Map Approach 2=====");
 	Set<Long> keys = map.keySet();
 	for(Long key : keys) {
 		System.out.println(key+ " : "+map.get(key));
