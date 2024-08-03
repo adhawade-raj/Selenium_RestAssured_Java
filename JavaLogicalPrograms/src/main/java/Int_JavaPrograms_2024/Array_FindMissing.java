@@ -13,6 +13,7 @@ public class Array_FindMissing {
 	 * Provide total count in argument e.g if u want find missing no from 1 to 100
 	 * then ur array should have only one missing, and u have to provide int argument as 100
 	 * with this functionn u can only find one missing no
+	 * total*((total+1)/2)) = formula
 	 * @param num
 	 * @param totalCount
 	 * @return

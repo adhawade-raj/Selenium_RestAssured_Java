@@ -28,7 +28,7 @@ public class Array_MatrixIterating2DArray {
 		}
 		
 		System.out.println("________Aproach 3__________");
-//		Approach 2
+//		Approach 3
 		for(int[] e1: a) {
 		System.out.println(Arrays.toString(e1));	
 		}
