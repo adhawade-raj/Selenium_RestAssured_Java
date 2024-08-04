@@ -1,6 +1,5 @@
 package Int_JavaPrograms_2024;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
 
 public class String_CountCapitalWords {
 
@@ -13,7 +12,7 @@ public class String_CountCapitalWords {
 		for(int i=0; i<str.length(); i++) {
 			if(str.charAt(i)>='A' && str.charAt(i)<='Z') {
 				count++;
-				System.out.println("Cpital Letter is : "+str.charAt(i));
+				System.out.println("Capital Letter is : "+str.charAt(i));
 			}
 		}
 		System.out.println("Count of Capital Letter is :"+count);
@@ -25,7 +24,7 @@ public class String_CountCapitalWords {
 		for(int i=0; i<str.length(); i++) {
 			if(str.charAt(i)>=65 && str.charAt(i)<=90) {
 				count1++;
-				System.out.println("Cpital Letter is : "+str.charAt(i));
+				System.out.println("Capital Letter is : "+str.charAt(i));
 			}
 		}
 		System.out.println("Count of Capital Letter is :"+count1);
@@ -37,7 +36,7 @@ public class String_CountCapitalWords {
 		for(int i=0; i<str.length(); i++) {
 			if(Character.isUpperCase(str.charAt(i))) {
 				count2++;
-				System.out.println("Cpital Letter is : "+str.charAt(i));
+				System.out.println("Capital Letter is : "+str.charAt(i));
 			}
 		}		
 		System.out.println("Count of Capital Letter is :"+count2);

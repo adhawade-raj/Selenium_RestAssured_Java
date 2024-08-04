@@ -9,6 +9,7 @@ public class String_DuplicatesCharacterUsingHashmap {
 	public static void main(String[] args) {
 		
 		printDuplicateCharacters("aa");
+		printDuplicateCharacters("adhawade");
 	}
 	
 	public static void printDuplicateCharacters(String str) {
@@ -23,13 +24,18 @@ public class String_DuplicatesCharacterUsingHashmap {
 			charMap.put(ch, 1);
 		}
 	}
+	//Approach 1 of printing hashmap
+	System.out.println("______________________________");
+	System.out.println(charMap);
+	System.out.println("-------------------------------");
 	
-	//To print the Map
+	
+	//To print the Map in key value format
 	Set<Map.Entry<Character, Integer>> entrySet = charMap.entrySet();
 	for(Map.Entry<Character, Integer> entry : entrySet) {
 		if(entry.getValue()>1) {
 			System.out.println(entry.getKey()+ " : "+ entry.getValue());
 		}
-	}
+	  }
 	}
 }

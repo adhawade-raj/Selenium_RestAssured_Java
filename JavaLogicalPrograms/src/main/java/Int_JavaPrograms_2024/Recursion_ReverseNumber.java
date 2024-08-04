@@ -7,6 +7,7 @@ public class Recursion_ReverseNumber {
 	public static void main(String[] args) {
 		
 		reverseNumber(1);
+		reverseNumber(121);
 	}
 
 	public static void reverseNumber(int num) {
