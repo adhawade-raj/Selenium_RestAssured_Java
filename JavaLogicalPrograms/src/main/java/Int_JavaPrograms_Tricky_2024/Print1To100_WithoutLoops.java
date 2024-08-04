@@ -6,7 +6,7 @@ public class Print1To100_WithoutLoops {
 
 	public static void main(String[] args) {
 		
-//		printNum(1);
+		printNum(1);
 //		System.out.println("___________Approach 1 Generic Way____________");
 //		printNumber(1,100);
 		

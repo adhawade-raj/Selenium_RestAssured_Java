@@ -14,6 +14,11 @@ public class StaticBlock_3_PrivateConstrutor {
 //		Approach 1- using static method - calling static method in main method using class name
 //		int i = StaticBlock_3_PrivateConstrutor.create();
 //		System.out.println(i);
+		
+		//Without static if u create object of private constructor
+		//Then o/p will not be printed
+		StaticBlock_3_PrivateConstrutor a = new StaticBlock_3_PrivateConstrutor();
+		a.age=50;
 
 	}
 	

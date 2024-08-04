@@ -5,6 +5,7 @@ public class NullArgument_Object_String {
 	
 //	Which method will be called first if we provide null argument
 //	Ans = String - as java will recognize it as most frequently used argument
+	//String uses null mostly so string will be printed
 	public static void main(String[] args) {
 		
 		test(null);
@@ -17,6 +18,7 @@ public class NullArgument_Object_String {
 	public static void test(String o) {
 		System.out.println("String Argument");	
 	}
+	
 
 //	null argument Not Allowed in Stringbuffer
 //	public static void test(StringBuffer o) {

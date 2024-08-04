@@ -13,7 +13,8 @@ public class StaticBlockExecutionWithFinalKeyword {
 	class Test{
 		public static final int x = 100;
 		static {
-			System.out.println("This is Static block.. It will not executed with Final Keyword");
+			System.out.println("This is Static block.. It will be not executed with Final Keyword");
+			
 		}
 	}
 	

@@ -7,7 +7,7 @@ public class UseOfStringJoiner {
 	public static void main(String[] args) {
 	
 		
-		StringJoiner sj = new StringJoiner(",", "[", "]");
+		StringJoiner sj = new StringJoiner(",");
 		sj.add("Raj");
 		sj.add("Ajay");
 		sj.add("Jay");

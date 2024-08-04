@@ -2,7 +2,7 @@ package Int_JavaPrograms_Tricky_2024;
 
 public class StaticBlock_1_ExecutionOrder {
 
-//	What will be excecutedFirst? Main MEthod or Static Vlock
+//	What will be excecutedFirst? Main Method or Static block
 //	Static Block will be executed first even before Main Method
 	
 	static {

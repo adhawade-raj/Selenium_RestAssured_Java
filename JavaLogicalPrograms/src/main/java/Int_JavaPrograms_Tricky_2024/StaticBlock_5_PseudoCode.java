@@ -17,8 +17,8 @@ package Int_JavaPrograms_Tricky_2024;
 			
 		 System.out.println(Test.x);
 		 
-		 // To execute static block in above scenario we need to create obj
-		 System.out.println("STATIC BLOCK EXECUTION IS BELOW - AFTER OBJECT CREATION");
-		 System.out.println(new Test().x);
+	// To execute static block in above scenario we need to create obj
+		System.out.println("STATIC BLOCK EXECUTION IS BELOW - AFTER OBJECT CREATION");
+		System.out.println(new Test().x);
 	}
 }
