@@ -7,8 +7,8 @@ public class CompareTwoInteger_IntegerCaching {
 //		Range = -128 to 127
 //		if integer value is out of this range then it will print else part
 		
-		Integer a= 100;
-		Integer b= 100;
+		Integer a= -128;
+		Integer b= -128;
 		if(a==b) {
 			System.out.println("Number are equal");
 		}
