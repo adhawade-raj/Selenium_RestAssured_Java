@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.gorest.in.POST_06_SchemaValidation">
+      <class name="com.gorest.in.GET_08_ValidateBody_JsonPath_ArrayListElement">
         <methods>
-          <include name="getUserSchemaTest"/>
+          <include name="getUSerWithQueryParamTest"/>
         </methods>
-      </class> <!-- com.gorest.in.POST_06_SchemaValidation -->
+      </class> <!-- com.gorest.in.GET_08_ValidateBody_JsonPath_ArrayListElement -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

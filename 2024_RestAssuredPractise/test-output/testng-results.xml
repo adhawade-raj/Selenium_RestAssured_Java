@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-16T11:31:45 IST" name="Default suite" finished-at="2024-06-16T11:31:51 IST" duration-ms="5687">
+  <suite started-at="2024-08-16T12:04:55 IST" name="Default suite" finished-at="2024-08-16T12:05:01 IST" duration-ms="6237">
     <groups>
     </groups>
-    <test started-at="2024-06-16T11:31:45 IST" name="Default test" finished-at="2024-06-16T11:31:51 IST" duration-ms="5687">
+    <test started-at="2024-08-16T12:04:55 IST" name="Default test" finished-at="2024-08-16T12:05:01 IST" duration-ms="6237">
       <class name="com.gorest.in.POST_07_MultiBody_Text">
-        <test-method signature="bodyWithText()[pri:0, instance:com.gorest.in.POST_07_MultiBody_Text@1efe439d]" started-at="2024-06-16T11:31:45 IST" name="bodyWithText" finished-at="2024-06-16T11:31:51 IST" duration-ms="5358" status="PASS">
+        <test-method signature="bodyWithText()[pri:0, instance:com.gorest.in.POST_07_MultiBody_Text@1efe439d]" started-at="2024-08-16T12:04:55 IST" name="bodyWithText" finished-at="2024-08-16T12:05:01 IST" duration-ms="5869" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bodyWithText -->

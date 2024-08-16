@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 
 import java.util.List;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -32,7 +33,7 @@ public class GET_08_ValidateBody_JsonPath_ArrayListElement {
 		List<String> genderList = jsonPath.getList("gender");
 		List<String> statusList = jsonPath.getList("status");
 		
-		for(int i=0; i<nameList.size(); i++) {
+		for(int i=0; i<idList.size(); i++) {
 //			System.out.println("\"id\" : "+idList.get(i));
 			System.out.println("id in String Format : "+idList2.get(i));
 			System.out.println("id : "+idList.get(i));
@@ -42,5 +43,6 @@ public class GET_08_ValidateBody_JsonPath_ArrayListElement {
 			System.out.println("status : "+statusList.get(i));
 			System.out.println("----------------------------------");
 		}
+	Assert.assertEquals(idList, idList.contains(2));
 }
 }
