@@ -14,10 +14,16 @@ public class Array_FindMissing {
 		int a[] = {1,2,4,5};
 		int sum1 = 0;
 		int sum2=0;
+		int sum3=0;
 		for(int i=0; i<a.length; i++)
 		{
 			sum1 = sum1+a[i];
 		}
+		
+//		for(int e: a)
+//		{
+//			sum3 = sum3+e;
+//		}
 		System.out.println("Sum of elements is "+sum1);
 		
 		for(int j=1; j<=5; j++)
