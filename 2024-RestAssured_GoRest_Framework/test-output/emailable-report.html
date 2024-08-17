@@ -8,17 +8,12 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">API Regression Suite</th></tr>
-<tr><td><a href="#t0">Go Rest API Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">10,518</td><td></td><td></td></tr>
-<tr class="stripe"><td><a href="#t1">F1 Circuits API Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1,310</td><td></td><td></td></tr>
-<tr><td><a href="#t2">F1 Circuits API Test2</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">1,688</td><td></td><td></td></tr>
-<tr><th>Total</th><th class="num">4</th><th class="num">0</th><th class="num">0</th><th class="num attn">1</th><th class="num">13,516</th><th colspan="2"></th></tr>
+<tr><th colspan="8">Default suite</th></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">32,926</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">API Regression Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Go Rest API Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.qa.gorest.tests.GET_01_AllUserTest</td><td><a href="#m0">getOneUserTest2</a></td><td rowspan="1">1719120003893</td><td rowspan="1">1483</td></tr><tr><th colspan="4">Go Rest API Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.qa.gorest.tests.GET_01_AllUserTest</td><td><a href="#m1">getAllUserTest1</a></td><td rowspan="1">1719120005395</td><td rowspan="1">1600</td></tr><tr class="passedeven"><td><a href="#m2">getUserWithQueryParamTest3</a></td><td rowspan="1">1719119998173</td><td rowspan="1">5679</td></tr></tbody>
-<tbody id="t1"><tr><th colspan="4">F1 Circuits API Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.gorest.tests.GET_04_GetCircuitsTest</td><td><a href="#m3">getCircuitsTest</a></td><td rowspan="1">1719120007577</td><td rowspan="1">1243</td></tr></tbody>
-<tbody id="t2"><tr><th colspan="4">F1 Circuits API Test2 &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest</td><td><a href="#m4">getCircuits_JsonPathValidatorTest</a></td><td rowspan="1">1719120008971</td><td rowspan="1">1664</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.qa.gorest.tests.GET_01_AllUserTest</td><td><a href="#m0">getOneUserTest2</a></td><td rowspan="1">1723901650192</td><td rowspan="1">1263</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com.qa.gorest.tests.GET_01_AllUserTest</td><td><a href="#m1">getAllUserTest1</a></td><td rowspan="1">1723901651509</td><td rowspan="1">22393</td></tr><tr class="passedeven"><td><a href="#m2">getUserWithQueryParamTest3</a></td><td rowspan="1">1723901642493</td><td rowspan="1">7581</td></tr></tbody>
 </table>
-<h2>Go Rest API Test</h2><h3 id="m0">com.qa.gorest.tests.GET_01_AllUserTest#getOneUserTest2</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
+<h2>Default test</h2><h3 id="m0">com.qa.gorest.tests.GET_01_AllUserTest#getOneUserTest2</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: 1 expectation failed.
 Expected status code &lt;200&gt; but was &lt;404&gt;.
 
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -64,17 +59,20 @@ Expected status code &lt;200&gt; but was &lt;404&gt;.
 	at org.testng.TestRunner.privateRun(TestRunner.java:794)
 	at org.testng.TestRunner.run(TestRunner.java:596)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-	at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:833)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m1">com.qa.gorest.tests.GET_01_AllUserTest#getAllUserTest1</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m2">com.qa.gorest.tests.GET_01_AllUserTest#getUserWithQueryParamTest3</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>F1 Circuits API Test</h2><h3 id="m3">com.qa.gorest.tests.GET_04_GetCircuitsTest#getCircuitsTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h2>F1 Circuits API Test2</h2><h3 id="m4">com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest#getCircuits_JsonPathValidatorTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

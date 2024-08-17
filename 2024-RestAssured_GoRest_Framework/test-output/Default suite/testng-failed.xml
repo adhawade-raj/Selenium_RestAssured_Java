@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest">
+      <class name="com.qa.gorest.tests.GET_01_AllUserTest">
         <methods>
+          <include name="getOneUserTest2"/>
           <include name="setup"/>
-          <include name="getCircuits_JsonPathValidatorTest"/>
+          <include name="setup"/>
           <include name="getUserSetup"/>
         </methods>
-      </class> <!-- com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest -->
+      </class> <!-- com.qa.gorest.tests.GET_01_AllUserTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

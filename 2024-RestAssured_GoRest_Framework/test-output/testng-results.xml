@@ -1,36 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="4" failed="1" skipped="0">
+<testng-results ignored="1" total="4" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-23T10:49:56 IST" name="API Regression Suite" finished-at="2024-06-23T10:50:10 IST" duration-ms="14160">
+  <suite started-at="2024-08-17T19:04:01 IST" name="Default suite" finished-at="2024-08-17T19:04:33 IST" duration-ms="32926">
     <groups>
     </groups>
-    <test started-at="2024-06-23T10:49:56 IST" name="Go Rest API Test" finished-at="2024-06-23T10:50:07 IST" duration-ms="10518">
+    <test started-at="2024-08-17T19:04:01 IST" name="Default test" finished-at="2024-08-17T19:04:33 IST" duration-ms="32926">
       <class name="com.qa.gorest.tests.GET_01_AllUserTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@4678a2eb]" started-at="2024-06-23T10:49:56 IST" name="setup" finished-at="2024-06-23T10:49:57 IST" duration-ms="1144" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://gorest.co.in]]>
-              </value>
-            </param>
-          </params>
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@12d2ce03]" started-at="2024-08-17T19:04:01 IST" name="setup" finished-at="2024-08-17T19:04:02 IST" duration-ms="1178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@4678a2eb]" started-at="2024-06-23T10:49:57 IST" name="getUserSetup" finished-at="2024-06-23T10:49:58 IST" duration-ms="314" status="PASS">
+        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@12d2ce03]" started-at="2024-08-17T19:04:02 IST" name="getUserSetup" finished-at="2024-08-17T19:04:02 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUserSetup -->
-        <test-method signature="getUserWithQueryParamTest3()[pri:1, instance:com.qa.gorest.tests.GET_01_AllUserTest@4678a2eb]" started-at="2024-06-23T10:49:58 IST" name="getUserWithQueryParamTest3" finished-at="2024-06-23T10:50:03 IST" duration-ms="5679" status="PASS">
+        <test-method signature="getUserWithQueryParamTest3()[pri:1, instance:com.qa.gorest.tests.GET_01_AllUserTest@12d2ce03]" started-at="2024-08-17T19:04:02 IST" name="getUserWithQueryParamTest3" finished-at="2024-08-17T19:04:10 IST" duration-ms="7581" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUserWithQueryParamTest3 -->
-        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@4678a2eb]" started-at="2024-06-23T10:50:03 IST" name="getUserSetup" finished-at="2024-06-23T10:50:03 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@12d2ce03]" started-at="2024-08-17T19:04:10 IST" name="getUserSetup" finished-at="2024-08-17T19:04:10 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUserSetup -->
-        <test-method signature="getOneUserTest2()[pri:2, instance:com.qa.gorest.tests.GET_01_AllUserTest@4678a2eb]" started-at="2024-06-23T10:50:03 IST" name="getOneUserTest2" finished-at="2024-06-23T10:50:05 IST" duration-ms="1483" status="FAIL">
+        <test-method signature="getOneUserTest2()[pri:2, instance:com.qa.gorest.tests.GET_01_AllUserTest@12d2ce03]" started-at="2024-08-17T19:04:10 IST" name="getOneUserTest2" finished-at="2024-08-17T19:04:11 IST" duration-ms="1263" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[1 expectation failed.
@@ -84,74 +77,33 @@ at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:794)
 at org.testng.TestRunner.run(TestRunner.java:596)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
-at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
-at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
-at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-at java.base/java.lang.Thread.run(Thread.java:833)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getOneUserTest2 -->
-        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@4678a2eb]" started-at="2024-06-23T10:50:05 IST" name="getUserSetup" finished-at="2024-06-23T10:50:05 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_01_AllUserTest@12d2ce03]" started-at="2024-08-17T19:04:11 IST" name="getUserSetup" finished-at="2024-08-17T19:04:11 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getUserSetup -->
-        <test-method signature="getAllUserTest1()[pri:3, instance:com.qa.gorest.tests.GET_01_AllUserTest@4678a2eb]" started-at="2024-06-23T10:50:05 IST" name="getAllUserTest1" finished-at="2024-06-23T10:50:06 IST" duration-ms="1600" status="PASS">
+        <test-method signature="getAllUserTest1()[pri:3, instance:com.qa.gorest.tests.GET_01_AllUserTest@12d2ce03]" started-at="2024-08-17T19:04:11 IST" name="getAllUserTest1" finished-at="2024-08-17T19:04:33 IST" duration-ms="22393" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getAllUserTest1 -->
       </class> <!-- com.qa.gorest.tests.GET_01_AllUserTest -->
-    </test> <!-- Go Rest API Test -->
-    <test started-at="2024-06-23T10:50:07 IST" name="F1 Circuits API Test" finished-at="2024-06-23T10:50:08 IST" duration-ms="1310">
-      <class name="com.qa.gorest.tests.GET_04_GetCircuitsTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.qa.gorest.tests.GET_04_GetCircuitsTest@f79a760]" started-at="2024-06-23T10:50:07 IST" name="setup" finished-at="2024-06-23T10:50:07 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://ergast.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_04_GetCircuitsTest@f79a760]" started-at="2024-06-23T10:50:07 IST" name="getUserSetup" finished-at="2024-06-23T10:50:07 IST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getUserSetup -->
-        <test-method signature="getCircuitsTest()[pri:0, instance:com.qa.gorest.tests.GET_04_GetCircuitsTest@f79a760]" started-at="2024-06-23T10:50:07 IST" name="getCircuitsTest" finished-at="2024-06-23T10:50:08 IST" duration-ms="1243" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getCircuitsTest -->
-      </class> <!-- com.qa.gorest.tests.GET_04_GetCircuitsTest -->
-    </test> <!-- F1 Circuits API Test -->
-    <test started-at="2024-06-23T10:50:08 IST" name="F1 Circuits API Test2" finished-at="2024-06-23T10:50:10 IST" duration-ms="1688">
-      <class name="com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest@652a7737]" started-at="2024-06-23T10:50:08 IST" name="setup" finished-at="2024-06-23T10:50:08 IST" duration-ms="3" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[https://ergast.com]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method is-config="true" signature="getUserSetup()[pri:0, instance:com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest@652a7737]" started-at="2024-06-23T10:50:08 IST" name="getUserSetup" finished-at="2024-06-23T10:50:08 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getUserSetup -->
-        <test-method signature="getCircuits_JsonPathValidatorTest()[pri:0, instance:com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest@652a7737]" started-at="2024-06-23T10:50:08 IST" name="getCircuits_JsonPathValidatorTest" finished-at="2024-06-23T10:50:10 IST" duration-ms="1664" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getCircuits_JsonPathValidatorTest -->
-      </class> <!-- com.qa.gorest.tests.GET_05_GetCircuits_JsonPathValidatorTest -->
-    </test> <!-- F1 Circuits API Test2 -->
-  </suite> <!-- API Regression Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="1" parallel="tests" name="Failed suite [API Regression Suite]" guice-stage="DEVELOPMENT" verbose="4">
-  <listeners>
-    <listener class-name="com.qa.gorest.listeners.ExtentReportListener"/>
-  </listeners>
-  <test thread-count="1" parallel="tests" name="Go Rest API Test(failed)" verbose="4">
-    <parameter name="baseURI" value="https://gorest.co.in"/>
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.qa.gorest.tests.GET_01_AllUserTest">
         <methods>
           <include name="getOneUserTest2"/>
           <include name="setup"/>
+          <include name="setup"/>
           <include name="getUserSetup"/>
         </methods>
       </class> <!-- com.qa.gorest.tests.GET_01_AllUserTest -->
     </classes>
-  </test> <!-- Go Rest API Test(failed) -->
-</suite> <!-- Failed suite [API Regression Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
