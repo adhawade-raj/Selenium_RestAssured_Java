@@ -24,7 +24,6 @@
     <fullyQualifiedTypeName name="RA_06_com.pet.api.F2_Pet_LombokPojo.Category"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="RA_06_com.pet.api.F2_Pet_LombokPojo.Tag"/>
-    <fullyQualifiedTypeName name="org.testng.Assert"/>
     <fullyQualifiedTypeName name="RA_06_com.pet.api.F2_Pet_LombokPojo.Category.CategoryBuilder"/>
     <fullyQualifiedTypeName name="RA_06_com.pet.api.F2_Pet_LombokPojo.Tag.TagBuilder"/>
     <fullyQualifiedTypeName name="RA_06_com.pet.api.F2_Pet_LombokPojo.F2_Pet_LombokPojoBuilder"/>
@@ -60,4 +59,5 @@
     <fullyQualifiedTypeName name="io.restassured.http.ContentType"/>
     <fullyQualifiedTypeName name="org.asynchttpclient.Response"/>
     <fullyQualifiedTypeName name="io.restassured.response.Response"/>
+    <fullyQualifiedTypeName name="org.testng.Assert"/>
 </qualifiedTypeNameHistroy>
