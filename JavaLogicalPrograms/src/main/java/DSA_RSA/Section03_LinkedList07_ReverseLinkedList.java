@@ -1,7 +1,7 @@
 package DSA_RSA;
 
 
-public class LinkedList07_ReverseLinkedList {
+public class Section03_LinkedList07_ReverseLinkedList {
 
 	
 class Node{
@@ -58,7 +58,7 @@ class Node{
 	
 	public static void main(String[] args) {
 	
-		LinkedList07_ReverseLinkedList ls = new LinkedList07_ReverseLinkedList();
+		Section03_LinkedList07_ReverseLinkedList ls = new Section03_LinkedList07_ReverseLinkedList();
 		ls.addNodeAtEnd(10);
 		ls.addNodeAtEnd(20);
 		ls.addNodeAtEnd(30);

@@ -1,6 +1,6 @@
 package DSA_RSA;
 
-public class Recursion01_ArrayAddition {
+public class Section02_Recursion01_ArrayAddition {
 
 	static int arr[] = {12,2,30,13,5};
 	

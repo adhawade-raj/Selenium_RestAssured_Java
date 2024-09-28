@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Stack;
 
-public class Stack03_MinimumElement {
+public class Section04_Stack03_MinimumElement {
 
 	static Stack<Integer> mainStack = new Stack<Integer>();
 	static Stack<Integer> temp = new Stack<Integer>();

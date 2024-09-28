@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Arrays;
 
-public class Sorting03_MergeSort {
+public class Section07_Sorting03_MergeSort {
 
 	public static void main(String[] args) {
 

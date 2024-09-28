@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Stack;
 
-public class Stack04_SortedStack {
+public class Section04_Stack04_SortedStack {
 
 	private static Stack<Integer> SortStack(Stack<Integer> stack1) {
 

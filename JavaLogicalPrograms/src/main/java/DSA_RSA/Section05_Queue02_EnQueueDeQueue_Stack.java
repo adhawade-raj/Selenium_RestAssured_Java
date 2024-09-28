@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Stack;
 
-public class Queue02_EnQueueDeQueue_Stack {
+public class Section05_Queue02_EnQueueDeQueue_Stack {
 
 	static Stack<Integer> stack1 = new Stack<Integer>();
 	Stack<Integer> stack2 = new Stack<Integer>();
@@ -29,7 +29,7 @@ public class Queue02_EnQueueDeQueue_Stack {
 	}
 	
 	public static void main(String[] args) {
-		Queue02_EnQueueDeQueue_Stack queue = new Queue02_EnQueueDeQueue_Stack();
+		Section05_Queue02_EnQueueDeQueue_Stack queue = new Section05_Queue02_EnQueueDeQueue_Stack();
 		queue.Enqueue(4);
 		queue.Enqueue(5);
 		queue.Enqueue(7);

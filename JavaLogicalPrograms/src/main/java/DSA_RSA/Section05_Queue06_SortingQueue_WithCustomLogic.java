@@ -1,13 +1,13 @@
 package DSA_RSA;
 
-public class Queue06_SortingQueue_WithCustomLogic {
+public class Section05_Queue06_SortingQueue_WithCustomLogic {
 
 	int rear;
 	int front;
 	int[] a;
 	int size;
 
-	public Queue06_SortingQueue_WithCustomLogic(int size)
+	public Section05_Queue06_SortingQueue_WithCustomLogic(int size)
 	{
 		rear = -1;
 		this.size=size;
@@ -65,7 +65,7 @@ public class Queue06_SortingQueue_WithCustomLogic {
 
 	
 	public static void main(String[] args) {
-		Queue06_SortingQueue_WithCustomLogic qd = new Queue06_SortingQueue_WithCustomLogic(10);
+		Section05_Queue06_SortingQueue_WithCustomLogic qd = new Section05_Queue06_SortingQueue_WithCustomLogic(10);
 		qd.enQueue(4);
 		qd.enQueue(2);
 		qd.deQueue();

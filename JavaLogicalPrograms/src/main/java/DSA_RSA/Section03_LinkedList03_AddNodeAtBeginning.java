@@ -1,7 +1,7 @@
 package DSA_RSA;
 
 
-public class LinkedList03_AddNodeAtBeginning {
+public class Section03_LinkedList03_AddNodeAtBeginning {
 
 	class Node{
 		
@@ -41,7 +41,7 @@ public class LinkedList03_AddNodeAtBeginning {
 	
 	public static void main(String[] args) {
 	
-	LinkedList03_AddNodeAtBeginning ls = new LinkedList03_AddNodeAtBeginning();
+	Section03_LinkedList03_AddNodeAtBeginning ls = new Section03_LinkedList03_AddNodeAtBeginning();
 	
 	
 	ls.addNodeAtTheBeginning(10);

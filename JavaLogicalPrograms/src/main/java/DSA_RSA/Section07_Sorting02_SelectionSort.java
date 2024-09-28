@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Arrays;
 
-public class Sorting02_SelectionSort {
+public class Section07_Sorting02_SelectionSort {
 
 	public static void main(String[] args) {
 	

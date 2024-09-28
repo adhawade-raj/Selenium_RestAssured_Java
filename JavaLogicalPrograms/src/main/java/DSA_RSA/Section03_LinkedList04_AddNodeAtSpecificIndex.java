@@ -1,8 +1,8 @@
 package DSA_RSA;
 
-import DSA_RSA.LinkedList03_AddNodeAtBeginning.Node;
+import DSA_RSA.Section03_LinkedList03_AddNodeAtBeginning.Node;
 
-public class LinkedList04_AddNodeAtSpecificIndex {
+public class Section03_LinkedList04_AddNodeAtSpecificIndex {
 
 	
 	class Node{
@@ -60,7 +60,7 @@ public class LinkedList04_AddNodeAtSpecificIndex {
 	
 	public static void main(String[] args) {
 		
-		LinkedList04_AddNodeAtSpecificIndex ls = new LinkedList04_AddNodeAtSpecificIndex();
+		Section03_LinkedList04_AddNodeAtSpecificIndex ls = new Section03_LinkedList04_AddNodeAtSpecificIndex();
 		ls.addNodeAtTheBeginning(50);
 		ls.addNodeAtTheBeginning(40);
 		ls.addNodeAtTheBeginning(20);

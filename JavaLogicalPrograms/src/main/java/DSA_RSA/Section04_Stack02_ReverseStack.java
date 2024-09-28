@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Stack;
 
-public class Stack02_ReverseStack {
+public class Section04_Stack02_ReverseStack {
 
 	public static void main(String[] args) {
 		Stack<Integer> stack1 = new Stack<Integer>();

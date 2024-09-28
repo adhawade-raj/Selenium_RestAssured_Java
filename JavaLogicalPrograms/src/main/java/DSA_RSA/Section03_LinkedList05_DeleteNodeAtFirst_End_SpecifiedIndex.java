@@ -1,7 +1,7 @@
 package DSA_RSA;
 
 
-public class LinkedList05_DeleteNodeAtFirst_End_SpecifiedIndex {
+public class Section03_LinkedList05_DeleteNodeAtFirst_End_SpecifiedIndex {
 class Node{
 		
 		int val;
@@ -78,7 +78,7 @@ class Node{
 	
 	public static void main(String[] args) {
 		
-		LinkedList05_DeleteNodeAtFirst_End_SpecifiedIndex ls = new LinkedList05_DeleteNodeAtFirst_End_SpecifiedIndex();
+		Section03_LinkedList05_DeleteNodeAtFirst_End_SpecifiedIndex ls = new Section03_LinkedList05_DeleteNodeAtFirst_End_SpecifiedIndex();
 		  
 		  ls.addNodeAtEnd(10);
 		  ls.addNodeAtEnd(20);  

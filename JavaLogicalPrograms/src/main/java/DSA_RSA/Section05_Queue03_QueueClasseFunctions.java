@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class Queue03_QueueClasseFunctions {
+public class Section05_Queue03_QueueClasseFunctions {
 
 	public static void main(String[] args) {
 		Queue<Integer> queue = new PriorityQueue<>();

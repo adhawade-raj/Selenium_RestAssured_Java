@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Arrays;
 
-public class Sorting01_BubbleSort {
+public class Section07_Sorting01_BubbleSort {
 
 	public static void main(String[] args) {
 //		Bubble sort algorithm is simplest algorithm in which array is traversed 

@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Stack;
 
-public class Stack01_StackOperations {
+public class Section04_Stack01_StackOperations {
 
 	public static void main(String[] args) {
 	

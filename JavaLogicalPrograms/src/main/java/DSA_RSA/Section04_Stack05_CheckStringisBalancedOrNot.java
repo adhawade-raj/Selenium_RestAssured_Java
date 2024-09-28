@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Stack;
 
-public class Stack05_CheckStringisBalancedOrNot {
+public class Section04_Stack05_CheckStringisBalancedOrNot {
 
 	public static void main(String[] args) {
 		String s = "(2+)[{4}]";

@@ -1,8 +1,8 @@
 package DSA_RSA;
 
-import DSA_RSA.LinkedList05_DeleteNodeAtFirst_End_SpecifiedIndex.Node;
+import DSA_RSA.Section03_LinkedList05_DeleteNodeAtFirst_End_SpecifiedIndex.Node;
 
-public class LinkedList06_DeleteNodeWithSpecificValue {
+public class Section03_LinkedList06_DeleteNodeWithSpecificValue {
 
 class Node{
 		
@@ -101,7 +101,7 @@ public void addNodeAtEnd(int val) {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		LinkedList06_DeleteNodeWithSpecificValue ls = new LinkedList06_DeleteNodeWithSpecificValue();	
+		Section03_LinkedList06_DeleteNodeWithSpecificValue ls = new Section03_LinkedList06_DeleteNodeWithSpecificValue();	
 		  ls.addNodeAtEnd(10);
 		  ls.addNodeAtEnd(20);  
 		  ls.addNodeAtEnd(30);

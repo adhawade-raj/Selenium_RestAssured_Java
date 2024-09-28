@@ -1,6 +1,6 @@
 package DSA_RSA;
 
-public class Recursion02_Factorial {
+public class Section02_Recursion02_Factorial {
 
 	public static void main(String[] args) {
 		

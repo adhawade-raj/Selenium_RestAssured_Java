@@ -1,6 +1,6 @@
 package DSA_RSA;
 
-public class Recursion03_Fibonacci {
+public class Section02_Recursion03_Fibonacci {
 
 	public static void main(String[] args) {
 		

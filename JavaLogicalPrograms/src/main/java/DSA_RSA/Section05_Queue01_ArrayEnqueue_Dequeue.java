@@ -1,6 +1,6 @@
 package DSA_RSA;
 
-public class Queue01_ArrayEnqueue_Dequeue {
+public class Section05_Queue01_ArrayEnqueue_Dequeue {
 
 	int rear;
 	int front;
@@ -8,7 +8,7 @@ public class Queue01_ArrayEnqueue_Dequeue {
 	int size;
 	
 
-	public Queue01_ArrayEnqueue_Dequeue(int size)
+	public Section05_Queue01_ArrayEnqueue_Dequeue(int size)
 	{
 		rear = -1;
 		this.size=size;
@@ -53,7 +53,7 @@ public class Queue01_ArrayEnqueue_Dequeue {
 	
 	public static void main(String[] args) {
 		
-		Queue01_ArrayEnqueue_Dequeue qd = new Queue01_ArrayEnqueue_Dequeue(5);
+		Section05_Queue01_ArrayEnqueue_Dequeue qd = new Section05_Queue01_ArrayEnqueue_Dequeue(5);
 		qd.enQueue(4);
 		qd.enQueue(2);
 		qd.enQueue(9);

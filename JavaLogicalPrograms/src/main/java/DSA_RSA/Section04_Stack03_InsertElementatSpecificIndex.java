@@ -2,7 +2,7 @@ package DSA_RSA;
 
 import java.util.Stack;
 
-public class Stack03_InsertElementatSpecificIndex {
+public class Section04_Stack03_InsertElementatSpecificIndex {
 
 public static void addElementatIndex(Stack<Integer> source, Stack<Integer> dest, int item, int index) {
 		

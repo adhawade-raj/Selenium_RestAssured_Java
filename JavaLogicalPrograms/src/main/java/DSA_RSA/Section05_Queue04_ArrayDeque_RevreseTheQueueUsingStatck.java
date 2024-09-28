@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Stack;
 
-public class Queue04_ArrayDeque_RevreseTheQueueUsingStatck {
+public class Section05_Queue04_ArrayDeque_RevreseTheQueueUsingStatck {
 
 	public static void main(String[] args) {
 		Queue<Integer> queue = new ArrayDeque<>();

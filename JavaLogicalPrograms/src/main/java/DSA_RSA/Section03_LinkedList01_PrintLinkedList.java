@@ -1,6 +1,6 @@
 package DSA_RSA;
 
-public class LinkedList01_PrintLinkedList {
+public class Section03_LinkedList01_PrintLinkedList {
 
 	
 	class Node{
@@ -56,7 +56,7 @@ public class LinkedList01_PrintLinkedList {
 	
 public static void main(String[] args) {
 		
-  LinkedList01_PrintLinkedList ls = new LinkedList01_PrintLinkedList();
+  Section03_LinkedList01_PrintLinkedList ls = new Section03_LinkedList01_PrintLinkedList();
   
   ls.addNodeAtEnd(10);
   ls.addNodeAtEnd(20);  
