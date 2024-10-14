@@ -29,7 +29,7 @@ public class FindMaxMinFrom3Numbers {
 	public static void main(String[] args) {
 		
 //		findMaxNumber(5,3,4);
-		findMinNumber(5,3,4);
+		findMinNumber(1,3,4);
 		
 
 	}
