@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-27T18:16:40 IST" name="Default suite" finished-at="2024-10-27T18:16:51 IST" duration-ms="11187">
+  <suite started-at="2024-10-27T18:29:48 IST" name="Default suite" finished-at="2024-10-27T18:30:10 IST" duration-ms="21794">
     <groups>
     </groups>
-    <test started-at="2024-10-27T18:16:40 IST" name="Default test" finished-at="2024-10-27T18:16:51 IST" duration-ms="11187">
-      <class name="_Playwright._Playwright.Get03_DisposeFunction">
-        <test-method is-config="true" signature="setup()[pri:0, instance:_Playwright._Playwright.Get03_DisposeFunction@2dc54ad4]" started-at="2024-10-27T18:16:40 IST" name="setup" finished-at="2024-10-27T18:16:49 IST" duration-ms="9419" status="PASS">
+    <test started-at="2024-10-27T18:29:48 IST" name="Default test" finished-at="2024-10-27T18:30:10 IST" duration-ms="21794">
+      <class name="_Playwright._Playwright.Get04_FetchResposneHeaders">
+        <test-method is-config="true" signature="setup()[pri:0, instance:_Playwright._Playwright.Get04_FetchResposneHeaders@47d9a273]" started-at="2024-10-27T18:29:48 IST" name="setup" finished-at="2024-10-27T18:30:07 IST" duration-ms="19206" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="disposeAPIResponseTest()[pri:0, instance:_Playwright._Playwright.Get03_DisposeFunction@2dc54ad4]" started-at="2024-10-27T18:16:49 IST" name="disposeAPIResponseTest" finished-at="2024-10-27T18:16:51 IST" duration-ms="1668" status="PASS">
+        <test-method signature="fetchResponseHeaders()[pri:0, instance:_Playwright._Playwright.Get04_FetchResposneHeaders@47d9a273]" started-at="2024-10-27T18:30:07 IST" name="fetchResponseHeaders" finished-at="2024-10-27T18:30:10 IST" duration-ms="2391" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- disposeAPIResponseTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:_Playwright._Playwright.Get03_DisposeFunction@2dc54ad4]" started-at="2024-10-27T18:16:51 IST" name="tearDown" finished-at="2024-10-27T18:16:51 IST" duration-ms="27" status="PASS">
+        </test-method> <!-- fetchResponseHeaders -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:_Playwright._Playwright.Get04_FetchResposneHeaders@47d9a273]" started-at="2024-10-27T18:30:10 IST" name="tearDown" finished-at="2024-10-27T18:30:10 IST" duration-ms="129" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- _Playwright._Playwright.Get03_DisposeFunction -->
+      </class> <!-- _Playwright._Playwright.Get04_FetchResposneHeaders -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

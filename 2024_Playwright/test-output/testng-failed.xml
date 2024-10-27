@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="_Playwright._Playwright.Get03_DisposeFunction">
+      <class name="_Playwright._Playwright.Get04_FetchResposneHeaders">
         <methods>
-          <include name="disposeAPIResponseTest"/>
-          <include name="setup"/>
+          <include name="fetchResponseHeaders"/>
           <include name="tearDown"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- _Playwright._Playwright.Get03_DisposeFunction -->
+      </class> <!-- _Playwright._Playwright.Get04_FetchResposneHeaders -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
