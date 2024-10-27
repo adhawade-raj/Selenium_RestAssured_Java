@@ -3,6 +3,7 @@ package _Playwright._Playwright;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -30,6 +31,11 @@ public class Get02_GetSpecificUser {
 		 apiRequest =  playwright.request();
 		 apiRequestContext =  apiRequest.newContext();
 	 
+	}
+	
+	@AfterTest()
+	public void tearDown() {
+		playwright.close();
 	}
 	
 	@Test
