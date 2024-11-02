@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-27T18:29:48 IST" name="Default suite" finished-at="2024-10-27T18:30:10 IST" duration-ms="21794">
+  <suite started-at="2024-11-02T19:06:05 IST" name="Default suite" finished-at="2024-11-02T19:06:27 IST" duration-ms="22057">
     <groups>
     </groups>
-    <test started-at="2024-10-27T18:29:48 IST" name="Default test" finished-at="2024-10-27T18:30:10 IST" duration-ms="21794">
-      <class name="_Playwright._Playwright.Get04_FetchResposneHeaders">
-        <test-method is-config="true" signature="setup()[pri:0, instance:_Playwright._Playwright.Get04_FetchResposneHeaders@47d9a273]" started-at="2024-10-27T18:29:48 IST" name="setup" finished-at="2024-10-27T18:30:07 IST" duration-ms="19206" status="PASS">
+    <test started-at="2024-11-02T19:06:05 IST" name="Default test" finished-at="2024-11-02T19:06:27 IST" duration-ms="22057">
+      <class name="_Playwright._Playwright.Post03_CreateUser_UsingFile">
+        <test-method is-config="true" signature="setup()[pri:0, instance:_Playwright._Playwright.Post03_CreateUser_UsingFile@47d9a273]" started-at="2024-11-02T19:06:05 IST" name="setup" finished-at="2024-11-02T19:06:25 IST" duration-ms="20098" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="fetchResponseHeaders()[pri:0, instance:_Playwright._Playwright.Get04_FetchResposneHeaders@47d9a273]" started-at="2024-10-27T18:30:07 IST" name="fetchResponseHeaders" finished-at="2024-10-27T18:30:10 IST" duration-ms="2391" status="PASS">
+        <test-method signature="createUser_StringBody()[pri:0, instance:_Playwright._Playwright.Post03_CreateUser_UsingFile@47d9a273]" started-at="2024-11-02T19:06:25 IST" name="createUser_StringBody" finished-at="2024-11-02T19:06:27 IST" duration-ms="1843" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- fetchResponseHeaders -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:_Playwright._Playwright.Get04_FetchResposneHeaders@47d9a273]" started-at="2024-10-27T18:30:10 IST" name="tearDown" finished-at="2024-10-27T18:30:10 IST" duration-ms="129" status="PASS">
+        </test-method> <!-- createUser_StringBody -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:_Playwright._Playwright.Post03_CreateUser_UsingFile@47d9a273]" started-at="2024-11-02T19:06:27 IST" name="tearDown" finished-at="2024-11-02T19:06:27 IST" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- _Playwright._Playwright.Get04_FetchResposneHeaders -->
+      </class> <!-- _Playwright._Playwright.Post03_CreateUser_UsingFile -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
