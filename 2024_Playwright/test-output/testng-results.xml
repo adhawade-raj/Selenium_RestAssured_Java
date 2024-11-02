@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-02T19:06:05 IST" name="Default suite" finished-at="2024-11-02T19:06:27 IST" duration-ms="22057">
+  <suite started-at="2024-11-02T20:15:11 IST" name="Default suite" finished-at="2024-11-02T20:15:42 IST" duration-ms="31309">
     <groups>
     </groups>
-    <test started-at="2024-11-02T19:06:05 IST" name="Default test" finished-at="2024-11-02T19:06:27 IST" duration-ms="22057">
-      <class name="_Playwright._Playwright.Post03_CreateUser_UsingFile">
-        <test-method is-config="true" signature="setup()[pri:0, instance:_Playwright._Playwright.Post03_CreateUser_UsingFile@47d9a273]" started-at="2024-11-02T19:06:05 IST" name="setup" finished-at="2024-11-02T19:06:25 IST" duration-ms="20098" status="PASS">
+    <test started-at="2024-11-02T20:15:11 IST" name="Default test" finished-at="2024-11-02T20:15:42 IST" duration-ms="31309">
+      <class name="_Playwright._Playwright.Post05_CreateUserUsingLombok">
+        <test-method is-config="true" signature="setup()[pri:0, instance:_Playwright._Playwright.Post05_CreateUserUsingLombok@27f981c6]" started-at="2024-11-02T20:15:11 IST" name="setup" finished-at="2024-11-02T20:15:41 IST" duration-ms="29668" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createUser_StringBody()[pri:0, instance:_Playwright._Playwright.Post03_CreateUser_UsingFile@47d9a273]" started-at="2024-11-02T19:06:25 IST" name="createUser_StringBody" finished-at="2024-11-02T19:06:27 IST" duration-ms="1843" status="PASS">
+        <test-method signature="createUser_StringBody()[pri:0, instance:_Playwright._Playwright.Post05_CreateUserUsingLombok@27f981c6]" started-at="2024-11-02T20:15:41 IST" name="createUser_StringBody" finished-at="2024-11-02T20:15:42 IST" duration-ms="1542" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser_StringBody -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:_Playwright._Playwright.Post03_CreateUser_UsingFile@47d9a273]" started-at="2024-11-02T19:06:27 IST" name="tearDown" finished-at="2024-11-02T19:06:27 IST" duration-ms="51" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:_Playwright._Playwright.Post05_CreateUserUsingLombok@27f981c6]" started-at="2024-11-02T20:15:42 IST" name="tearDown" finished-at="2024-11-02T20:15:42 IST" duration-ms="37" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- _Playwright._Playwright.Post03_CreateUser_UsingFile -->
+      </class> <!-- _Playwright._Playwright.Post05_CreateUserUsingLombok -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
