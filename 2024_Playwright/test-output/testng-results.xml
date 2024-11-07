@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-07T21:00:37 IST" name="Default suite" finished-at="2024-11-07T21:01:05 IST" duration-ms="28156">
+  <suite started-at="2024-11-07T21:21:41 IST" name="Default suite" finished-at="2024-11-07T21:22:00 IST" duration-ms="18675">
     <groups>
     </groups>
-    <test started-at="2024-11-07T21:00:37 IST" name="Default test" finished-at="2024-11-07T21:01:05 IST" duration-ms="28156">
-      <class name="_Playwright._Playwright.Put01_UpdateTheUser">
-        <test-method is-config="true" signature="setup()[pri:0, instance:_Playwright._Playwright.Put01_UpdateTheUser@27f981c6]" started-at="2024-11-07T21:00:37 IST" name="setup" finished-at="2024-11-07T21:01:02 IST" duration-ms="25186" status="PASS">
+    <test started-at="2024-11-07T21:21:41 IST" name="Default test" finished-at="2024-11-07T21:22:00 IST" duration-ms="18675">
+      <class name="_Playwright._Playwright.Delete01_DeleteTheUser">
+        <test-method is-config="true" signature="setup()[pri:0, instance:_Playwright._Playwright.Delete01_DeleteTheUser@27f981c6]" started-at="2024-11-07T21:21:42 IST" name="setup" finished-at="2024-11-07T21:21:57 IST" duration-ms="15418" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createUser_StringBody()[pri:0, instance:_Playwright._Playwright.Put01_UpdateTheUser@27f981c6]" started-at="2024-11-07T21:01:03 IST" name="createUser_StringBody" finished-at="2024-11-07T21:01:05 IST" duration-ms="2873" status="PASS">
+        <test-method signature="createUser_StringBody()[pri:0, instance:_Playwright._Playwright.Delete01_DeleteTheUser@27f981c6]" started-at="2024-11-07T21:21:57 IST" name="createUser_StringBody" finished-at="2024-11-07T21:22:00 IST" duration-ms="3140" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createUser_StringBody -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:_Playwright._Playwright.Put01_UpdateTheUser@27f981c6]" started-at="2024-11-07T21:01:05 IST" name="tearDown" finished-at="2024-11-07T21:01:05 IST" duration-ms="34" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:_Playwright._Playwright.Delete01_DeleteTheUser@27f981c6]" started-at="2024-11-07T21:22:00 IST" name="tearDown" finished-at="2024-11-07T21:22:00 IST" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- _Playwright._Playwright.Put01_UpdateTheUser -->
+      </class> <!-- _Playwright._Playwright.Delete01_DeleteTheUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

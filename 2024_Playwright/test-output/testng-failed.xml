@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="_Playwright._Playwright.Put01_UpdateTheUser">
+      <class name="_Playwright._Playwright.Delete01_DeleteTheUser">
         <methods>
-          <include name="createUser_StringBody"/>
           <include name="setup"/>
           <include name="tearDown"/>
+          <include name="createUser_StringBody"/>
         </methods>
-      </class> <!-- _Playwright._Playwright.Put01_UpdateTheUser -->
+      </class> <!-- _Playwright._Playwright.Delete01_DeleteTheUser -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
