@@ -15,13 +15,18 @@ public class ExcelUtil {
 		private static Workbook book;
 		private static Sheet sheet;
 
-		public static Object[][] getTestData(String sheetName) throws org.apache.poi.openxml4j.exceptions.InvalidFormatException {
+		public static Object[][] getTestData(String sheetName) throws InvalidFormatException {
 
 			Object data[][] = null;
 
 			try {
 				FileInputStream ip = new FileInputStream(TEST_DATA_SHEET);
-				book = WorkbookFactory.create(ip);
+				try {
+					book = WorkbookFactory.create(ip);
+				} catch (org.apache.poi.openxml4j.exceptions.InvalidFormatException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				sheet = book.getSheet(sheetName);
 
 				data = new Object[sheet.getLastRowNum()][sheet.getRow(0).getLastCellNum()];
