@@ -28,12 +28,15 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="_Playwright._Playwright"/>
 			<item value="_RestAssured_Framework_GoRest._RestAssured_Framework_GoRest"/>
 		</list>
 		<list key="groupId">
+			<item value="2024_Playwright"/>
 			<item value="2024-RestAssured_Framework_GoRest"/>
 		</list>
 		<list key="artifactId">
+			<item value="2024_Playwright"/>
 			<item value="2024-RestAssured_Framework_GoRest"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -107,6 +110,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\TechVeritoAssignment"/>
 			<item value="E:\Software Testing\API\Naveen - Rest Assured\June2023RestAssuredFramework"/>
 			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_Cucumber_Practise"/>
 			<item value="E:\Eclipse_VSCode\SeleniumJava_Workspace\2022-Selenium_CucumberTraining"/>
