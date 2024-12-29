@@ -23,13 +23,17 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/LENOVO/.m2/repository/org/projectlombok/lombok/1.18.12/lombok-1.18.12.jar" sourcepath="C:/Users/LENOVO/.m2/repository/org/projectlombok/lombok/1.18.12/lombok-1.18.12-sources.jar">
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="org.projectlombok"/>
-			<attribute name="maven.artifactId" value="lombok"/>
-			<attribute name="maven.version" value="1.18.12"/>
-			<attribute name="maven.scope" value="compile"/>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
