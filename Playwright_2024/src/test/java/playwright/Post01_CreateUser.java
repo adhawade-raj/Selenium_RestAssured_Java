@@ -1,6 +1,8 @@
-package _Playwright._Playwright;
+package playwright;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -15,9 +17,7 @@ import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.RequestOptions;
 
-public class Post02_CreateUser_UsingStringBody {
-
-	
+public class Post01_CreateUser {
 	Playwright playwright;
 	APIRequest apiRequest;
 	APIRequestContext apiRequestContext;
@@ -39,21 +39,20 @@ public class Post02_CreateUser_UsingStringBody {
 	
 	
 	@Test
-	public void createUser_StringBody() throws IOException {
+	public void createUser() throws IOException {
 		
-		String requestBody = "{\r\n"
-				+ "\"name\":\"temp\",\r\n"
-				+ "\"email\":\"randomEmail1@gmail.com\",\r\n"
-				+ "\"gender\":\"male\",\r\n"
-				+ "\"status\":\"active\"\r\n"
-				+ "}";
+		Map<String, String> data = new HashMap<String, String>();
+		data.put("name", "raj");
+		data.put("email", "raj3@gmail.com");
+		data.put("gender", "male");
+		data.put("status", "active");
 		
 		
 		APIResponse apiResponse = apiRequestContext.post("https://gorest.co.in/public/v2/users", 
 		RequestOptions.create()
 		.setHeader("Content-Type", "application/json")
 		.setHeader("Authorization", "Bearer ea94c395f5df75e2d78ea00a764aa9d6b96e055e9d8b38e0311178406a3c081c")
-		.setData(requestBody)
+		.setData(data)
 		);
 		
 		System.out.println(apiResponse.status());
@@ -70,6 +69,7 @@ public class Post02_CreateUser_UsingStringBody {
 		System.out.println(node.toPrettyString());
 		
 		//Capture ID from api Response
+		
 		String userId = node.get("id").asText();
 		System.out.println("User Id : "+userId);
 		
@@ -87,5 +87,4 @@ public class Post02_CreateUser_UsingStringBody {
 		
 		
 	}
-	
 }

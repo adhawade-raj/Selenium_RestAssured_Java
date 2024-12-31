@@ -1,7 +1,4 @@
-package _Playwright._Playwright;
-
-import java.util.List;
-import java.util.Map;
+package playwright;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -12,9 +9,9 @@ import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
 import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Playwright;
-import com.microsoft.playwright.options.HttpHeader;
+import com.microsoft.playwright.PlaywrightException;
 
-public class Get04_FetchResposneHeaders {
+public class Get03_DisposeFunction {
 	Playwright playwright;
 	APIRequest apiRequest;
 	APIRequestContext apiRequestContext;
@@ -35,7 +32,7 @@ public class Get04_FetchResposneHeaders {
 	
 	
 	@Test
-	public void fetchResponseHeaders() {
+	public void disposeAPIResponseTest() {
 		
 		Playwright playwright = Playwright.create();
 		APIRequest apiRequest =  playwright.request();
@@ -47,24 +44,23 @@ public class Get04_FetchResposneHeaders {
 		int status = apiResponse.status();
 		System.out.println("Response code is : "+status);
 		Assert.assertTrue(true, "Status is not 200");
-
-//		Using Map
-		System.out.println("====Fetch Reponse Headers using Map");
-		Map<String, String> headersMap = apiResponse.headers();
-		headersMap.forEach((k,v) -> System.out.println(k+" : "+v));
-		System.out.println("total response headers : "+headersMap.size());
-		Assert.assertEquals(headersMap.get("server"), "cloudflare");
-		Assert.assertEquals(headersMap.get("content-type"), "application/json; charset=utf-8");
 		
-		System.out.println("===============================================================");
-		System.out.println("======Fetch Reponse Headers using List (headersArray())========");
+		System.out.println("-----API Response before dispose-----");
+		System.out.println(apiResponse.text());
 		
-		List<HttpHeader> headersList = apiResponse.headersArray();
-		for(HttpHeader e: headersList) {
-			System.out.println(e.name+ " : "+e.value);
+		apiResponse.dispose();
+		int status2 = apiResponse.status();
+		System.out.println("Response code after dispose : "+status2);
+		
+		
+		try {
+		System.out.println("-----API Response after dispose-----");
+		System.out.println(apiResponse.text());
+		}
+		catch(PlaywrightException e) {
+			System.out.println("Response has been disposed");
 		}
 		
 		
 	}
-	
 }

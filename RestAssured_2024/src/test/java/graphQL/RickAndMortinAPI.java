@@ -1,4 +1,4 @@
-package GraphQL;
+package graphQL;
 
 import org.testng.annotations.Test;
 

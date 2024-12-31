@@ -1,4 +1,4 @@
-package _Playwright._Playwright;
+package playwright;
 
 public class Post04_Pojo {
 	private int id;

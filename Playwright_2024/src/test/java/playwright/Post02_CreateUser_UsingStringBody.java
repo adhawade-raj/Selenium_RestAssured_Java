@@ -1,11 +1,13 @@
-package _Playwright._Playwright;
+package playwright;
 
 import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microsoft.playwright.APIRequest;
 import com.microsoft.playwright.APIRequestContext;
@@ -13,8 +15,9 @@ import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.RequestOptions;
 
-public class Post04_CreateUserUsingPojo {
+public class Post02_CreateUser_UsingStringBody {
 
+	
 	Playwright playwright;
 	APIRequest apiRequest;
 	APIRequestContext apiRequestContext;
@@ -33,12 +36,19 @@ public class Post04_CreateUserUsingPojo {
 		playwright.close();
 	}
 	
-
+	
+	
 	@Test
 	public void createUser_StringBody() throws IOException {
 		
-		Post04_Pojo requestBody = new Post04_Pojo("raj","raj06@gmail.com", "male", "active");
-
+		String requestBody = "{\r\n"
+				+ "\"name\":\"temp\",\r\n"
+				+ "\"email\":\"randomEmail1@gmail.com\",\r\n"
+				+ "\"gender\":\"male\",\r\n"
+				+ "\"status\":\"active\"\r\n"
+				+ "}";
+		
+		
 		APIResponse apiResponse = apiRequestContext.post("https://gorest.co.in/public/v2/users", 
 		RequestOptions.create()
 		.setHeader("Content-Type", "application/json")
@@ -50,19 +60,32 @@ public class Post04_CreateUserUsingPojo {
 		Assert.assertEquals(apiResponse.status(), 201);
 		
 		System.out.println("-----API Response Body-----");
-		String responseBodyText = apiResponse.text();
-		System.out.println(responseBodyText);
+		System.out.println(apiResponse.text());
 		System.out.println("-----API Response Body-----");
 		
 		
 		ObjectMapper mapper = new ObjectMapper();
-		Post04_Pojo responseBody = mapper.readValue(responseBodyText, Post04_Pojo.class);
-		
-		Assert.assertEquals(requestBody.getName(), responseBody.getName());
-		Assert.assertEquals(requestBody.getGender(), responseBody.getGender());
-		Assert.assertEquals(requestBody.getStatus(), responseBody.getStatus());
-		Assert.assertNotNull(responseBody.getId());
 
+		JsonNode node = mapper.readTree(apiResponse.body());
+		System.out.println(node.toPrettyString());
+		
+		//Capture ID from api Response
+		String userId = node.get("id").asText();
+		System.out.println("User Id : "+userId);
+		
+		
+		//GET Call - Fetch the same user
+		
+		APIResponse apiGetReponse = apiRequestContext.get("https://gorest.co.in/public/v2/users/"+userId,
+		RequestOptions.create()
+		.setHeader("Authorization", "Bearer ea94c395f5df75e2d78ea00a764aa9d6b96e055e9d8b38e0311178406a3c081c")				
+				);
+		
+		Assert.assertEquals(apiGetReponse.status(), 200);
+		Assert.assertTrue(apiGetReponse.text().contains(userId));
+		
+		
+		
 	}
 	
 }

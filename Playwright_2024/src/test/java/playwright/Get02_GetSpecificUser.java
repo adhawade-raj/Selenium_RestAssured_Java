@@ -1,4 +1,4 @@
-package _Playwright._Playwright;
+package playwright;
 
 import java.io.IOException;
 

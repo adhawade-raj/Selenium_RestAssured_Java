@@ -1,4 +1,4 @@
-package _Playwright._Playwright;
+package playwright;
 
 import java.io.IOException;
 
@@ -14,7 +14,8 @@ import com.microsoft.playwright.APIResponse;
 import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.RequestOptions;
 
-public class Delete01_DeleteTheUser {
+public class Put01_UpdateTheUser {
+
 	Playwright playwright;
 	APIRequest apiRequest;
 	APIRequestContext apiRequestContext;
@@ -37,7 +38,7 @@ public class Delete01_DeleteTheUser {
 	@Test
 	public void createUser_StringBody() throws IOException {
 		
-		Post05_LombokPojo requestBody = new Post05_LombokPojo("raj","raj13@gmail.com", "male", "active");
+		Post05_LombokPojo requestBody = new Post05_LombokPojo("raj","raj10@gmail.com", "male", "active");
 
 		APIResponse apiResponse = apiRequestContext.post("https://gorest.co.in/public/v2/users", 
 		RequestOptions.create()
@@ -66,15 +67,29 @@ public class Delete01_DeleteTheUser {
 		int userId = responseBody.getId();
         System.out.println("new user id is : " + userId);
 
-        System.out.println("---------------DELETE CALL----------------");
+        //update status active to inactive
+        requestBody.setStatus("active");
+        requestBody.setName("Raj Adhawade");
+
+        System.out.println("---------------PUT CALL----------------");
 
         //2. PUT Call - update user:
-        APIResponse apiPUTResponse = apiRequestContext.delete("https://gorest.co.in/public/v2/users/" + userId,
+        APIResponse apiPUTResponse = apiRequestContext.put("https://gorest.co.in/public/v2/users/" + userId,
           RequestOptions.create()
-               .setHeader("Authorization", "Bearer ea94c395f5df75e2d78ea00a764aa9d6b96e055e9d8b38e0311178406a3c081c"));
+                   .setHeader("Content-Type", "application/json")
+                   .setHeader("Authorization", "Bearer ea94c395f5df75e2d78ea00a764aa9d6b96e055e9d8b38e0311178406a3c081c")
+                   .setData(requestBody));
 
         System.out.println(apiPUTResponse.status() + " : " + apiPUTResponse.statusText());
-        Assert.assertEquals(apiPUTResponse.status(), 204);
+        Assert.assertEquals(apiPUTResponse.status(), 200);
+
+        String putResponseText = apiPUTResponse.text();
+        System.out.println("update user : " + putResponseText);
+
+        Post05_LombokPojo actPutUser = mapper.readValue(putResponseText, Post05_LombokPojo.class);
+        Assert.assertEquals(actPutUser.getId(), userId);
+        Assert.assertEquals(actPutUser.getStatus(), requestBody.getStatus());
+        Assert.assertEquals(actPutUser.getName(), requestBody.getName());
 
         System.out.println("---------------GET CALL----------------");
 
@@ -87,6 +102,19 @@ public class Delete01_DeleteTheUser {
 
         int statusCode = apiGETResponse.status();
         System.out.println("response status code: " + statusCode);
-        Assert.assertEquals(statusCode, 404);
-       }
+        Assert.assertEquals(statusCode, 200);
+        Assert.assertEquals(apiGETResponse.ok(), true);
+
+        String statusGETStatusText = apiGETResponse.statusText();
+        System.out.println(statusGETStatusText);
+
+        String getResponseText = apiGETResponse.text();
+
+        Post05_LombokPojo actGETUser = mapper.readValue(getResponseText, Post05_LombokPojo.class);
+        Assert.assertEquals(actGETUser.getId(), userId);
+        Assert.assertEquals(actGETUser.getStatus(), requestBody.getStatus());
+        Assert.assertEquals(actGETUser.getName(), requestBody.getName());	
+	
+}
+	
 }
