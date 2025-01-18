@@ -1,0 +1,7 @@
+2025-01-18 21:25:03 INFO  Logging:18 - Logging execution started.
+2025-01-18 21:25:03 DEBUG Logging:20 - This is a sample debug message.
+2025-01-18 21:25:03 INFO  Logging:21 - This is a sample info message.
+2025-01-18 21:25:03 WARN  Logging:22 - This is a sample warning message.
+2025-01-18 21:25:03 ERROR Logging:23 - This is a sample error message.
+2025-01-18 21:25:03 FATAL Logging:24 - This is a sample fatal message.
+2025-01-18 21:25:03 INFO  Logging:26 - Logging execution ended.
