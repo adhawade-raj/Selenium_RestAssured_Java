@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n%throwable"/>
+            <AnsiPatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n%throwable</Pattern>
+                <ColorMap>
+                    <Level color="green">INFO</Level>
+                    <Level color="yellow">WARN</Level>
+                    <Level color="red">ERROR</Level>
+                    <Level color="magenta">FATAL</Level>
+                    <Level color="cyan">DEBUG</Level>
+                </ColorMap>
+            </AnsiPatternLayout>
+        </Console>
+        <File name="File" fileName="logs/application.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n%throwable"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>

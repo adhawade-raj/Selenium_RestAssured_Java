@@ -8,9 +8,6 @@ public class Test {
 		System.out.println("Raj");
 		System.out.println("Raj");
 
-		System.out.println("Raj");
-		System.out.println("Raj");
-
 	}
 
 }
