@@ -8,8 +8,8 @@ public class Test {
 		System.out.println("Raj");
 		System.out.println("Raj");
 
-		System.out.println("Raj");
-		System.out.println("Raj");
+		System.out.println("Raj2");
+		System.out.println("Raj2");
 
 	}
 
