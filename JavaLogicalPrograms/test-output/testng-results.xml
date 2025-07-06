@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-05T20:29:53 IST" name="Default suite" finished-at="2025-07-05T20:30:02 IST" duration-ms="8418">
+    <groups>
+    </groups>
+    <test started-at="2025-07-05T20:29:53 IST" name="Default test" finished-at="2025-07-05T20:30:02 IST" duration-ms="8418">
+      <class name="org.mock.api.test.MockUserTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:org.mock.api.test.MockUserTest@7a8c8dcf]" started-at="2025-07-05T20:29:53 IST" name="setup" finished-at="2025-07-05T20:29:57 IST" duration-ms="3693" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="mockUserAPITest()[pri:0, instance:org.mock.api.test.MockUserTest@7a8c8dcf]" started-at="2025-07-05T20:29:57 IST" name="mockUserAPITest" finished-at="2025-07-05T20:30:01 IST" duration-ms="4613" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mockUserAPITest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:org.mock.api.test.MockUserTest@7a8c8dcf]" started-at="2025-07-05T20:30:01 IST" name="tearDown" finished-at="2025-07-05T20:30:02 IST" duration-ms="55" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- org.mock.api.test.MockUserTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
