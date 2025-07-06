@@ -1,7 +1,5 @@
 package org.mock.api.test;
 
-import static org.hamcrest.Matchers.equalTo;
-
 import org.mock.api.ApiMocks;
 import org.mock.api.WiremockSetup;
 import org.testng.annotations.AfterTest;
@@ -9,9 +7,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
+import io.restassured.response.Response;
 
-public class MockUserTest {
-
+public class DeleteMockUserTest {
 	@BeforeTest
 	public void setup() {
 		WiremockSetup.createWireMockServer();
@@ -25,11 +23,15 @@ public class MockUserTest {
 	}
 
 	@Test
-	public void mockUserAPITest() {
+	public void createMockUserAPITest() {
 
-		ApiMocks.getDummyUser();
-		RestAssured.given().log().all().when().get("/api/users").then().log().all().statusCode(200).body("name",
-				equalTo("Raj"));
+		ApiMocks.deleteDummyUser();
+		Response response = RestAssured.given().log().all()
+				.when()
+				.delete("/api/users");
+
+		response.then().log().all()
+		.statusCode(204);
 
 	}
 }
