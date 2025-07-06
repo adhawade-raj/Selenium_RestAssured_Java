@@ -1,0 +1,14 @@
+
+{
+            "request": {
+                "url": "/whatsapp",
+                "method": "GET"
+            },
+            "response": {
+                "status": 200,
+                "body": "Hey this is a stub response for WhatsApp",
+                "headers": {
+                    "Content-Type": "text/plain"
+                }
+    }
+}
