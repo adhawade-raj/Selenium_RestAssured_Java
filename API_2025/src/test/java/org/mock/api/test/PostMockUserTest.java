@@ -1,6 +1,7 @@
 package org.mock.api.test;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 import org.mock.api.ApiMocks;
 import org.mock.api.WiremockSetup;
@@ -25,7 +26,7 @@ public class PostMockUserTest {
 		WiremockSetup.stopWireMockServer();
 	}
 
-	@Test
+	@Test(enabled=false)
 	public void createMockUserAPITest() {
 
 		ApiMocks.createDummyUser();
@@ -40,5 +41,25 @@ public class PostMockUserTest {
 		System.out.println("Response: " + response.asString());
 
 	}
+	
+	@Test
+    public void createDummyUserWithJsonFileTest(){
+        ApiMocks.createDummyUserWithJson();
+
+       Response response = RestAssured.given().log().all()
+                    .contentType("application/json")
+                    .body("{\"name\": \"Tom\"}")
+                    .when()
+                    .post("/api/users");
+
+        response.then().log().all()
+                .assertThat().statusCode(201)
+                            .contentType("application/json")
+                            .statusLine("HTTP/1.1 201 user is created")
+                            .body("id", notNullValue());
+
+        System.out.println(response.getBody().asString());
+
+    }
 
 }

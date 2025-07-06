@@ -1,6 +1,7 @@
 package org.mock.api;
 
 import com.github.tomakehurst.wiremock.client.WireMock;
+import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 public class ApiMocks {
 
@@ -41,5 +42,16 @@ public class ApiMocks {
 				WireMock.delete(WireMock.urlEqualTo("/api/users"))
 				.willReturn(WireMock.aResponse().withStatus(204)));
 	}
+	
+	public static void createDummyUserWithJson() {
+
+        stubFor(post(urlEqualTo("/api/users"))
+                .withHeader("Content-Type", equalTo("application/json"))
+                .willReturn(aResponse()
+                        .withStatus(201)
+                        .withHeader("Content-Type", "application/json")
+                        .withStatusMessage("user is created")
+                        .withBodyFile("user.json")));
+    }
 
 }
