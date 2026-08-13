@@ -118,6 +118,3 @@ If you'd like, I can:
 - add module-specific run instructions for a particular project (pick one),
 - add GitHub Actions / CI templates, or
 - create a CONTRIBUTING.md and CODE_OF_CONDUCT.md.
-
-Please tell me which additions you want and I will update the README.
-
