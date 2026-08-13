@@ -12,7 +12,7 @@ public class DuplicateElementsInArray {
 		{
 		for(int j=(i+1); j<arr.length; j++)
 		{
-			if(arr[i] == arr[j])
+			if(arr[i].equals(arr[j]))
 			System.out.println("Duplicate element found is "+arr[i]);
 			flag = true;
 		}

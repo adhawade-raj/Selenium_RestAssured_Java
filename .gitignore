@@ -39,4 +39,4 @@ tmp/
 *~.nib
 local.properties
 .loadpath
-.factorypath
+.factorypath.idea/
