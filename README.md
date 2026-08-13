@@ -7,8 +7,14 @@ This repository is a personal collection of test automation and Java practice pr
 ## Repository structure (high level)
 
 - `API_2025/` - API automation examples (Maven project)
+- `bddCucumber_2025/` - BDD Cucumber framework for test automation (Maven project)
 - `JavaLogicalPrograms/` - Small Java programs and logical problems (Maven project)
 - `Playwright_2024/` - Playwright-based tests (Maven project)
+- `rest-assured_2025/` - RestAssured 2025 API testing (Maven project)
+- `rest-assured_2025_akash/` - RestAssured 2025 Akash variant with course resources (Maven project)
+- `rest-assured_2025_akash-testng-framework/` - RestAssured 2025 Akash with TestNG framework (contains Dockerfile and Jenkinsfile)
+- `rest-assured_2026/` - RestAssured 2026 API testing (Maven project)
+- `rest-assured-JsonDrivenFramework_2026/` - RestAssured 2026 JSON-Driven framework with Allure reporting (Maven project)
 - `RestAssured_2024/` - RestAssured API tests with Allure/extent outputs
 - `RestAssured_2024_Ergast_Framework/` - RestAssured framework targeting Ergast API
 - `RestAssured_2024_GoRest_Framework/` - RestAssured framework for GoRest API

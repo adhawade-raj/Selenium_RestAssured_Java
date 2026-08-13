@@ -1,0 +1,1 @@
+{"uuid":"0c40c2d3-898d-46d3-8be5-e34d6e761e15","name":"rest-assured-JsonDrivenFramework_2026","children":["d6d35976-7ec3-4261-a2a5-76d0de7f6744"],"befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1768719174144,"stop":1768719174482}],"afters":[],"start":1768719174025,"stop":1768719177269}

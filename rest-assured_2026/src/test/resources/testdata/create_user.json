@@ -1,0 +1,18 @@
+{
+  "tests": [
+    {
+      "testcase": "CU01_valid_user",
+      "endpoint": "/public/v2/users",
+      "method": "POST",
+      "request": {
+        "name": "Raj",
+        "email": "raj_1001@gmail.com",
+        "gender": "male",
+        "status": "active"
+      },
+      "expected": {
+        "statusCode": 201
+      }
+    }
+  ]
+}
