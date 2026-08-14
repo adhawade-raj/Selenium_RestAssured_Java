@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>2024_RestAssuredNaveen</groupId>
-  <artifactId>2024_RestAssuredNaveen</artifactId>
+  <groupId>rest-assured-2024-naveen</groupId>
+  <artifactId>rest-assured-2024-naveen</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>2024_RestAssuredNaveen</name>
+  <name>rest-assured-2024-naveen</name>
   <url>http://maven.apache.org</url>
 
   <properties>

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>2024-RestAssured_Framework_GoRest</groupId>
-  <artifactId>2024-RestAssured_Framework_GoRest</artifactId>
+  <groupId>rest-assured-2024-ergast-framework</groupId>
+  <artifactId>rest-assured-2024-ergast-framework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
 
-  <name>2024-RestAssured_Framework_GoRest</name>
+  <name>rest-assured-2024-ergast-framework</name>
+  <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
@@ -196,12 +196,8 @@
 				<artifactId>maven-deploy-plugin</artifactId>
 				<version>2.8.2</version>
 			</plugin>
-			
-			
-			
+	
 		</plugins>
-
-
 
 	</build>
 
