@@ -20,10 +20,10 @@ This repository is a personal collection of test automation and Java practice pr
 - `RestAssured_2024_GoRest_Framework/` - RestAssured framework for GoRest API
 - `RestAssured_2024_GoRest_Framework_Naveen/` - GoRest framework (contains Dockerfile and Jenkins pipeline files)
 - `RestAssured_2024_Practise/` - Practice API tests
-- `Selenium_2022_EcommerceFramework/` - Selenium-based ecommerce automation framework
-- `Selenium_2022_MyAutomationTraining/` - Selenium training exercises and examples
-- `selenium-2024/` - Updated Selenium examples
-- `Selenium_2024_BooksCart_Framework/` - BooksCart demo framework
+ - `selenium-2022-ecommerce-framework/` - Selenium-based ecommerce automation framework
+ - `selenium-2022-my-automation-training/` - Selenium training exercises and examples
+ - `selenium-2024/` - Updated Selenium examples
+ - `selenium-2024-bookscart-framework/` - BooksCart demo framework
  - `selenium-2026/` - Selenium 2026 examples and updated tests (Maven project)
 
 Many of the folders contain a `pom.xml` so they can be executed with Maven independently.

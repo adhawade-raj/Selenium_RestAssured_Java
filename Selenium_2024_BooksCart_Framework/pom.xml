@@ -3,11 +3,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.booksCart</groupId>
-  <artifactId>TechVeritoAssignment</artifactId>
+  <groupId>selenium-2024-bookscart-framework</groupId>
+  <artifactId>selenium-2024-bookscart-framework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>TechVeritoAssignment</name>
+  <name>selenium-2024-bookscart-framework</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
