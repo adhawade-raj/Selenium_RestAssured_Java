@@ -4,12 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>Selenium2024</groupId>
-  <artifactId>Selenium2024</artifactId>
+  <groupId>selenium-2024</groupId>
+  <artifactId>selenium-2024</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>Selenium2024</name>
+  <name>selenium-2024</name>
   <url>http://www.example.com</url>
 
   <properties>

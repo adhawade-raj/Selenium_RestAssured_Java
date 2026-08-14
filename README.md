@@ -22,7 +22,7 @@ This repository is a personal collection of test automation and Java practice pr
 - `RestAssured_2024_Practise/` - Practice API tests
 - `Selenium_2022_EcommerceFramework/` - Selenium-based ecommerce automation framework
 - `Selenium_2022_MyAutomationTraining/` - Selenium training exercises and examples
-- `Selenium_2024/` - Updated Selenium examples
+- `selenium-2024/` - Updated Selenium examples
 - `Selenium_2024_BooksCart_Framework/` - BooksCart demo framework
  - `selenium-2026/` - Selenium 2026 examples and updated tests (Maven project)
 
@@ -118,11 +118,3 @@ target/
 ## Contact / Author
 
 Repository owner: adhawade-raj
-
----
-
-If you'd like, I can:
-
-- add module-specific run instructions for a particular project (pick one),
-- add GitHub Actions / CI templates, or
-- create a CONTRIBUTING.md and CODE_OF_CONDUCT.md.
