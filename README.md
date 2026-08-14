@@ -7,9 +7,9 @@ This repository is a personal collection of test automation and Java practice pr
 ## Repository structure (high level)
 
 - `wiremock-2025/` - API automation examples (Maven project)
-- `bddCucumber_2025/` - BDD Cucumber framework for test automation (Maven project)
-- `JavaLogicalPrograms/` - Small Java programs and logical problems (Maven project)
-- `Playwright_2024/` - Playwright-based tests (Maven project)
+ - `bdd-cucumber-2025/` - BDD Cucumber framework for test automation (Maven project)
+ - `java-logical-programs/` - Small Java programs and logical problems (Maven project)
+ - `playwright-2024/` - Playwright-based tests (Maven project)
 - `rest-assured-2025/` - RestAssured 2025 API testing (Maven project)
 - `rest-assured-2025-akash/` - RestAssured 2025 Akash variant with course resources (Maven project)
 - `rest-assured-2025-akash-testng-framework/` - RestAssured 2025 Akash with TestNG framework (contains Dockerfile and Jenkinsfile)
@@ -59,17 +59,17 @@ cd rest-assured-2024
 mvn clean test
 ```
 
-Example: run tests for `JavaLogicalPrograms` (unit tests / main classes as configured):
+Example: run tests for `java-logical-programs` (unit tests / main classes as configured):
 
 ```powershell
-cd JavaLogicalPrograms
+cd java-logical-programs
 mvn clean test
 ```
 
 Example: run Playwright project tests (if configured as a Maven project):
 
 ```powershell
-cd Playwright_2024
+cd playwright-2024
 mvn clean test
 ```
 

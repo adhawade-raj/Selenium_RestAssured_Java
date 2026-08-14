@@ -10,10 +10,16 @@ public class Code02_IterateOneRow {
     Utils launch = new Utils();
     Code02_Helper helper = new Code02_Helper();
 
-    @Test
+
+    @Test(enabled=false)
     public void iterate02() {
         launch.launchDriver();
-        helper.getAllTableData();
+        helper.getAllTableData_OneRow();
+    }
 
+    @Test
+    public void iterate03() {
+        launch.launchDriver();
+        helper.getAllTableData_SpecificData();
     }
 }
