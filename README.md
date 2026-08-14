@@ -10,16 +10,16 @@ This repository is a personal collection of test automation and Java practice pr
 - `bddCucumber_2025/` - BDD Cucumber framework for test automation (Maven project)
 - `JavaLogicalPrograms/` - Small Java programs and logical problems (Maven project)
 - `Playwright_2024/` - Playwright-based tests (Maven project)
-- `rest-assured_2025/` - RestAssured 2025 API testing (Maven project)
-- `rest-assured_2025_akash/` - RestAssured 2025 Akash variant with course resources (Maven project)
-- `rest-assured_2025_akash-testng-framework/` - RestAssured 2025 Akash with TestNG framework (contains Dockerfile and Jenkinsfile)
-- `rest-assured_2026/` - RestAssured 2026 API testing (Maven project)
-- `rest-assured-JsonDrivenFramework_2026/` - RestAssured 2026 JSON-Driven framework with Allure reporting (Maven project)
-- `RestAssured_2024/` - RestAssured API tests with Allure/extent outputs
-- `RestAssured_2024_Ergast_Framework/` - RestAssured framework targeting Ergast API
-- `RestAssured_2024_GoRest_Framework/` - RestAssured framework for GoRest API
-- `RestAssured_2024_GoRest_Framework_Naveen/` - GoRest framework (contains Dockerfile and Jenkins pipeline files)
-- `RestAssured_2024_Practise/` - Practice API tests
+- `rest-assured-2025/` - RestAssured 2025 API testing (Maven project)
+- `rest-assured-2025-akash/` - RestAssured 2025 Akash variant with course resources (Maven project)
+- `rest-assured-2025-akash-testng-framework/` - RestAssured 2025 Akash with TestNG framework (contains Dockerfile and Jenkinsfile)
+- `rest-assured-2026/` - RestAssured 2026 API testing (Maven project)
+- `rest-assured-json-driven-framework-2026/` - RestAssured 2026 JSON-driven framework with Allure reporting (Maven project)
+- `rest-assured-2024/` - RestAssured API tests with Allure/extent outputs
+- `rest-assured-2024-ergast-framework/` - RestAssured framework targeting Ergast API
+- `rest-assured-2024-gorest-framework/` - RestAssured framework for GoRest API
+- `rest-assured-2024-gorest-framework-naveen/` - GoRest framework (contains Dockerfile and Jenkins pipeline files)
+- `rest-assured-2024-practise/` - Practice API tests
  - `selenium-2022-ecommerce-framework/` - Selenium-based ecommerce automation framework
  - `selenium-2022-my-automation-training/` - Selenium training exercises and examples
  - `selenium-2024/` - Updated Selenium examples
@@ -52,10 +52,10 @@ cd Selenium_RestAssured_Java
 
 Each subproject is designed to be run independently. The general pattern is to change into the module directory and run Maven commands.
 
-Example: run tests for `RestAssured_2024`:
+Example: run tests for `rest-assured-2024`:
 
 ```powershell
-cd RestAssured_2024
+cd rest-assured-2024
 mvn clean test
 ```
 
@@ -82,10 +82,10 @@ allure serve target/allure-results
 
 ## Docker (example)
 
-One module (`RestAssured_2024_GoRest_Framework_Naveen`) contains a `Dockerfile`. To build the image locally:
+One module (`rest-assured-2024-gorest-framework-naveen`) contains a `Dockerfile`. To build the image locally:
 
 ```powershell
-cd RestAssured_2024_GoRest_Framework_Naveen
+cd rest-assured-2024-gorest-framework-naveen
 docker build -t gorest-framework:latest .
 ```
 
