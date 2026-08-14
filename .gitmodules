@@ -1,8 +1,0 @@
-[submodule "rest-assured_2025_akash"]
-	path = rest-assured_2025_akash
-	url = https://github.com/ch-akash/rest-assured-java/
-
-[submodule "rest-assured_2025_akash-testng-framework"]
-	path = rest-assured_2025_akash-testng-framework
-	url = https://github.com/ch-akash/rest-assured-testng-framework
-
