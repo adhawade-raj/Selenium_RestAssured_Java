@@ -2,12 +2,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>API_2025</groupId>
-  <artifactId>API_2025</artifactId>
+  <groupId>wiremock-2025</groupId>
+  <artifactId>wiremock-2025</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>API_2025</name>
+  <name>wiremock-2025</name>
   <url>http://maven.apache.org</url>
 
   <properties>

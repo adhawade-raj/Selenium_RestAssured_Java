@@ -6,7 +6,7 @@ This repository is a personal collection of test automation and Java practice pr
 
 ## Repository structure (high level)
 
-- `API_2025/` - API automation examples (Maven project)
+- `wiremock-2025/` - API automation examples (Maven project)
 - `bddCucumber_2025/` - BDD Cucumber framework for test automation (Maven project)
 - `JavaLogicalPrograms/` - Small Java programs and logical problems (Maven project)
 - `Playwright_2024/` - Playwright-based tests (Maven project)
@@ -37,6 +37,7 @@ Many of the folders contain a `pom.xml` so they can be executed with Maven indep
 - Node.js (if you want to run Playwright tests or install Playwright CLI/tools).
 - (Optional) Allure CLI for generating / serving test reports: https://docs.qameta.io/allure/
 - (Optional) Docker (for building Docker images located in some modules).
+
 
 ## Quick start — clone the repository
 
