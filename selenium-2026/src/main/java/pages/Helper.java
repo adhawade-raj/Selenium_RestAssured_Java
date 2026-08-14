@@ -72,4 +72,28 @@ public class Helper {
         System.out.println("Total Count of names from Chennai: " + count);
 
     }
+
+/** Finds the person with the highest amount in the table
+ * and prints their name and the amount.*/
+    public void getAllTableData_PersonWithHighestAmount(){
+        String name = "";
+        int max = Integer.MIN_VALUE;
+
+        utils.scroll();
+        List<WebElement> allRows = utils.findElements(tableValues);
+        for (WebElement row : allRows) {
+            List<WebElement> allValues = row.findElements(By.tagName("td"));
+            if (allValues.size() >= 4) {
+                int amount = Integer.parseInt(allValues.get(3).getText());
+
+                if(amount > max){
+                    max = amount;
+                    name = allValues.get(0).getText();
+                }
+            }
+
+        }
+        System.out.println("Person: " + name);
+        System.out.println("Max amount: " + max);
+    }
 }
