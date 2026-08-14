@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.Utils;
 
+import javax.swing.*;
 import java.util.List;
 
 public class Helper {
@@ -50,5 +51,25 @@ public class Helper {
                 }
             }
         }
+    }
+
+    public void getAllTableData_FromSpecificLocation(){
+        int count = 0;
+        String name = "";
+
+        utils.scroll();
+        List<WebElement> allRows = utils.findElements(tableValues);
+        for (WebElement row : allRows) {
+            List<WebElement> allValues = row.findElements(By.tagName("td"));
+
+            if(allValues.get(2).getText().equalsIgnoreCase("Chennai")){
+                count++;
+                name = allValues.get(0).getText();
+                System.out.println("Row containing 'Chennai': " + name);
+            }
+
+        }
+        System.out.println("Total Count of names from Chennai: " + count);
+
     }
 }

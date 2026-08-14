@@ -26,4 +26,10 @@ public class TableIterator_Tests {
         launch.launchDriver();
         helper.getAllTableData_SpecificData();
     }
+
+    @Test
+    public void testGetAllTableData_NamesFromSpecifcCity() {
+        launch.launchDriver();
+        helper.getAllTableData_FromSpecificLocation();
+    }
 }
