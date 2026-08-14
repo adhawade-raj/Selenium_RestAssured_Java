@@ -40,3 +40,8 @@ tmp/
 local.properties
 .loadpath
 .factorypath.idea/
+
+# JetBrains IDEs
+.idea/
+*.iml
+
