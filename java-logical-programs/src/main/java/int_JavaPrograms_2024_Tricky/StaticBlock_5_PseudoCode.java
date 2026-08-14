@@ -1,4 +1,4 @@
-package int_JavaPrograms_Tricky_2024;
+package int_JavaPrograms_2024_Tricky;
 
 
 //		What will be the o/p? Will static block get execute
