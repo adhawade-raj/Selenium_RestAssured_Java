@@ -24,6 +24,7 @@ This repository is a personal collection of test automation and Java practice pr
 - `Selenium_2022_MyAutomationTraining/` - Selenium training exercises and examples
 - `Selenium_2024/` - Updated Selenium examples
 - `Selenium_2024_BooksCart_Framework/` - BooksCart demo framework
+ - `selenium-2026/` - Selenium 2026 examples and updated tests (Maven project)
 
 Many of the folders contain a `pom.xml` so they can be executed with Maven independently.
 
