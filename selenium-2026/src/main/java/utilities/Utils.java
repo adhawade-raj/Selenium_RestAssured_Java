@@ -12,20 +12,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.ArrayList;
 
-public class Utils {
-
-    static WebDriver driver;
-
-    /** Launches ChromeDriver, sets timeouts and opens the practice URL. */
-    public static void launchDriver() {
-        System.out.println("Launching WebDriver...");
-
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-        driver.manage().window().maximize();
-
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
-    }
+public class Utils extends BrowserHandling {
 
     /** Waits until the element located by the locator is visible. */
     public static void waitForVisible(By locator) {
