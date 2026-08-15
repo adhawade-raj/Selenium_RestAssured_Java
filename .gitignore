@@ -45,3 +45,30 @@ local.properties
 .idea/
 *.iml
 
+##############################
+## Test Reports and Artifacts
+##############################
+# HTML and PDF reports
+*.html
+*.htm
+*.pdf
+
+# Screenshots and images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+
+# Test output directories
+test-output/
+test output/
+extentReport/
+allure-results/
+PdfReport/
+reports/
+screenshots/
+screenshots.zip
+logs/
+
