@@ -35,7 +35,7 @@ public class Utils extends BrowserHandling {
 
     /** Finds and returns a list of visible WebElements for the given locator. */
     public static List<WebElement> findElements(By locator) {
-        waitForVisible(locator);
+//        waitForVisible(locator);
         List<WebElement> elements = driver.findElements(locator);
         return elements;
     }
@@ -90,5 +90,13 @@ public class Utils extends BrowserHandling {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         waitForVisible(element);
         js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    public static void commonSleep(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
