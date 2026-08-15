@@ -93,16 +93,6 @@ docker build -t gorest-framework:latest .
 
 Some modules include `Jenkinsfile` or pipeline helpers. If you use Jenkins, the repository can be built using those pipeline definitions. The repo also contains a `Jenkins_PipeLine` folder in one module.
 
-## Recommended .gitignore
-
-This repository should ignore IDE-specific files. Example entries (already applied):
-
-```
-.idea/
-target/
-*.log
-```
-
 ## Contributing
 
 - Create a feature branch off `master` for non-trivial changes: `git checkout -b feature/my-change`.
