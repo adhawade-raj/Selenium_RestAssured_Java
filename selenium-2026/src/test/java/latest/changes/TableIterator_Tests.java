@@ -2,17 +2,16 @@ package latest.changes;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.Helper;
+import pages.IteratorHelper;
 import utilities.Utils;
 
 public class TableIterator_Tests {
 
     Utils launch = new Utils();
-    Helper helper = new Helper();
+    IteratorHelper helper = new IteratorHelper();
 
     @BeforeTest
     public void setup() {
-        launch.launchDriver();
         launch.openUrl("https://rahulshettyacademy.com/AutomationPractice/");
     }
 

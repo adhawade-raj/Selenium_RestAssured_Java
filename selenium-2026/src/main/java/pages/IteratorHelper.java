@@ -4,10 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.Utils;
 
-import javax.swing.*;
 import java.util.List;
 
-public class Helper {
+public class IteratorHelper {
 
     Utils utils = new Utils();
 
