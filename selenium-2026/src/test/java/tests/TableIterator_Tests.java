@@ -1,4 +1,4 @@
-package latest.changes;
+package tests;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;

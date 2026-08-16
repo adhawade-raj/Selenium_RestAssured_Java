@@ -1,9 +1,8 @@
-package latest.changes;
+package tests;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.CalendarHandling;
-import pages.IteratorHelper;
 import utilities.Utils;
 
 public class CalendarHandling_Tests {
