@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import utilities.Utils;
 
 import java.time.Duration;
 
@@ -13,6 +14,7 @@ public class Part02_JavaScriptExecutorCommands {
 
     static WebDriver webDriver;
     static JavascriptExecutor js;
+    Utils utils = new Utils();
 
     // Click an already located WebElement using JavaScript
 
@@ -53,22 +55,14 @@ public class Part02_JavaScriptExecutorCommands {
     public void scrollToEndOfPage() {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
         jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        utils.commonSleep(1000);
     }
 
     /** Scrolls to the top of the page and pauses briefly after scrolling. */
     public void scrollToTopOfPage() {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
         jsExecutor.executeScript("window.scrollTo(0, 0);");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        utils.commonSleep(1000);
     }
 
 
