@@ -88,6 +88,26 @@
             <version>1.0-beta</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.42</version>
+        </dependency>
+
+            <!-- SLF4J API -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>2.0.17</version>
+            </dependency>
+
+            <!-- Logback implementation -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>1.5.18</version>
+            </dependency>
+
     </dependencies>
     <build>
         <plugins>
