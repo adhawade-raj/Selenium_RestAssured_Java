@@ -16,9 +16,6 @@ public class Part08_DropDownWithoutSelectClass {
 		driver.get("https://www.opencart.com/index.php?route=account/register");
 	
 		WebElement cList = driver.findElement(By.xpath("//select[contains(@name,'country_id')]"));
-		Select select = new Select(cList);
-		
-		java.util.List<WebElement> alloptions = select.getOptions();
 		for(WebElement option : alloptions)
 		{
 			if(option.getText().equals("India"))
@@ -26,9 +23,5 @@ public class Part08_DropDownWithoutSelectClass {
 				option.click();
 			}
 		}
-		
-		
-		
 	}
-
 }
