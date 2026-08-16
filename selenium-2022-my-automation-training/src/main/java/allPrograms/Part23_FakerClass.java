@@ -1,4 +1,4 @@
-package allPrograms;
+package int_allSeleniumCodes_2022;
 
 import com.github.javafaker.Faker;
 
