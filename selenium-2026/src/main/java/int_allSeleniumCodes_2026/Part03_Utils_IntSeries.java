@@ -78,12 +78,6 @@ public class Utils_IntSeries {
         js.executeScript("arguments[0].click();", element);
     }
 
-    /** Scrolls the page until the specified element is brought into view. */
-    public void scrollToViewElement(final By by) {
-        final WebElement element = webDriver.findElement(by);
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-    }
-
     /** Scrolls to the specified element and clicks it using Selenium Actions. */
     public void scrollToElementAndClick(final By by) {
         final Actions actions = new Actions(webDriver);
@@ -147,12 +141,6 @@ public class Utils_IntSeries {
         Assert.assertEquals(expectedTitle, webDriver.getTitle());
     }
 
-    /** Scrolls the specified WebElement into view and clicks it using JavaScript. */
-    public void clickUsingJSWithWebElement(final WebElement element) {
-        js.executeScript("arguments[0].scrollIntoView(true);", element);
-        js.executeScript("arguments[0].click();", element);
-    }
-
     /** Waits for the specified element to become visible using a FluentWait with polling. */
     public void waitForSpecificElement(final By by) {
         FluentWait<WebDriver> fluentWait = new FluentWait<>(webDriver)
@@ -194,28 +182,6 @@ public class Utils_IntSeries {
                         ((JavascriptExecutor) wd)
                                 .executeScript("return document.readyState")
                                 .equals("complete"));
-    }
-
-    /** Scrolls to the end of the page and pauses briefly after scrolling. */
-    public void scrollToEndOfPage() {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
-        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    /** Scrolls to the top of the page and pauses briefly after scrolling. */
-    public void scrollToTopOfPage() {
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
-        jsExecutor.executeScript("window.scrollTo(0, 0);");
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     /** Checks whether the specified element is available and displayed on the page. */

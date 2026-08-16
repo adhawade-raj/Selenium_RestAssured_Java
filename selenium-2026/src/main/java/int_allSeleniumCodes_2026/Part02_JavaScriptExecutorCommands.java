@@ -16,6 +16,18 @@ public class JavaScriptExecutorCommands {
         js.executeScript("arguments[0].click();", element);
     }
 
+    /** Scrolls the specified WebElement into view and clicks it using JavaScript. */
+    public void clickUsingJSWithWebElement(final WebElement element) {
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+        js.executeScript("arguments[0].click();", element);
+    }
+
+    /** Scrolls the page until the specified element is brought into view. */
+    public void scrollToViewElement(final By by) {
+        final WebElement element = webDriver.findElement(by);
+        js.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
     // Locate an element using Selenium By locator and click it using JavaScript
 
     public static void javaScriptExecutorLocateElement_ClickElement(By locator) {
@@ -36,6 +48,28 @@ public class JavaScriptExecutorCommands {
     public static void javaScriptExecutorScrolling_02(int horizontal, int vertical) {
         JavascriptExecutor js = ((JavascriptExecutor)driver);
         js.executeScript("window.scrollTo(" + horizontal + ", " + vertical + ");");
+    }
+
+    /** Scrolls to the end of the page and pauses briefly after scrolling. */
+    public void scrollToEndOfPage() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
+        jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /** Scrolls to the top of the page and pauses briefly after scrolling. */
+    public void scrollToTopOfPage() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
+        jsExecutor.executeScript("window.scrollTo(0, 0);");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }
