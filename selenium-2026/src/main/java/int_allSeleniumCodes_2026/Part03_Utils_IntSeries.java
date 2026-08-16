@@ -21,10 +21,11 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class Utils_IntSeries {
+public class Utils_IntSeries extends Part02_JavaScriptExecutorCommands {
+
 
     private static final Logger LOG = LoggerFactory.getLogger(Utils_IntSeries.class);
-
+    Part02_JavaScriptExecutorCommands jsExecutor = new Part02_JavaScriptExecutorCommands();
     public static JavascriptExecutor js;
 
     @Getter
@@ -70,30 +71,6 @@ public class Utils_IntSeries {
                 LOG.info("failed to find element after 2 attempts");
             }
         }
-    }
-
-    /** Clicks an element using JavaScript execution. */
-    public void clickUsingJS(final By by) {
-        final WebElement element = webDriver.findElement(by);
-        js.executeScript("arguments[0].click();", element);
-    }
-
-    /** Scrolls to the specified element and clicks it using Selenium Actions. */
-    public void scrollToElementAndClick(final By by) {
-        final Actions actions = new Actions(webDriver);
-        actions.moveToElement(webDriver.findElement(by))
-                .click()
-                .build()
-                .perform();
-    }
-
-    /** Scrolls to the specified WebElement and clicks it using Selenium Actions. */
-    public void scrollToElementAndClick(final WebElement element) {
-        final Actions actions = new Actions(webDriver);
-        actions.moveToElement(element)
-                .click()
-                .build()
-                .perform();
     }
 
     /** Checks whether an element exists on the page using the specified locator. */
@@ -170,18 +147,9 @@ public class Utils_IntSeries {
 
     /** Hovers over the main menu element and clicks the specified submenu element. */
     public void hoverOnElementAndClickSubmenu(final By mainMenuBy, final By by) {
-        scrollToTopOfPage();
+        jsExecutor.scrollToTopOfPage();
         hoverOnElement(mainMenuBy);
         waitForExpectedElement(by).click();
-    }
-
-    /** Waits until the page JavaScript document is completely loaded. */
-    public void waitForJavaScriptLoad() {
-        new WebDriverWait(webDriver, Duration.ofSeconds(30))
-                .until((ExpectedCondition<Boolean>) wd ->
-                        ((JavascriptExecutor) wd)
-                                .executeScript("return document.readyState")
-                                .equals("complete"));
     }
 
     /** Checks whether the specified element is available and displayed on the page. */
@@ -192,5 +160,23 @@ public class Utils_IntSeries {
         } catch (Exception e) {
             return false;
         }
+    }
+
+    /** Scrolls to the specified element and clicks it using Selenium Actions. */
+    public void scrollToElementAndClick(final By by) {
+        final Actions actions = new Actions(webDriver);
+        actions.moveToElement(webDriver.findElement(by))
+                .click()
+                .build()
+                .perform();
+    }
+
+    /** Scrolls to the specified WebElement and clicks it using Selenium Actions. */
+    public void scrollToElementAndClick(final WebElement element) {
+        final Actions actions = new Actions(webDriver);
+        actions.moveToElement(element)
+                .click()
+                .build()
+                .perform();
     }
 }

@@ -68,4 +68,14 @@ public class JavaScriptExecutorCommands {
         }
     }
 
+
+    /** Waits until the page JavaScript document is completely loaded. */
+    public void waitForJavaScriptLoad() {
+        new WebDriverWait(webDriver, Duration.ofSeconds(30))
+                .until((ExpectedCondition<Boolean>) wd ->
+                        ((JavascriptExecutor) wd)
+                                .executeScript("return document.readyState")
+                                .equals("complete"));
+    }
+
 }
