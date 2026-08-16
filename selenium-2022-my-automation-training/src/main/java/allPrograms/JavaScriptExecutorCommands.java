@@ -36,7 +36,6 @@ public class JavaScriptExecutorCommands {
     }
 
     public static void javaScriptExecutorLocateClick(By locator) {
-        JavascriptExecutor js = ((JavascriptExecutor)driver);
         javaScriptExecutorLocateElement(locator);
         javaScriptExecutorClick();
     }
