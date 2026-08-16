@@ -21,10 +21,10 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class Part03_Utils_IntSeries {
+public class Part03_Utils_IntSeries extends Part02_JavaScriptExecutorCommands {
 
     private static final Logger LOG = LoggerFactory.getLogger(Part03_Utils_IntSeries.class);
-    Part02_JavaScriptExecutorCommands jsExecutor = new Part02_JavaScriptExecutorCommands();
+    //Part02_JavaScriptExecutorCommands jsExecutor = new Part02_JavaScriptExecutorCommands();
     public static JavascriptExecutor js;
 
     @Getter
@@ -146,7 +146,7 @@ public class Part03_Utils_IntSeries {
 
     /** Hovers over the main menu element and clicks the specified submenu element. */
     public void hoverOnElementAndClickSubmenu(final By mainMenuBy, final By by) {
-        jsExecutor.scrollToTopOfPage();
+        scrollToTopOfPage();
         hoverOnElement(mainMenuBy);
         waitForExpectedElement(by).click();
     }
