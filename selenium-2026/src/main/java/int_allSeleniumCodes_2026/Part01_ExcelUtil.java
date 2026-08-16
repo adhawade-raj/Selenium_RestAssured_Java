@@ -10,7 +10,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
 
-public class ExcelUtil {
+public class Part01_ExcelUtil {
 
     private static String TEST_DATA_SHEET = "./src/test/resources/testdata/OpenCartTestData.xlsx";
     private static Workbook book;
@@ -24,7 +24,7 @@ public class ExcelUtil {
             FileInputStream ip = new FileInputStream(TEST_DATA_SHEET);
             try {
                 book = WorkbookFactory.create(ip);
-            } catch (org.apache.poi.openxml4j.exceptions.InvalidFormatException e) {
+            } catch (InvalidFormatException e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }

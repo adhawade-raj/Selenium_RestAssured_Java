@@ -4,17 +4,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class JavaScriptExecutorCommands {
+import java.time.Duration;
 
-    static WebDriver driver;
+public class Part02_JavaScriptExecutorCommands {
+
+    static WebDriver webDriver;
     static JavascriptExecutor js;
-    js = (JavascriptExecutor) webDriver;
 
     // Click an already located WebElement using JavaScript
 
     public static void javaScriptExecutorLocate_ClickElement(WebElement element) {
-        JavascriptExecutor js = ((JavascriptExecutor)driver);
+        JavascriptExecutor js = ((JavascriptExecutor)webDriver);
         js.executeScript("arguments[0].click();", element);
     }
 
@@ -33,8 +36,8 @@ public class JavaScriptExecutorCommands {
     // Locate an element using Selenium By locator and click it using JavaScript
 
     public static void javaScriptExecutorLocateElement_ClickElement(By locator) {
-        JavascriptExecutor js = ((JavascriptExecutor)driver);
-        WebElement element = driver.findElement(locator);
+        JavascriptExecutor js = ((JavascriptExecutor)webDriver);
+        WebElement element = webDriver.findElement(locator);
         js.executeScript("arguments[0].click();", element);
     }
 
@@ -42,7 +45,7 @@ public class JavaScriptExecutorCommands {
     // Scroll to a specific horizontal and vertical position using JavaScript
 
     public static void javaScriptExecutorScrolling_02(int horizontal, int vertical) {
-        JavascriptExecutor js = ((JavascriptExecutor)driver);
+        JavascriptExecutor js = ((JavascriptExecutor)webDriver);
         js.executeScript("window.scrollTo(" + horizontal + ", " + vertical + ");");
     }
 

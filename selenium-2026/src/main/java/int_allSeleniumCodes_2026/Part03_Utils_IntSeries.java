@@ -21,10 +21,9 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
-public class Utils_IntSeries extends Part02_JavaScriptExecutorCommands {
+public class Part03_Utils_IntSeries {
 
-
-    private static final Logger LOG = LoggerFactory.getLogger(Utils_IntSeries.class);
+    private static final Logger LOG = LoggerFactory.getLogger(Part03_Utils_IntSeries.class);
     Part02_JavaScriptExecutorCommands jsExecutor = new Part02_JavaScriptExecutorCommands();
     public static JavascriptExecutor js;
 
@@ -40,7 +39,7 @@ public class Utils_IntSeries extends Part02_JavaScriptExecutorCommands {
     public final String platform = System.getenv("platform");
     public final String browser = System.getProperty("browser");
 
-    public Utils_IntSeries() {
+    public Part03_Utils_IntSeries() {
 
         webDriver = new ChromeDriver();
         this.wait = new WebDriverWait(webDriver, Duration.ofSeconds(60));
