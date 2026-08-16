@@ -55,6 +55,7 @@ public class Utils_IntSeries {
         LOG.info(HOME_PAGE_URL);
     }
 
+    /** Clicks an element by locator, retrying with an explicit wait if the element is not initially found. */
     public void clickByElement(final By by) {
 
         LOG.info("Running: clickByElement");
@@ -71,16 +72,19 @@ public class Utils_IntSeries {
         }
     }
 
+    /** Clicks an element using JavaScript execution. */
     public void clickUsingJS(final By by) {
         final WebElement element = webDriver.findElement(by);
         js.executeScript("arguments[0].click();", element);
     }
 
+    /** Scrolls the page until the specified element is brought into view. */
     public void scrollToViewElement(final By by) {
         final WebElement element = webDriver.findElement(by);
         js.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
+    /** Scrolls to the specified element and clicks it using Selenium Actions. */
     public void scrollToElementAndClick(final By by) {
         final Actions actions = new Actions(webDriver);
         actions.moveToElement(webDriver.findElement(by))
@@ -89,6 +93,7 @@ public class Utils_IntSeries {
                 .perform();
     }
 
+    /** Scrolls to the specified WebElement and clicks it using Selenium Actions. */
     public void scrollToElementAndClick(final WebElement element) {
         final Actions actions = new Actions(webDriver);
         actions.moveToElement(element)
@@ -97,6 +102,7 @@ public class Utils_IntSeries {
                 .perform();
     }
 
+    /** Checks whether an element exists on the page using the specified locator. */
     public boolean isElementPresentBy(final By by) {
         LOG.info("Running: isElementPresentBy");
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(DRIVER_WAIT_TIME));
@@ -106,11 +112,13 @@ public class Utils_IntSeries {
         return exists;
     }
 
+    /** Checks whether the element located by the specified locator is displayed. */
     public boolean isDisplayedBy(final By by) {
         LOG.info("Running: isDisplayedBy");
         return webDriver.findElement(by).isDisplayed();
     }
 
+    /** Waits until the specified element is visible and returns it. */
     protected WebElement waitForExpectedElement(final By by) {
         LOG.info("Running: waitForExpectedElement");
         try {
@@ -121,26 +129,31 @@ public class Utils_IntSeries {
         }
     }
 
+    /** Waits until the specified element is clickable. */
     protected void waitForExpectedElementToBeClickable(final By by) {
         LOG.info("Running: waitForExpectedElement");
         this.wait.until(ExpectedConditions.elementToBeClickable(by));
     }
 
+    /** Waits for an element to be visible, clears its existing text, and enters the specified text. */
     public void waitClearAndEnterText(final By by, final String textToEnter) {
         LOG.info("Running: waitClearAndEnterText");
         waitForExpectedElement(by).clear();
         waitForExpectedElement(by).sendKeys(textToEnter);
     }
 
+    /** Verifies that the current page title matches the expected title. */
     public void verifyPageTitle(final String expectedTitle) {
         Assert.assertEquals(expectedTitle, webDriver.getTitle());
     }
 
+    /** Scrolls the specified WebElement into view and clicks it using JavaScript. */
     public void clickUsingJSWithWebElement(final WebElement element) {
         js.executeScript("arguments[0].scrollIntoView(true);", element);
         js.executeScript("arguments[0].click();", element);
     }
 
+    /** Waits for the specified element to become visible using a FluentWait with polling. */
     public void waitForSpecificElement(final By by) {
         FluentWait<WebDriver> fluentWait = new FluentWait<>(webDriver)
                 .withTimeout(Duration.ofSeconds(300))
@@ -149,6 +162,7 @@ public class Utils_IntSeries {
         fluentWait.until(webDriver -> webDriver.findElement(by).isDisplayed());
     }
 
+    /** Checks whether the specified element is clickable and returns the result. */
     public boolean isElementClickableBy(final By by) {
         LOG.info("Running: isElementClickable");
         try {
@@ -160,17 +174,20 @@ public class Utils_IntSeries {
         }
     }
 
+    /** Moves the mouse pointer over the specified element. */
     public void hoverOnElement(final By by) {
         final Actions actions = new Actions(webDriver);
         actions.moveToElement(webDriver.findElement(by)).build().perform();
     }
 
+    /** Hovers over the main menu element and clicks the specified submenu element. */
     public void hoverOnElementAndClickSubmenu(final By mainMenuBy, final By by) {
         scrollToTopOfPage();
         hoverOnElement(mainMenuBy);
         waitForExpectedElement(by).click();
     }
 
+    /** Waits until the page JavaScript document is completely loaded. */
     public void waitForJavaScriptLoad() {
         new WebDriverWait(webDriver, Duration.ofSeconds(30))
                 .until((ExpectedCondition<Boolean>) wd ->
@@ -179,6 +196,7 @@ public class Utils_IntSeries {
                                 .equals("complete"));
     }
 
+    /** Scrolls to the end of the page and pauses briefly after scrolling. */
     public void scrollToEndOfPage() {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
         jsExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight);");
@@ -189,6 +207,7 @@ public class Utils_IntSeries {
         }
     }
 
+    /** Scrolls to the top of the page and pauses briefly after scrolling. */
     public void scrollToTopOfPage() {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) webDriver;
         jsExecutor.executeScript("window.scrollTo(0, 0);");
@@ -199,6 +218,7 @@ public class Utils_IntSeries {
         }
     }
 
+    /** Checks whether the specified element is available and displayed on the page. */
     public boolean isItAvailableBy(final By by) {
         LOG.info("Running: isItAvailableBy");
         try {
@@ -207,5 +227,4 @@ public class Utils_IntSeries {
             return false;
         }
     }
-
 }
