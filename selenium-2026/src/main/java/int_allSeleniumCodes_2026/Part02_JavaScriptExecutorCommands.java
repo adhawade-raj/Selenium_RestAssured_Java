@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 public class JavaScriptExecutorCommands {
 
     static WebDriver driver;
+    static JavascriptExecutor js;
+    js = (JavascriptExecutor) webDriver;
 
     // Click an already located WebElement using JavaScript
 
@@ -36,12 +38,6 @@ public class JavaScriptExecutorCommands {
         js.executeScript("arguments[0].click();", element);
     }
 
-    // Scroll to the bottom of the page using JavaScript
-
-    public static void javaScriptExecutorScrolling_01() {
-        JavascriptExecutor js = ((JavascriptExecutor)driver);
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-    }
 
     // Scroll to a specific horizontal and vertical position using JavaScript
 
