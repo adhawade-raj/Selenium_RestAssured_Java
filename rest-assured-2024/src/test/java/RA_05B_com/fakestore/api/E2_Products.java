@@ -15,7 +15,6 @@ public class E2_Products {
 	
 	public E2_Products(int id, String title, float price, String description, String category, String image,
 			Rating rating) {
-		super();
 		this.id = id;
 		this.title = title;
 		this.price = price;
