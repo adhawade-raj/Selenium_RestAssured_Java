@@ -20,6 +20,7 @@ This repository is a personal collection of test automation and Java practice pr
 - `rest-assured-2024-framework-gorest/` - RestAssured framework for GoRest API
 - `rest-assured-2024-framework-gorest-naveen/` - GoRest framework (contains Dockerfile and Jenkins pipeline files)
 - `rest-assured-2024-practise/` - Practice API tests
+- `selenium-rest-assured/` - RestAssured module (renamed from rest-assured)
  - `selenium-2022-framework-ecommerce/` - Selenium-based ecommerce automation framework
  - `selenium-2022-my-automation-training/` - Selenium training exercises and examples
  - `selenium-2024/` - Updated Selenium examples
