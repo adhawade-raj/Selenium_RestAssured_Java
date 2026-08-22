@@ -17,7 +17,7 @@ This repository is a personal collection of test automation and Java practice pr
 - `rest-assured-2026-framework-json-driven/` - RestAssured 2026 JSON-driven framework with Allure reporting (Maven project)
 - `rest-assured-2024/` - RestAssured API tests with Allure/extent outputs
 - `rest-assured-2024-framework-ergast/` - RestAssured framework targeting Ergast API
-- `rest-assured-2024-gorest-framework/` - RestAssured framework for GoRest API
+- `rest-assured-2024-framework-gorest/` - RestAssured framework for GoRest API
 - `rest-assured-2024-framework-gorest-naveen/` - GoRest framework (contains Dockerfile and Jenkins pipeline files)
 - `rest-assured-2024-practise/` - Practice API tests
  - `selenium-2022-framework-ecommerce/` - Selenium-based ecommerce automation framework
@@ -108,3 +108,4 @@ Some modules include `Jenkinsfile` or pipeline helpers. If you use Jenkins, the 
 ## Contact / Author
 
 Repository owner: adhawade-raj
+
