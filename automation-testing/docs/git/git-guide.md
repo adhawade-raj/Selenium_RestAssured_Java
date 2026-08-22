@@ -180,45 +180,26 @@ Example workflow to pull while having local changes:
 
 ## 7) Merge vs Rebase (with diff and how-to)
 
-What they do:
-
-- Merge: creates a merge commit that combines histories. Keeps chronological commit history.
-- Rebase: rewrites commits to appear on top of another base (linear history). Avoid rebasing public/shared branches.
-
-Commands and examples:
-
-- Merge:
-
-  git checkout main
-  git merge feature/my-feature
-
-  This produces a merge commit if branches diverged.
-
-- Rebase (move feature commits on top of main):
-
-  git checkout feature/my-feature
-  git fetch origin
-  git rebase origin/main
-
-  Resolve conflicts during rebase, then git rebase --continue. After rebase, force-push the branch (if it was pushed before):
-
-  git push --force-with-lease origin feature/my-feature
-
-When to prefer:
-- Use merge for public branches to keep history intact.
-- Use rebase for private feature branches to keep history linear before merging.
+| Aspect | Merge | Rebase |
+|---|---|---|
+|What it does|Creates a merge commit that combines histories; preserves chronological commit history.|Rewrites feature commits onto the target base, producing a linear history; rewrites commit hashes (history is rewritten). Avoid on public/shared branches.|
+|When to use|Merging public/shared branches to preserve full history and context.|Rebasing private feature branches to keep history linear before merging; rebase local work before opening a PR for cleaner history.|
+|Basic commands|git checkout main
+git merge feature/my-feature|git checkout feature/my-feature
+git fetch origin
+git rebase origin/main|
+|Conflict resolution|Open conflicted files, remove conflict markers, git add <file>, then git commit (or use git merge --abort to cancel the merge).|Open conflicted files, resolve markers, git add <file>, then git rebase --continue. To stop: git rebase --abort (returns to pre-rebase state).|
+|After completing|Push merged changes: git push origin main|If the branch was previously pushed, update remote with rewritten history: git push --force-with-lease origin feature/my-feature|
 
 
-### Diffing before merge/rebase
+### Diffing before merge/rebase (commands)
 
-- Show differences between branches:
+| Action | Command |
+|---|---|
+|Fetch remote refs|git fetch origin|
+|Show file content diffs between branches|git diff origin/main..feature/my-feature|
+|Show commits unique to feature branch (what would be added)|git log --oneline origin/main..feature/my-feature|
 
-  git fetch origin
-  git diff origin/main..feature/my-feature
-
-- Show commits that would be added by merging:
-
-  git log --oneline origin/main..feature/my-feature
 
 
 ## 8) Quick command reference table
