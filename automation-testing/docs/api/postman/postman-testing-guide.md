@@ -19,10 +19,6 @@ Common URLs used (examples from collections)
 - https://rahulshettyacademy.com/maps/api/place/*
 - https://api.weatherapi.com/v1/*
 
-Environment / collection variables found
-- baseURL (QA_Raj environment) — e.g., https://gorest.co.in
-- tokenID (QA_Raj environment) — API bearer token
-- Many requests use {{baseURL}} and {{tokenID}} or {{tokenId}} and other temp variables
 
 High-level Postman concepts
 - Variable scopes: global, collection, environment, local. Use {{varName}} in URLs/headers/bodies.
@@ -37,25 +33,78 @@ Variable precedence (highest → lowest)
 - Collection (collection-level variables)
 - Global (pm.globals)
 
-How to set variables from response (examples)
-- Set environment variable from JSON response:
+**How to set variables from response (examples)**
+
+Example environment/collection variables used in these collections:
+- baseURL (QA_Raj environment) — e.g., https://gorest.co.in
+- tokenID (QA_Raj environment) — API bearer token
+- Many requests use {{baseURL}} and {{tokenID}} or {{tokenId}} and other temp variables
+
+Variable precedence (highest → lowest):
+- Local (pm.variables.set / request-level)
+- Data (runner / CSV row values)
+- Environment (pm.environment)
+- Collection (collection-level variables)
+- Global (pm.globals)
+
+Common examples
+
+Set environment variable from JSON response:
 
 ```
 const json = pm.response.json();
 pm.environment.set('tokenID', json.token);
 ```
 
-- Set global variable:
+Set global variable:
 
 ```
 pm.globals.set('username', json.data[0].first_name);
 ```
 
-- Set collection/temporary variable (collection runner):
+Set collection/temporary variable (collection runner):
 
 ```
 pm.variables.set('abc', 'xyz');
 ```
+
+Chaining and using variables across requests
+
+- Extract id and set environment variable:
+
+```
+const resJson = pm.response.json();
+pm.environment.set('createdUserId', resJson.id);
+```
+
+- Use in later requests: `{{createdUserId}}` in path or query
+
+- Example: set in one request and use in another
+
+Request A - test script
+```
+const data = pm.response.json();
+pm.environment.set('userId', data.id);
+```
+
+Request B - use variable in URL
+```
+GET {{baseURL}}/users/{{userId}}
+Authorization: ******
+```
+
+Read variable in Request B script
+
+```
+const uid = pm.environment.get('userId');
+pm.test('userId exists', () => {
+  pm.expect(uid).to.not.be.undefined;
+});
+```
+
+Notes
+- Prefer `pm.environment` for test-run-specific state, `pm.globals` for truly global values, and `pm.variables` for request-scoped temporary values.
+- Keep secrets out of committed environments; use CI secrets or runtime injection where possible.
 
 Pre-request snippets
 - Simple header injection using env var (no script needed): add header Authorization: {{tokenID}}

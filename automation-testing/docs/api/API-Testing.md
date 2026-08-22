@@ -1,6 +1,6 @@
 # API Testing — Overview
 
-This document explains APIs, why we test them, comparisons (REST vs SOAP, RESTful vs RESTless), how APIs differ from web services, and key API‑testing concepts, tools and best practices. Refer to the `postman/` and `restassured/` subfolders for examples and runnable collections/tests.
+This document explains APIs, why we test them, comparisons (REST vs SOAP, RESTful vs RESTless), how APIs differ from web services, and key API‑testing concepts, tools and best practices. Refer to the [postman/](postman/) and [restassured/](restassured/) subfolders for examples and runnable collections/tests.
 
 ---
 
@@ -15,26 +15,36 @@ An API (Application Programming Interface) is a defined set of rules and endpoin
 - Supports CI/CD by enabling automated verification of service behavior.
 
 ## REST vs SOAP
-- SOAP:
-  - Protocol with strict standards (WSDL, XML messaging).
-  - Uses XML only, has built-in WS-* standards for security (WS-Security).
-  - Often heavier and stateful features via extensions.
-- REST:
-  - Architectural style, not a protocol — uses HTTP verbs and resource-oriented URLs.
-  - Typically uses JSON (but can use XML, others).
-  - Lightweight, cacheable, stateless (ideally), easy to use with web clients.
+
+| Aspect | SOAP | REST |
+|---|---|---|
+| Nature | Protocol with strict standards (WSDL, XML messaging) | Architectural style using HTTP verbs and resource-oriented URLs |
+| Message format | XML only | Typically JSON (can be XML or others) |
+| Standards | Built-in WS-* (security, transactions) | Fewer standards; relies on HTTP features |
+| Weight | Heavier, more verbose | Lightweight, cacheable, ideal for web clients |
+| State | Can support stateful features via extensions | Ideally stateless |
+| Typical use cases | Enterprise systems needing formal contracts and message-level security | Microservices, mobile/web APIs, general-purpose services
 
 When to use each: SOAP for enterprise systems needing formal contracts, advanced WS-* features, or strong message-level security; REST for general-purpose web APIs, microservices, mobile apps.
 
 ## RESTful vs RESTless
-- RESTful: API design that follows REST constraints (client-server, stateless, uniform interface, cacheable, layered, code-on-demand optional). Uses resources (nouns) and HTTP verbs (GET/POST/PUT/DELETE) properly.
-- RESTless: APIs that are HTTP-based but do not follow REST principles — often RPC-style endpoints (e.g., `/doPayment`), misuse of verbs, inconsistent status codes, or rely on custom action semantics.
+
+| Aspect | RESTful | RESTless |
+|---|---|---|
+| Conformance | Follows REST constraints: client-server, stateless, uniform interface, cacheable, layered | HTTP-based but ignores REST constraints; often RPC-like |
+| URL design | Resource-oriented (nouns) and uses HTTP verbs correctly | Action-oriented endpoints (e.g., /doPayment), misuse of verbs |
+| Predictability | Easier to understand, cache, and scale | Pragmatic but harder to standardize and document |
+| When seen | Recommended for APIs aiming for standardization | Often seen in legacy or ad-hoc services
 
 RESTful designs are usually easier to understand, cache, and scale; RESTless designs can be pragmatic but may be harder to standardize and document.
 
 ## API vs Web Service — Differences
-- Web Service: a service available over the web; traditionally implies SOAP or WSDL-based services and strict messaging formats.
-- API: broader term for any interface exposed by a system (can be local libraries, OS APIs, or web APIs). Every web service is an API, but not all APIs are web services.
+
+| Aspect | Web Service | API |
+|---|---|---|
+| Scope | Typically a network-accessible service (often SOAP/WSDL historically) | Broad term for any interface exposed by a system (web APIs, libraries, OS APIs) |
+| Protocol/format | Traditionally SOAP/XML with formal contracts | Often REST/JSON for web APIs, but can be anything |
+| Implication | Implies service over web with formal contracts | General programming interface; not necessarily over network
 
 Key practical difference: "web service" often implies SOAP/XML and formal contracts; "API" is the general programming interface (commonly REST/JSON today).
 
@@ -73,8 +83,8 @@ Key practical difference: "web service" often implies SOAP/XML and formal contra
 - OpenAPI / Swagger: API specification and auto-generated client/server stubs.
 
 See subfolders:
-- `postman/` — Postman collections, exported environments, and Newman examples.
-- `restassured/` — Java RestAssured test examples, sample Maven/Gradle setup and test classes.
+- [postman/](postman/) — Postman collections, exported environments, and Newman examples.
+- [restassured/](restassured/) — Java RestAssured test examples, sample Maven/Gradle setup and test classes.
 
 ## Best practices for API tests
 - Automate in CI: run functional and contract tests on every build.
@@ -95,4 +105,4 @@ See subfolders:
 
 ---
 
-If examples or runnable collections are needed, see the `postman` and `restassured` subfolders for ready-to-run artifacts. For help creating Postman collections, Newman CI steps, or RestAssured test classes, provide which format (Postman or RestAssured) to prioritize and a target endpoint example.
+If examples or runnable collections are needed, see the [postman](postman/) and [restassured](restassured/) subfolders for ready-to-run artifacts. For help creating Postman collections, Newman CI steps, or RestAssured test classes, provide which format (Postman or RestAssured) to prioritize and a target endpoint example.
