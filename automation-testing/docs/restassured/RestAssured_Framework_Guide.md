@@ -137,18 +137,20 @@ Execute Test with Valid Token
 
 | Component | Technology | Version | Purpose |
 |-----------|-----------|---------|---------|
-| **Language** | Java | 11+ | Test development |
-| **API Testing** | RestAssured | 5.x | HTTP request/response handling |
-| **Testing Framework** | TestNG | - | Test execution, data-driven testing |
-| **BDD** | Cucumber | - | Behavior-driven development (optional) |
-| **JSON Serialization** | Jackson | - | POJO ↔ JSON mapping |
-| **POJO Boilerplate** | Lombok | - | Reduce getter/setter code |
-| **Schema Validation** | json-schema-validator | - | Contract testing |
+| **Language** | Java | 1.8 (Java 8) | Test development (source/target set to 1.8 in pom.xml) |
+| **API Testing** | RestAssured | 5.3.1 | HTTP request/response handling |
+| **JSON Schema Validation** | rest-assured json-schema-validator | 5.3.1 | Contract/schema validation |
+| **Testing Framework** | TestNG | 7.0.0 | Test execution and data-driven testing |
+| **Reporting** | Allure (allure-testng, allure-rest-assured) | 2.22.1 / 2.23.0 | Test reporting, attachments and request/response logging |
+| **JSON Serialization** | Jackson Databind | 2.15.2 | POJO ↔ JSON mapping |
+| **POJO Boilerplate** | Lombok | 1.18.28 | Reduce boilerplate (getters/setters) |
+| **JSON Parsing / Extraction** | json-path | 2.8.0 | JSON path expressions and assertions |
+| **AOP / Weaving** | AspectJ Weaver | 1.9.19 | Runtime weaving (used by instrumentation/hooks) |
+| **Reporting (optional)** | ExtentReports | 5.0.8 | Additional HTML reporting capability |
+| **Excel / Data Management** | Apache POI | 3.9 | Read/write Excel files (present in pom.xml; consider upgrading) |
 | **Build Tool** | Maven | 3.x | Dependency management & build |
-| **CI Platforms** | Jenkins/Docker | - | Automated execution |
-| **Reporting** | Allure | - | Rich HTML test reports |
-| **Data Management** | Excel Utility | - | Data-driven test combinations |
-| **Stability Utilities** | Awaitility, Retry Logic | - | Handle flaky tests |
+| **Maven Plugins** | maven-surefire-plugin, maven-assembly-plugin | 2.20, 3.3.0 | Test execution and creating jar-with-dependencies |
+| **CI Platforms** | Jenkins / Docker | - | Automated execution and containerized runs |
 
 ---
 
