@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class DyanamicWebTableWithPagination {
+public class Part24_DyanamicWebTableWithPagination {
 
 	public static void main(String[] args) {
 

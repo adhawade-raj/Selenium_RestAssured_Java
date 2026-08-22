@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import java.util.List;
+
 public class Part08_DropDownWithoutSelectClass {
 
 	public static void main(String[] args) {
@@ -15,12 +17,12 @@ public class Part08_DropDownWithoutSelectClass {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.opencart.com/index.php?route=account/register");
 	
-		WebElement cList = driver.findElement(By.xpath("//select[contains(@name,'country_id')]"));
-		for(WebElement option : alloptions)
+		List<WebElement> alloptions = driver.findElements(By.xpath("//select[contains(@name,'country_id')]"));
+		for(WebElement options : alloptions)
 		{
-			if(option.getText().equals("India"))
+			if(options.getText().equals("India"))
 			{
-				option.click();
+				options.click();
 			}
 		}
 	}

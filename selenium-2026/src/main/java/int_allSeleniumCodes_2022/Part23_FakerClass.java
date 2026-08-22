@@ -2,7 +2,7 @@ package int_allSeleniumCodes_2022;
 
 import com.github.javafaker.Faker;
 
-public class FakerClass {
+public class Part23_FakerClass {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
