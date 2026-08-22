@@ -1,5 +1,7 @@
 Postman API Testing — Quick Guide
 
+[Reference: status.md](status.md)
+
 This guide summarizes the Postman collections in https://github.com/adhawade-raj/Postman_API-Testing and provides concrete examples for API testing with Postman: environment variables, pre-request scripts, test assertions, setting variables, and validating status codes and JSON bodies.
 
 Collections analyzed
@@ -27,6 +29,13 @@ High-level Postman concepts
 - Pre-request script: runs before the request; use to compute values or fetch tokens.
 - Tests script: run after the response; use pm.test, pm.expect, and pm.response to assert.
 - Chaining requests: extract values in tests and set environment/global variables to be used by later requests.
+
+Variable precedence (highest → lowest)
+- Local (pm.variables.set / request-level)
+- Data (runner / CSV row values)
+- Environment (pm.environment)
+- Collection (collection-level variables)
+- Global (pm.globals)
 
 How to set variables from response (examples)
 - Set environment variable from JSON response:
@@ -124,6 +133,41 @@ pm.environment.set('createdUserId', resJson.id);
 
 - Use in later requests: {{createdUserId}} in path or query
 
+- Example: set in one request and use in another (bullet points + dark code blocks):
+  - Set variable in Request A (test script):
+
+  ```javascript
+  // Request A - test script
+  const data = pm.response.json();
+  // store user id in environment for next requests
+  pm.environment.set('userId', data.id);
+  ```
+
+  - Use in Request B (URL/path/header):
+
+  ```http
+  GET {{baseURL}}/users/{{userId}}
+  Authorization: Bearer {{tokenID}}
+  ```
+
+  - Read variable in Request B script:
+
+  ```javascript
+  // Request B - test script
+  const uid = pm.environment.get('userId');
+  pm.test('userId exists', () => {
+    pm.expect(uid).to.not.be.undefined;
+  });
+  ```
+
+Console / debug options
+- Use pm.console.log / pm.console.info / pm.console.warn / pm.console.error for debugging inside scripts.
+
+```
+pm.console.log('response body:', pm.response.text());
+pm.console.warn('token missing');
+```
+
 Best-practices & tips
 - Use environment variables for baseURL and tokens; keep secrets out of repo.
 - Use descriptive test names for easy debugging when running Newman.
@@ -138,5 +182,3 @@ How to run
 
 Newman (example):
 newman run 2024_V2.postman_collection.json -e QA_Raj.postman_environment.json --reporters cli,json
-
-If you want, can add a short README or copy this guide into that Postman repo as README_POSTMAN.md.
