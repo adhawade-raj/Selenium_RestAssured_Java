@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class Part04_DatabaseConnection {
+public class Part03_DatabaseConnection {
 
     public static void main(String[] args) throws Exception {
 

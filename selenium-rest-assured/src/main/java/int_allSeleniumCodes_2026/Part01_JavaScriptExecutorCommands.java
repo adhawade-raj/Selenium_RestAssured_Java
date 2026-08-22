@@ -10,7 +10,7 @@ import utilities.Utils;
 
 import java.time.Duration;
 
-public class Part02_JavaScriptExecutorCommands {
+public class Part01_JavaScriptExecutorCommands {
 
     static WebDriver webDriver;
     static JavascriptExecutor js;
