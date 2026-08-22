@@ -4,17 +4,25 @@ Folder structure (top-level items):
 - .github
 - src
 - target
-- pom.xml and TestNG config files (suite.xml, crud-tests.xml)
+- pom.xml
+- suite.xml / crud-tests.xml (TestNG suites)
+- Jenkinsfile, Dockerfile
 
-Typical layers and flow:
-- TestNG suites trigger test classes in src/test (suite.xml/crud-tests.xml).
-- Base classes and TestNG listeners initialize configuration and reporting.
-- API clients or page/service classes provide reusable actions.
-- Utilities and data providers feed tests with test data.
-- CI/CD: Jenkinsfile and Dockerfile are used to run tests in pipeline.
+Tech stack and versions (from pom.xml):
+- Java: 21 (maven.compiler.source/target 21)
+- RestAssured: 5.4.0
+- TestNG: 7.10.2
+- Allure: 2.24.0
+- Owner (config): org.aeonbits.owner 1.0.8
+- Lombok: 1.18.32
 
-Call/inheritance mapping:
-- TestNG tests -> BaseTest -> Utils/Listeners -> Reporting
+Execution flow and wiring:
+1. CI/Runner: Maven/CI triggers TestNG suites (suite.xml/crud-tests.xml) which select tests to run.
+2. Setup: TestNG listeners/BaseTest initialize config (Owner/properties), logging and reporting (Allure) and may set RestAssured.baseURI.
+3. Requests: Tests call API clients built on a BaseClient/RestClient that encapsulates RestAssured usage and common RequestSpecifications.
+4. Validation: ResponseSpecBuilders / json-schema-validator are used; responses are mapped to POJOs via Jackson.
+5. Data providers: TestNG @DataProvider or external JSON drive CRUD/regression tests.
+6. CI: Jenkinsfile / Dockerfile run the test command and archive allure/extent reports.
 
-Notes:
-- Look into src for packages named tests, listeners, utils and pages/services.
+Where to inspect code for details:
+- BaseTest, RestClient, listeners and src/test/resources for suite XML and property files that contain base URLs and credentials.
