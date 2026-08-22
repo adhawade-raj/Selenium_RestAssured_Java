@@ -1,4 +1,4 @@
-# RestAssured API Automation Framework - Cheatsheet
+# RestAssured API Automation Framework - TestNG Based Framework Guide
 
 ## Table of Contents
 1. [Framework Architecture](#framework-architecture)
@@ -23,9 +23,9 @@
 
 ```
 ┌─────────────────────────────────────────┐
-│         Test Layer & Scenarios          │  <- BDD Cucumber / TestNG Tests
+│      TestNG Test Classes                │  <- @Test methods in test layer
 ├─────────────────────────────────────────┤
-│          BaseTest & Assertions          │  <- Common preconditions/postconditions
+│          BaseTest & Fixtures            │  <- @BeforeTest, @BeforeMethod, @AfterTest
 ├─────────────────────────────────────────┤
 │   Authentication & Token Management    │  <- Token refresh, expiry handling
 ├─────────────────────────────────────────┤
@@ -41,8 +41,8 @@
 - **Reusability**: Common utilities, constants, and enums shared across all layers
 - **Readability**: Clear separation of concerns; easy to understand test flow
 - **Maintainability**: Centralized configuration; minimal code duplication
-- **Scalability**: Hybrid approach supports API-centric tests + UI/BDD hooks
-- **Reliability**: Token refresh, retry logic, and awaitility for flaky tests
+- **Scalability**: Pure API-centric test design with TestNG for execution and data-driven testing
+- **Reliability**: Token refresh, retry logic, and error handling for robust tests
 
 ---
 
@@ -121,15 +121,16 @@ Execute Test with Valid Token
 ---
 
 ### 5. Test Layer
-**Purpose**: Contain actual test scenarios and assertions
+**Purpose**: Contain actual test methods using TestNG annotations
 
 **Test Characteristics**:
-- BDD Cucumber scenarios OR TestNG test methods
-- Clear Given-When-Then structure (for BDD)
+- TestNG test methods using `@Test` annotation
+- `@BeforeTest` and `@BeforeMethod` for setup
+- `@AfterTest` and `@AfterMethod` for teardown
 - Focused on single API endpoint or workflow
 - Use RestClient for API calls
-- Assert response status, body, headers
-- Capture logs for Allure reporting
+- Assert response status, body, headers with Hamcrest/AssertJ matchers
+- Capture logs automatically via Allure reporting
 
 ---
 
@@ -198,24 +199,64 @@ public class AppConfig {
 }
 ```
 
-### BaseTest Configuration (Example)
+### BaseTest Configuration (Example - TestNG Pattern)
+
+**From rest-assured-2024-framework-gorest-naveen project:**
 
 ```java
 public class BaseTest {
-    protected RestClient restClient;
     
-    @BeforeClass
-    public void setUp() {
-        String baseUrl = ConfigManager.getBaseUrl();
-        restClient = new RestClient(baseUrl);
-        restClient.setCommonHeaders(getCommonHeaders());
+    // Service URLs
+    public static final String GOREST_ENDPOINT = "/public/v2/users";
+    public static final String REQRES_ENDPOINT = "/api/users";
+    public static final String CIRCUIT_ENDPOINT = "/api/f1";
+    
+    protected ConfigurationManager config;
+    protected Properties prop;
+    protected RestClient restClient;
+    protected String baseURI;
+    
+    @Parameters({"baseURI"})
+    @BeforeTest
+    public void setUp(String baseURI) {
+        // Add Allure filter for logging
+        RestAssured.filters(new AllureRestAssured());
+        
+        // Initialize configuration
+        config = new ConfigurationManager();
+        prop = config.initProp();
+        this.baseURI = baseURI;
+    }
+}
+```
+
+**Usage in Test Methods:**
+
+```java
+public class GetUserTest extends BaseTest {
+    
+    @BeforeMethod
+    public void getUserSetup() {
+        restClient = new RestClient(prop, baseURI);
     }
     
-    private Map<String, String> getCommonHeaders() {
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json");
-        headers.put("Accept", "application/json");
-        return headers;
+    @Test(enabled = true)
+    @Description("Fetch all users with authorization")
+    public void getAllUsersTest() {
+        restClient.get(GOREST_ENDPOINT, true, true)
+            .then().log().all()
+            .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
+    }
+    
+    @Test()
+    public void getUserWithQueryParamsTest() {
+        Map<String,Object> queryParams = new HashMap<>();
+        queryParams.put("name", "naveen");
+        queryParams.put("status", "active");
+        
+        restClient.get(GOREST_ENDPOINT, queryParams, null, true, true)
+            .then().log().all()
+            .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
     }
 }
 ```
@@ -224,87 +265,86 @@ public class BaseTest {
 
 ## RestClient Layer
 
-### RestClient Implementation Pattern
+### RestClient Implementation Pattern (From Project)
+
+**Real implementation from rest-assured-2024-framework-gorest-naveen:**
 
 ```java
 public class RestClient {
-    private RequestSpecification requestSpec;
     
-    public RestClient(String baseUrl) {
-        this.requestSpec = RestAssured
-            .given()
-            .baseUri(baseUrl)
-            .contentType(ContentType.JSON);
+    private RequestSpecBuilder specBuilder;
+    private Properties prop;
+    private String baseURI;
+    private boolean isAuthorizationHeaderAdded = false;
+    
+    public RestClient(Properties prop, String baseURI) {
+        specBuilder = new RequestSpecBuilder();
+        this.prop = prop;
+        this.baseURI = baseURI;
+    }
+    
+    public void addAuthorizationHeader() {
+        if(!isAuthorizationHeaderAdded) {
+            specBuilder.addHeader("Authorization", "Bearer " + prop.getProperty("tokenId"));
+            isAuthorizationHeaderAdded = true;
+        }
+    }
+    
+    private RequestSpecification createRequestSpec(boolean includeAuth) {
+        specBuilder.setBaseUri(baseURI);
+        if(includeAuth) { addAuthorizationHeader(); }
+        return specBuilder.build();
     }
     
     // GET Request
-    public Response get(String endpoint, Map<String, String> headers) {
-        return requestSpec
-            .headers(headers)
-            .get(endpoint)
-            .then()
-            .log().all()
-            .extract().response();
+    public Response get(String serviceUrl, boolean includeAuth, boolean log) {		
+        if(log) {
+            return RestAssured.given(createRequestSpec(includeAuth)).log().all()
+                .when().get(serviceUrl);
+        }
+        return RestAssured.given(createRequestSpec(includeAuth)).when().get(serviceUrl);
+    }
+    
+    // GET with Query Parameters
+    public Response get(String serviceUrl, Map<String, Object> queryParams, 
+                       Map<String, String> headersMap, boolean includeAuth, boolean log) {
+        specBuilder.setBaseUri(baseURI);
+        if(includeAuth) { addAuthorizationHeader(); }
+        if(headersMap != null) { specBuilder.addHeaders(headersMap); }
+        if(queryParams != null) { specBuilder.addQueryParams(queryParams); }
+        
+        if(log) {
+            return RestAssured.given(specBuilder.build()).log().all()
+                .when().get(serviceUrl);
+        }
+        return RestAssured.given(specBuilder.build()).when().get(serviceUrl);
     }
     
     // POST Request
-    public Response post(String endpoint, Object body, Map<String, String> headers) {
-        return requestSpec
-            .headers(headers)
-            .body(body)
-            .post(endpoint)
-            .then()
-            .log().all()
-            .extract().response();
+    public Response post(String serviceUrl, String contentType, Object requestBody, 
+                         boolean includeAuth, boolean log) {
+        specBuilder.setBaseUri(baseURI);
+        specBuilder.setContentType(ContentType.JSON);
+        if(includeAuth) { addAuthorizationHeader(); }
+        if(requestBody != null) { specBuilder.setBody(requestBody); }
+        
+        if(log) {
+            return RestAssured.given(specBuilder.build()).log().all()
+                .when().post(serviceUrl);
+        }
+        return RestAssured.given(specBuilder.build()).when().post(serviceUrl);
     }
     
-    // PUT Request
-    public Response put(String endpoint, Object body, Map<String, String> headers) {
-        return requestSpec
-            .headers(headers)
-            .body(body)
-            .put(endpoint)
-            .then()
-            .log().all()
-            .extract().response();
-    }
-    
-    // PATCH Request
-    public Response patch(String endpoint, Object body, Map<String, String> headers) {
-        return requestSpec
-            .headers(headers)
-            .body(body)
-            .patch(endpoint)
-            .then()
-            .log().all()
-            .extract().response();
-    }
-    
-    // DELETE Request
-    public Response delete(String endpoint, Map<String, String> headers) {
-        return requestSpec
-            .headers(headers)
-            .delete(endpoint)
-            .then()
-            .log().all()
-            .extract().response();
-    }
+    // Similar methods for PUT, PATCH, DELETE...
 }
 ```
 
-### Request Specification with Auth
-
-```java
-RequestSpecification spec = RestAssured
-    .given()
-    .baseUri("https://api.example.com")
-    .header("Authorization", "Bearer " + token)
-    .header("Content-Type", "application/json")
-    .auth().basic(username, password)  // or OAuth2, API key, etc.
-    .queryParam("limit", 10)
-    .body(requestPayload)
-    .log().all();
-```
+### Supported HTTP Methods
+- **GET** - Retrieve data with optional query params and headers
+- **POST** - Create resources with request body
+- **PUT** - Full update of resources
+- **PATCH** - Partial update of resources  
+- **DELETE** - Remove resources
 
 ---
 
@@ -361,71 +401,104 @@ public class PrerequisiteAPI {
 
 ## Test Execution Flow
 
-### Typical Test Execution Sequence
+### Typical TestNG Test Execution Sequence
 
 ```
 1. Test Framework Initialization
-   └─ Load Configuration (BaseUrl, credentials)
+   └─ Maven loads project configuration
+   └─ TestNG discovers test classes
    
-2. BaseTest Setup (@BeforeClass)
-   └─ Initialize RestClient
+2. BaseTest Setup (@BeforeTest)
+   └─ Load Configuration (BaseUrl, credentials)
+   └─ Initialize ConfigurationManager
+   └─ Load Properties from config files
+   
+3. Test Method Setup (@BeforeMethod)
+   └─ Initialize RestClient with properties
    └─ Perform Authentication (if required)
    └─ Store access token
    
-3. Test Execution (@Test)
-   ├─ Prepare test data
+4. Test Execution (@Test)
+   ├─ Prepare test data (inline or from @DataProvider)
    ├─ Call RestClient method (GET/POST/PUT/PATCH/DELETE)
    ├─ Receive Response
    ├─ Assert status code, headers, body
-   └─ Log results for Allure
+   ├─ Log results via Allure filter (RestAssured.filters(new AllureRestAssured()))
+   └─ Capture request/response automatically
    
-4. Test Cleanup (@AfterClass)
+5. Test Teardown (@AfterMethod)
    └─ Delete test data (cleanup prerequisites)
-   └─ Close connections
+   └─ Close connections if needed
    
-5. Report Generation
-   └─ Allure processes test results
-   └─ Generate HTML report
+6. Report Generation
+   └─ Allure processes test results and logs
+   └─ Generate HTML report from allure-results/
 ```
 
-### BDD Cucumber Scenario Example
-
-```gherkin
-Feature: User API Operations
-  Scenario: Create a new user successfully
-    Given the API is accessible at base URL
-    And user authentication is completed
-    When I send a POST request to create a user with email "newuser@example.com"
-    Then the response status code should be 201
-    And the response body should contain the created user ID
-    And the user email should match "newuser@example.com"
-```
-
-### TestNG Test Example
+### TestNG Test Execution (Real Example)
 
 ```java
-public class UserAPITest extends BaseTest {
+public class GetUserTest extends BaseTest {
     
-    @Test
-    public void testCreateUserSuccessfully() {
+    @BeforeMethod
+    public void getUserSetup() {
+        restClient = new RestClient(prop, baseURI);
+    }
+    
+    @Test(enabled = true)
+    @Description("Test 1: Fetch all users with authorization")
+    public void getAllUsersTest() {
+        // Arrange - Nothing extra needed, RestClient handles all setup
+        
+        // Act - Call REST API
+        restClient.get(GOREST_ENDPOINT, true, true)
+            .then().log().all()
+            // Assert - Verify response
+            .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
+    }
+    
+    @Test()
+    @Description("Test 2: Get users with query parameters")
+    public void getUserWithQueryParamsTest() {
         // Arrange
-        CreateUserRequest userRequest = new CreateUserRequest();
-        userRequest.setName("John Doe");
-        userRequest.setEmail("john@example.com");
+        Map<String,Object> queryParams = new HashMap<>();
+        queryParams.put("name", "naveen");
+        queryParams.put("status", "active");
         
         // Act
-        Response response = restClient.post(
-            "/users", 
-            userRequest, 
-            getAuthHeaders()
-        );
-        
-        // Assert
-        assertEquals(response.getStatusCode(), 201);
-        User createdUser = response.as(User.class);
-        assertEquals(createdUser.getEmail(), "john@example.com");
+        restClient.get(GOREST_ENDPOINT, queryParams, null, true, true)
+            .then().log().all()
+            // Assert
+            .assertThat().statusCode(APIHttpStatus.OK_200.getCode());
+    }
+    
+    @AfterMethod
+    public void tearDown() {
+        // Cleanup if needed
     }
 }
+```
+
+### Running Tests with TestNG
+
+**TestNG XML Configuration:**
+```xml
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="GoREST API Tests">
+    <parameter name="baseURI" value="https://gorest.co.in"/>
+    
+    <test name="User API Tests">
+        <classes>
+            <class name="com.qa.gorest.tests.GetUserTest"/>
+            <class name="com.qa.gorest.tests.CreateUserTest"/>
+        </classes>
+    </test>
+</suite>
+```
+
+**Maven Command:**
+```bash
+mvn clean test -Dsuitexml=src/test/resources/testrunners/testng_regression.xml
 ```
 
 ---
