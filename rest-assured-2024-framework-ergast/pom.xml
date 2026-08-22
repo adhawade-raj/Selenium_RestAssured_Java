@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>rest-assured-2024-ergast-framework</groupId>
-  <artifactId>rest-assured-2024-ergast-framework</artifactId>
+  <groupId>rest-assured-2024-framework-ergast</groupId>
+  <artifactId>rest-assured-2024-framework-ergast</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>rest-assured-2024-ergast-framework</name>
+  <name>rest-assured-2024-framework-ergast</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 

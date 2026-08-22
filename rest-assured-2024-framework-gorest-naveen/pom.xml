@@ -5,11 +5,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>rest-assured-2024-gorest-framework-naveen</groupId>
-	<artifactId>rest-assured-2024-gorest-framework-naveen</artifactId>
+	<groupId>rest-assured-2024-framework-gorest-naveen</groupId>
+	<artifactId>rest-assured-2024-framework-gorest-naveen</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>rest-assured-2024-gorest-framework-naveen</name>
+	<name>rest-assured-2024-framework-gorest-naveen</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
 

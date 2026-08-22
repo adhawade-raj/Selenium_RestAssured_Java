@@ -12,18 +12,18 @@ This repository is a personal collection of test automation and Java practice pr
  - `playwright-2024/` - Playwright-based tests (Maven project)
 - `rest-assured-2025/` - RestAssured 2025 API testing (Maven project)
 - `rest-assured-2025-akash/` - RestAssured 2025 Akash variant with course resources (Maven project)
-- `rest-assured-2025-akash-testng-framework/` - RestAssured 2025 Akash with TestNG framework (contains Dockerfile and Jenkinsfile)
+- `rest-assured-2025-framework-testng-akash/` - RestAssured 2025 Akash with TestNG framework (contains Dockerfile and Jenkinsfile)
 - `rest-assured-2026/` - RestAssured 2026 API testing (Maven project)
-- `rest-assured-json-driven-framework-2026/` - RestAssured 2026 JSON-driven framework with Allure reporting (Maven project)
+- `rest-assured-2026-framework-json-driven/` - RestAssured 2026 JSON-driven framework with Allure reporting (Maven project)
 - `rest-assured-2024/` - RestAssured API tests with Allure/extent outputs
-- `rest-assured-2024-ergast-framework/` - RestAssured framework targeting Ergast API
+- `rest-assured-2024-framework-ergast/` - RestAssured framework targeting Ergast API
 - `rest-assured-2024-gorest-framework/` - RestAssured framework for GoRest API
-- `rest-assured-2024-gorest-framework-naveen/` - GoRest framework (contains Dockerfile and Jenkins pipeline files)
+- `rest-assured-2024-framework-gorest-naveen/` - GoRest framework (contains Dockerfile and Jenkins pipeline files)
 - `rest-assured-2024-practise/` - Practice API tests
- - `selenium-2022-ecommerce-framework/` - Selenium-based ecommerce automation framework
+ - `selenium-2022-framework-ecommerce/` - Selenium-based ecommerce automation framework
  - `selenium-2022-my-automation-training/` - Selenium training exercises and examples
  - `selenium-2024/` - Updated Selenium examples
- - `selenium-2024-bookscart-framework/` - BooksCart demo framework
+ - `selenium-2024-framework-bookscart/` - BooksCart demo framework
  - `selenium-2026/` - Selenium 2026 examples and updated tests (Maven project)
 
 Many of the folders contain a `pom.xml` so they can be executed with Maven independently.
@@ -82,10 +82,10 @@ allure serve target/allure-results
 
 ## Docker (example)
 
-One module (`rest-assured-2024-gorest-framework-naveen`) contains a `Dockerfile`. To build the image locally:
+One module (`rest-assured-2024-framework-gorest-naveen`) contains a `Dockerfile`. To build the image locally:
 
 ```powershell
-cd rest-assured-2024-gorest-framework-naveen
+cd rest-assured-2024-framework-gorest-naveen
 docker build -t gorest-framework:latest .
 ```
 
