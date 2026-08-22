@@ -1,4 +1,4 @@
-API Automation Framework — Theory (Interview-friendly)
+API Automation Framework — Theory
 
 We have designed our API automation framework using Java, Rest Assured and BDD (Cucumber). The framework follows a layered architecture to keep responsibilities clear and tests maintainable.
 
@@ -32,4 +32,4 @@ We have designed our API automation framework using Java, Rest Assured and BDD (
 - Reporting
   - Allure is used for reporting. Execution artifacts are produced under `allure-results`, which are then used to generate the HTML execution report.
 
-This concise overview is useful for explaining the architecture and design choices during interviews or design discussions.
+This concise overview is useful for explaining the architecture and design choices during design discussions.

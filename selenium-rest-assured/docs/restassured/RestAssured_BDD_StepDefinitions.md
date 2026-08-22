@@ -1,6 +1,6 @@
 BDD Mapping — Step Definitions (JUnit runner)
 
-This document maps the framework layers to a Cucumber BDD step-definition approach using JUnit as the test runner. It explains where responsibilities live and how features, step-defs and runners interact so the design can be explained in interviews.
+This document maps the framework layers to a Cucumber BDD step-definition approach using JUnit as the test runner. It explains where responsibilities live and how features, step-defs and runners interact.
 
 High-level design (same layered architecture)
 
@@ -54,11 +54,5 @@ Folder structure (example)
 - src/main/java/com/myorg/config/ConfigurationManager.java
 - src/main/java/com/myorg/model/*.java
 - src/main/java/com/myorg/utils/*.java
-
-Notes for interviews
-
-- Emphasize separation of concerns: step defs glue features to implementation; RestClient contains HTTP logic; hooks manage auth and lifecycle; ConfigurationManager isolates environment details.
-- Mention POJOs + Lombok + Jackson for payloads and Allure for reports.
-- Be ready to explain TestContext and thread-safety for parallel runs.
 
 This mapping helps explain how the framework supports readable BDD tests while keeping implementation maintainable and reusable.
