@@ -1,34 +1,10 @@
-Introduction to this framework
-
-1. Purpose
-- A Selenium-based UI automation framework for ecommerce flows that emphasizes page objects, reusability and stable tests.
-
-2. Objectives
-- Encapsulate UI interactions in PageObjects and centralize WebDriver setup and teardown for consistency.
-
-3. Layers
-- Test layer: TestNG tests implementing user journeys.
-- Page layer: PageObjects encapsulating locators and actions.
-- Core: BasePage/BaseTest, utilities for waits and data.
-- Reporting: ExtentReports / TestNG listeners.
-
-4. Configuration
-- Centralized properties determine baseURL, browser and timeouts; BaseTest applies WebDriver configuration.
-
-5. Page object pattern
-- BasePage provides common actions; concrete page classes model pages with methods returning next page objects.
-
-6. Data-driven testing
-- TestNG @DataProvider or external data drives test scenarios and input values.
-
-7. Utilities & stability
-- Retry logic, fluent waits, and helper methods improve stability; WebDriverManager manages drivers.
-
-8. Reporting & CI
-- Test artifacts and logs attached to ExtentReports; CI runs suites and publishes results.
-
-9. Extension points
-- Add new page objects, utilities or listeners to extend functionality without changing core setup.
-
-10. Best practices
-- Keep page methods focused and return page objects; avoid assertions in page methods; centralize config and test data.
+﻿- Purpose: Selenium-based UI automation framework for ecommerce flows emphasizing Page Object Model, reusability and test stability.
+- Tech stack: Java 1.8, Selenium 4.x, WebDriverManager, TestNG, ExtentReports; Maven build and dependency management.
+- Hybrid approach: primarily UI-focused but can be extended to include API tests and data-driven flows; supports PageObject + BaseTest patterns.
+- Configuration: centralized properties provide baseURL, browser, timeouts; BaseTest sets up WebDriver consistently across tests.
+- Pattern & reuse: BasePage provides common actions; page classes return page objects to enable fluent flows and reuse.
+- Data-driven: TestNG @DataProvider or resource files supply test data variations.
+- Stability & utilities: fluent/explicit waits, retry logic, helpers and WebDriverManager to manage drivers and reduce flakiness.
+- Flow (one-line): config -> BaseTest -> Test -> PageObject -> Action -> Page/State -> Assertion -> Report.
+- CI & reporting: Maven/TestNG suites run in CI (Jenkins/Docker); Extent/Allure attach artifacts and logs.
+- Best practices: avoid assertions in page methods, centralize selectors and config, keep tests deterministic and small.
