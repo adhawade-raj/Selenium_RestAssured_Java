@@ -1,6 +1,6 @@
 # Postman API Testing — Quick Guide
 
-[Reference: status.md](status.md)
+[Reference: status.md](../status.md)
 
 Compact, revision-oriented notes for quick lookup — each title is bold and variable-related material is grouped in one box.
 
@@ -13,6 +13,56 @@ Compact, revision-oriented notes for quick lookup — each title is bold and var
 - https://httpbin.org/post
 - https://postman-echo.com/get
 - https://reqres.in/api/users
+
+
+**Authentication types (quick notes)**
+
+| Type | Description | When to use |
+|---|---|---|
+| No auth | Public endpoints with no access control | Simple public APIs or health checks |
+| API Key | Key passed in header or query (e.g., x-api-key or ?api_key=) | Simple service-to-service access or basic API gating |
+| Basic Auth | username:password base64 in Authorization header | Internal/legacy services over HTTPS where simple creds suffice |
+| Bearer Token (JWT) | Authorization: Bearer <token> (often JWT) | Stateless auth for web/mobile clients; use with HTTPS |
+| OAuth 1.0 | Signature-based (consumer key/secret, token, nonce, signature) | Legacy APIs requiring signed requests (e.g., older Twitter APIs) |
+| OAuth 2.0 | Token-based flows (Authorization Code, Client Credentials, etc.) | Modern delegated auth for user or server apps; widely adopted |
+
+**OAuth 1.0 vs OAuth 2.0**
+
+| Aspect | OAuth 1.0 | OAuth 2.0 |
+|---|---|---|
+| Mechanism | Per-request signatures (HMAC-SHA1) plus tokens | Bearer tokens (access + refresh tokens); no per-request signature |
+| Complexity | More complex to implement and verify | Simpler flows but requires secure token handling and HTTPS |
+| Security model | Signed requests protect against token interception | Relies on TLS; tokens must be protected at rest/in transit |
+| Common flows | N/A (signature-based) | Authorization Code, Implicit, Client Credentials, Resource Owner Password Credentials, Refresh Token |
+| When to use | Legacy systems or where signing is required | New development, delegated access, mobile/web clients; preferred today |
+
+**Headers & Content-Types (quick reference)**
+
+| Header / Type | Purpose | Example |
+|---|---|---|
+| Authorization | Carries credentials (Basic, Bearer, OAuth) | Authorization: Bearer {{tokenID}} |
+| Content-Type | Indicates request body media type | Content-Type: application/json |
+| Accept | Indicates expected response media types | Accept: application/json |
+| Content-Disposition | Used with multipart for file metadata | Content-Disposition: form-data; name="file"; filename="a.png" |
+| Content-Length | Size of request body in bytes | Content-Length: 5243 |
+| Accept-Encoding | Compression formats client accepts | Accept-Encoding: gzip, deflate |
+| X-Request-ID | Correlation id for tracing | X-Request-ID: 123e4567-e89b-12d3-a456-426614174000 |
+
+**Common Content-Types (table)**
+
+| MIME type | Use case | Notes |
+|---|---|---|
+| application/json | Structured JSON payloads | Default for modern APIs |
+| application/xml | XML payloads | Used by SOAP or legacy APIs |
+| multipart/form-data | File uploads and mixed form fields | Uses boundary; each part has its own headers (Content-Disposition) |
+| application/x-www-form-urlencoded | HTML form submissions | Key=value&key2=value2 form encoding |
+| text/plain | Plain text payloads | Simple text responses or debugging |
+| application/octet-stream | Binary data | Generic binary stream for downloads/uploads |
+
+**When using multipart/form-data**
+- Each part is separated by a boundary string defined in Content-Type header, e.g. Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryxyz
+- Each part has its own headers (Content-Disposition, Content-Type optional)
+- Use for file uploads alongside form fields; in Postman choose "form-data" body type and set the field to "file" for file parts
 
 
 **How to set variables from response (examples)**
