@@ -2,27 +2,90 @@
 
 Complete collection of essential SQL queries with questions and answers. Total queries to practice: **60+**
 
+**Progression:** Basic → Intermediate → Advanced
+
 ---
 
 ## Table of Contents
-1. [Basic Joins](#basic-joins) - 4 questions
-2. [Finding Extremes](#finding-extremes) - 7 questions
-3. [Duplicates & Unique Records](#duplicates--unique-records) - 5 questions
-4. [Aggregation Patterns](#aggregation-patterns) - 6 questions
-5. [Ranking & Ordering](#ranking--ordering) - 5 questions
-6. [String Operations](#string-operations) - 5 questions
-7. [Date Operations](#date-operations) - 5 questions
-8. [Complex Filtering](#complex-filtering) - 4 questions
-9. [Self Joins](#self-joins) - 2 questions
-10. [Window Functions](#window-functions) - 4 questions
-11. [DELETE Operations](#delete-operations) - 6 questions
-12. [Comparison Topics](#comparison-topics) - 3 questions
+1. [Basic SELECT & WHERE](#basic-select--where) - 4 questions
+2. [Basic Joins](#basic-joins) - 4 questions
+3. [Aggregation with GROUP BY & HAVING](#aggregation-with-group-by--having) - 6 questions
+4. [DELETE Operations](#delete-operations) - 6 questions
+5. [Finding Extremes](#finding-extremes) - 7 questions
+6. [Duplicates & Unique Records](#duplicates--unique-records) - 5 questions
+7. [Ranking & Ordering](#ranking--ordering) - 5 questions
+8. [String Operations](#string-operations) - 5 questions
+9. [Date Operations](#date-operations) - 5 questions
+10. [Complex Filtering & Subqueries](#complex-filtering--subqueries) - 4 questions
+11. [Self Joins](#self-joins) - 2 questions
+12. [Window Functions](#window-functions) - 4 questions
+13. [Comparison Topics](#comparison-topics) - 2 questions
+
+---
+
+## Basic SELECT & WHERE
+
+### Q1: Simple SELECT statement
+**Question:** Display all customer names from the Customers table.
+
+**Answer:**
+```sql
+SELECT CustomerName
+FROM Customers;
+```
+
+**Explanation:** SELECT specifies columns to display, FROM specifies the table. Use * to select all columns.
+
+---
+
+### Q2: SELECT with single WHERE condition
+**Question:** Get all customers from 'USA'.
+
+**Answer:**
+```sql
+SELECT *
+FROM Customers
+WHERE Country = 'USA';
+```
+
+**Explanation:** WHERE clause filters rows. Only rows matching the condition are returned.
+
+---
+
+### Q3: Multiple conditions with WHERE (AND)
+**Question:** Find orders from Germany with status 'Completed' and amount > 100.
+
+**Answer:**
+```sql
+SELECT *
+FROM Orders
+WHERE Country = 'Germany'
+  AND Status = 'Completed'
+  AND Amount > 100;
+```
+
+**Explanation:** Multiple WHERE conditions using AND. All must be true for a row to be included.
+
+---
+
+### Q4: COUNT with WHERE clause
+**Question:** Count active customers from the USA.
+
+**Answer:**
+```sql
+SELECT COUNT(*) as ActiveUSACustomers
+FROM Customers
+WHERE Country = 'USA'
+  AND Status = 'Active';
+```
+
+**Explanation:** WHERE clause filters rows before COUNT applies. Only matching rows are counted.
 
 ---
 
 ## Basic Joins
 
-### Q1: Write a simple join to connect two tables
+### Q5: Simple join (two tables)
 **Question:** Connect two tables (TableA and TableB) using their ID columns and display names from both.
 
 **Answer:**
@@ -37,7 +100,7 @@ WHERE a.ID = b.ID;
 
 ---
 
-### Q2: Write an INNER JOIN query with explicit syntax
+### Q6: INNER JOIN with explicit syntax
 **Question:** Display customer names and their order IDs using explicit INNER JOIN syntax.
 
 **Answer:**
@@ -51,7 +114,7 @@ INNER JOIN Orders o ON c.CustomerID = o.CustomerID;
 
 ---
 
-### Q3: Join three tables
+### Q7: Three table join
 **Question:** Display customer names, order IDs, and product names from three related tables.
 
 **Answer:**
@@ -70,7 +133,7 @@ INNER JOIN Products p ON od.ProductID = p.ProductID;
 
 ---
 
-### Q4: Write a LEFT JOIN to find unmatched records
+### Q8: LEFT JOIN to find unmatched records
 **Question:** Get all customers and their orders. Include customers with no orders.
 
 **Answer:**
@@ -80,14 +143,195 @@ FROM Customers c
 LEFT JOIN Orders o ON c.CustomerID = o.CustomerID;
 ```
 
-**Explanation:** LEFT JOIN returns ALL records from the left table (Customers) and matching records from the right table (Orders). Non-matching orders will have NULL values.
+**Explanation:** LEFT JOIN returns ALL records from the left table (Customers) and matching records from the right table (Orders). Non-matching will have NULL values.
+
+---
+
+## Aggregation with GROUP BY & HAVING
+
+### Q9: COUNT by group
+**Question:** Display each country and how many customers are from that country.
+
+**Answer:**
+```sql
+SELECT Country, COUNT(*) as CustomerCount
+FROM Customers
+GROUP BY Country
+ORDER BY CustomerCount DESC;
+```
+
+**Explanation:** GROUP BY groups records, COUNT(*) counts rows in each group. Always include grouped columns in SELECT.
+
+---
+
+### Q10: SUM by group
+**Question:** Calculate the total salary for each department.
+
+**Answer:**
+```sql
+SELECT Department, SUM(Salary) as TotalSalary
+FROM Employees
+GROUP BY Department
+ORDER BY TotalSalary DESC;
+```
+
+**Explanation:** SUM() adds up values. GROUP BY creates separate groups for each department.
+
+---
+
+### Q11: AVG by group
+**Question:** Find the average salary for each department.
+
+**Answer:**
+```sql
+SELECT Department, AVG(Salary) as AverageSalary
+FROM Employees
+GROUP BY Department;
+```
+
+**Explanation:** AVG() calculates the average. GROUP BY ensures one result per department.
+
+---
+
+### Q12: Multiple aggregations
+**Question:** Get count, average, max, min, and total salary for each department.
+
+**Answer:**
+```sql
+SELECT 
+  Department,
+  COUNT(*) as EmployeeCount,
+  AVG(Salary) as AvgSalary,
+  MAX(Salary) as MaxSalary,
+  MIN(Salary) as MinSalary,
+  SUM(Salary) as TotalSalary
+FROM Employees
+GROUP BY Department;
+```
+
+**Explanation:** Use multiple aggregate functions in one query. All get applied to grouped data.
+
+---
+
+### Q13: HAVING to filter groups
+**Question:** Find departments where the average salary is greater than 50,000.
+
+**Answer:**
+```sql
+SELECT Department, AVG(Salary) as AvgSalary
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) > 50000;
+```
+
+**Explanation:** WHERE filters rows BEFORE grouping. HAVING filters groups AFTER aggregation. Aggregate functions can only be in HAVING, not WHERE.
+
+---
+
+### Q14: WHERE and HAVING together
+**Question:** Find departments with average salary > 40,000, excluding employees with salary < 30,000, and only departments with more than 5 employees.
+
+**Answer:**
+```sql
+SELECT Department, AVG(Salary) as AvgSalary, COUNT(*) as EmployeeCount
+FROM Employees
+WHERE Salary >= 30000
+GROUP BY Department
+HAVING AVG(Salary) > 40000 AND COUNT(*) > 5;
+```
+
+**Explanation:** WHERE filters rows first, then GROUP BY, then HAVING filters the grouped results.
+
+---
+
+## DELETE Operations
+
+### Q15: Simple DELETE with WHERE
+**Question:** Delete all customers from the 'Inactive' status.
+
+**Answer:**
+```sql
+DELETE FROM Customers
+WHERE Status = 'Inactive';
+```
+
+**Explanation:** WHERE clause specifies which rows to delete. Without WHERE, ALL rows are deleted! Always test with SELECT first.
+
+---
+
+### Q16: DELETE with multiple conditions
+**Question:** Delete all customers from 'USA' who are inactive.
+
+**Answer:**
+```sql
+DELETE FROM Customers
+WHERE Country = 'USA'
+  AND Status = 'Inactive';
+```
+
+**Explanation:** Use AND/OR in WHERE clause to specify complex deletion criteria.
+
+---
+
+### Q17: DELETE based on another table (subquery)
+**Question:** Delete orders from customers that don't exist in the Customers table.
+
+**Answer:**
+```sql
+DELETE FROM Orders
+WHERE CustomerID NOT IN (SELECT CustomerID FROM Customers);
+```
+
+**Explanation:** Use subquery to identify rows to delete. Prevents orphaned records.
+
+---
+
+### Q18: DELETE duplicate records
+**Question:** Keep only one record for each email, delete duplicates.
+
+**Answer:**
+```sql
+DELETE FROM Users
+WHERE ID NOT IN (
+  SELECT MIN(ID)
+  FROM Users
+  GROUP BY Email
+);
+```
+
+**Explanation:** Keep minimum ID per email group, delete all others.
+
+---
+
+### Q19: DELETE specific records with aggregate
+**Question:** Delete the employee with the highest salary.
+
+**Answer:**
+```sql
+DELETE FROM Employees
+WHERE Salary = (SELECT MAX(Salary) FROM Employees);
+```
+
+**Explanation:** Subquery finds the max salary, DELETE removes matching row.
+
+---
+
+### Q20: Delete all records from a table
+**Question:** Clear all records from a temporary table.
+
+**Answer:**
+```sql
+DELETE FROM TempTable;
+```
+
+**Explanation:** DELETE without WHERE removes all rows. ⚠️ Be careful! Always backup first. For speed, use TRUNCATE TABLE instead.
 
 ---
 
 ## Finding Extremes
 
-### Q5: Find the highest salary
-**Question:** Get the maximum salary from the Employees table.
+### Q21: Maximum value
+**Question:** Get the highest salary from the Employees table.
 
 **Answer:**
 ```sql
@@ -99,7 +343,7 @@ FROM Employees;
 
 ---
 
-### Q6: Find the employee with the highest salary
+### Q22: Find row with maximum value
 **Question:** Display the name and salary of the employee earning the most.
 
 **Answer:**
@@ -113,12 +357,12 @@ WHERE Salary = (SELECT MAX(Salary) FROM Employees);
 
 ---
 
-### Q7: Find the second highest salary
+### Q23: Second highest value
 **Question:** Get the second highest salary amount from the Employees table.
 
 **Answer:**
 ```sql
--- Method 1: Using OFFSET
+-- Method 1: Using OFFSET (MySQL, PostgreSQL)
 SELECT DISTINCT Salary
 FROM Employees
 ORDER BY Salary DESC
@@ -142,7 +386,7 @@ WHERE Salary NOT IN (SELECT MAX(Salary) FROM Employees);
 
 ---
 
-### Q8: Find the third highest salary
+### Q24: Third highest value
 **Question:** Get the third highest distinct salary.
 
 **Answer:**
@@ -157,7 +401,7 @@ LIMIT 1 OFFSET 2;
 
 ---
 
-### Q9: Find the Nth highest salary (general solution)
+### Q25: Nth highest value (general)
 **Question:** Create a query to find any Nth highest salary. Example: 5th highest.
 
 **Answer:**
@@ -187,7 +431,7 @@ WHERE Salary NOT IN (
 
 ---
 
-### Q10: Find the lowest salary
+### Q26: Minimum value
 **Question:** Get the minimum salary and the employee name.
 
 **Answer:**
@@ -201,7 +445,7 @@ WHERE Salary = (SELECT MIN(Salary) FROM Employees);
 
 ---
 
-### Q11: Find top 5 salaries
+### Q27: Top N values
 **Question:** Display the top 5 highest salary amounts.
 
 **Answer:**
@@ -224,7 +468,7 @@ ORDER BY Salary DESC;
 
 ## Duplicates & Unique Records
 
-### Q12: Find duplicate records
+### Q28: Find duplicate records
 **Question:** Find all email addresses that appear more than once in the Users table.
 
 **Answer:**
@@ -239,7 +483,7 @@ HAVING COUNT(*) > 1;
 
 ---
 
-### Q13: Get all rows with duplicate emails
+### Q29: Get all rows with duplicates
 **Question:** Display all records that have duplicate email addresses.
 
 **Answer:**
@@ -258,24 +502,7 @@ WHERE Email IN (
 
 ---
 
-### Q14: Remove duplicate records (keep one)
-**Question:** Delete all but one record for each duplicate email.
-
-**Answer:**
-```sql
-DELETE FROM Users
-WHERE ID NOT IN (
-  SELECT MIN(ID)
-  FROM Users
-  GROUP BY Email
-);
-```
-
-**Explanation:** GROUP BY finds minimum ID for each email (keep this), DELETE all others.
-
----
-
-### Q15: Count unique values
+### Q30: Count unique values
 **Question:** Count how many distinct countries are in the Customers table.
 
 **Answer:**
@@ -288,8 +515,22 @@ FROM Customers;
 
 ---
 
-### Q16: Count occurrences by group
-**Question:** Display each country and how many customers are from that country.
+### Q31: List distinct values
+**Question:** Display all unique countries from customers.
+
+**Answer:**
+```sql
+SELECT DISTINCT Country
+FROM Customers
+ORDER BY Country;
+```
+
+**Explanation:** DISTINCT removes duplicate values. ORDER BY sorts the results.
+
+---
+
+### Q32: Count occurrences of each value
+**Question:** Show how many customers are in each country, sorted by count.
 
 **Answer:**
 ```sql
@@ -299,110 +540,40 @@ GROUP BY Country
 ORDER BY CustomerCount DESC;
 ```
 
-**Explanation:** GROUP BY groups records, COUNT(*) counts rows in each group.
-
----
-
-## Aggregation Patterns
-
-### Q17: Sum by department
-**Question:** Calculate the total salary for each department.
-
-**Answer:**
-```sql
-SELECT Department, SUM(Salary) as TotalSalary
-FROM Employees
-GROUP BY Department
-ORDER BY TotalSalary DESC;
-```
-
-**Explanation:** SUM() adds up values. GROUP BY creates separate groups for each department.
-
----
-
-### Q18: Average by group
-**Question:** Find the average salary for each department.
-
-**Answer:**
-```sql
-SELECT Department, AVG(Salary) as AverageSalary
-FROM Employees
-GROUP BY Department;
-```
-
-**Explanation:** AVG() calculates the average. GROUP BY ensures one result per department.
-
----
-
-### Q19: Multiple aggregations
-**Question:** Get count, average, max, min, and total salary for each department.
-
-**Answer:**
-```sql
-SELECT 
-  Department,
-  COUNT(*) as EmployeeCount,
-  AVG(Salary) as AvgSalary,
-  MAX(Salary) as MaxSalary,
-  MIN(Salary) as MinSalary,
-  SUM(Salary) as TotalSalary
-FROM Employees
-GROUP BY Department;
-```
-
-**Explanation:** Use multiple aggregate functions in one query. All get applied to grouped data.
-
----
-
-### Q20: Aggregation with filtering (HAVING)
-**Question:** Find departments where the average salary is greater than 50,000.
-
-**Answer:**
-```sql
-SELECT Department, AVG(Salary) as AvgSalary
-FROM Employees
-GROUP BY Department
-HAVING AVG(Salary) > 50000;
-```
-
-**Explanation:** WHERE filters rows before grouping. HAVING filters groups after aggregation.
-
----
-
-### Q21: Multiple conditions with WHERE
-**Question:** Find orders from Germany with status 'Completed' and amount > 100.
-
-**Answer:**
-```sql
-SELECT *
-FROM Orders
-WHERE Country = 'Germany'
-  AND Status = 'Completed'
-  AND Amount > 100;
-```
-
-**Explanation:** Multiple WHERE conditions using AND. All must be true for a row to be included.
-
----
-
-### Q22: Count with WHERE clause
-**Question:** Count active customers from the USA.
-
-**Answer:**
-```sql
-SELECT COUNT(*) as ActiveUSACustomers
-FROM Customers
-WHERE Country = 'USA'
-  AND Status = 'Active';
-```
-
-**Explanation:** WHERE clause filters rows before COUNT applies. Only matching rows are counted.
+**Explanation:** GROUP BY with COUNT shows frequency of each value.
 
 ---
 
 ## Ranking & Ordering
 
-### Q23: Rank employees by salary
+### Q33: ORDER BY single column
+**Question:** List customers ordered by country alphabetically.
+
+**Answer:**
+```sql
+SELECT * FROM Customers
+ORDER BY Country;
+```
+
+**Explanation:** ORDER BY sorts results. Default is ASC (ascending). Use DESC for descending.
+
+---
+
+### Q34: ORDER BY multiple columns
+**Question:** Order employees by department (A-Z) then by salary (highest first).
+
+**Answer:**
+```sql
+SELECT Name, Department, Salary
+FROM Employees
+ORDER BY Department ASC, Salary DESC;
+```
+
+**Explanation:** Multiple ORDER BY columns. ASC (default) for ascending, DESC for descending.
+
+---
+
+### Q35: Rank rows by value
 **Question:** Display employees with their salary rank.
 
 **Answer:**
@@ -418,7 +589,7 @@ FROM Employees;
 
 ---
 
-### Q24: Rank within department
+### Q36: Rank within groups
 **Question:** Rank employees within their own department by salary.
 
 **Answer:**
@@ -435,55 +606,30 @@ FROM Employees;
 
 ---
 
-### Q25: Dense rank (no gaps)
-**Question:** Display employees with dense ranking (no gaps if same salary).
+### Q37: Dense rank vs RANK
+**Question:** Show the difference between RANK and DENSE_RANK.
 
 **Answer:**
 ```sql
 SELECT 
   Name,
   Salary,
-  DENSE_RANK() OVER (ORDER BY Salary DESC) as DenseRank
+  RANK() OVER (ORDER BY Salary DESC) as RegularRank,
+  DENSE_RANK() OVER (ORDER BY Salary DESC) as DenseRank,
+  ROW_NUMBER() OVER (ORDER BY Salary DESC) as RowNum
 FROM Employees;
 ```
 
-**Explanation:** DENSE_RANK() doesn't skip numbers after ties. RANK() would skip numbers.
-
----
-
-### Q26: Sequential row numbers
-**Question:** Assign sequential numbers to employees ordered by salary.
-
-**Answer:**
-```sql
-SELECT 
-  ROW_NUMBER() OVER (ORDER BY Salary DESC) as RowNum,
-  Name,
-  Salary
-FROM Employees;
-```
-
-**Explanation:** ROW_NUMBER() gives sequential numbers starting from 1.
-
----
-
-### Q27: Order by multiple columns
-**Question:** Order employees by department (A-Z) then by salary (highest first).
-
-**Answer:**
-```sql
-SELECT Name, Department, Salary
-FROM Employees
-ORDER BY Department ASC, Salary DESC;
-```
-
-**Explanation:** Multiple ORDER BY columns. ASC (default) for ascending, DESC for descending.
+**Explanation:** 
+- RANK() skips numbers after ties (1, 1, 3)
+- DENSE_RANK() doesn't skip (1, 1, 2)
+- ROW_NUMBER() always sequential (1, 2, 3)
 
 ---
 
 ## String Operations
 
-### Q28: Concatenate columns
+### Q38: Concatenate columns
 **Question:** Create a full name by combining first and last names.
 
 **Answer:**
@@ -501,7 +647,7 @@ FROM Employees;
 
 ---
 
-### Q29: String length
+### Q39: String length
 **Question:** Find employees whose name is longer than 10 characters.
 
 **Answer:**
@@ -515,7 +661,7 @@ WHERE LENGTH(Name) > 10;
 
 ---
 
-### Q30: Substring
+### Q40: Substring
 **Question:** Extract the first 5 characters of each employee name.
 
 **Answer:**
@@ -528,7 +674,7 @@ FROM Employees;
 
 ---
 
-### Q31: UPPER and LOWER
+### Q41: UPPER and LOWER case
 **Question:** Convert names to uppercase and lowercase.
 
 **Answer:**
@@ -544,7 +690,7 @@ FROM Employees;
 
 ---
 
-### Q32: Pattern matching with LIKE
+### Q42: Pattern matching with LIKE
 **Question:** Find all employees whose name starts with 'J'.
 
 **Answer:**
@@ -554,13 +700,13 @@ FROM Employees
 WHERE Name LIKE 'J%';
 ```
 
-**Explanation:** % is wildcard for any characters. 'J%' = starts with J. '%J%' = contains J.
+**Explanation:** % is wildcard for any characters. 'J%' = starts with J. '%J%' = contains J. '_J%' = second character is J.
 
 ---
 
 ## Date Operations
 
-### Q33: Current date and time
+### Q43: Current date
 **Question:** Get today's date.
 
 **Answer:**
@@ -579,7 +725,7 @@ SELECT NOW() as Today;
 
 ---
 
-### Q34: Date difference
+### Q44: Date difference
 **Question:** Calculate the number of days between start and end dates.
 
 **Answer:**
@@ -601,8 +747,8 @@ FROM Projects;
 
 ---
 
-### Q35: Add days to a date
-**Question:** Add 30 days to the order date.
+### Q45: Add days to a date
+**Question:** Add 30 days to the order date to get delivery date.
 
 **Answer:**
 ```sql
@@ -620,7 +766,7 @@ SELECT OrderDate + INTERVAL '30 days' as DeliveryDate FROM Orders;
 
 ---
 
-### Q36: Extract year, month, day
+### Q46: Extract date parts
 **Question:** Extract the year, month, and day from join dates.
 
 **Answer:**
@@ -636,7 +782,7 @@ FROM Employees;
 
 ---
 
-### Q37: Records from last 30 days
+### Q47: Recent records filter
 **Question:** Get all orders from the last 30 days.
 
 **Answer:**
@@ -661,9 +807,49 @@ WHERE OrderDate >= CURRENT_DATE - INTERVAL '30 days';
 
 ---
 
-## Complex Filtering
+## Complex Filtering & Subqueries
 
-### Q38: NOT EXISTS (find unmatched records)
+### Q48: IN operator
+**Question:** Find customers from specific countries: Germany, France, and UK.
+
+**Answer:**
+```sql
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+```
+
+**Explanation:** IN checks if value matches any item in a list. Cleaner than multiple OR conditions.
+
+---
+
+### Q49: NOT IN operator
+**Question:** Find customers NOT from Germany, France, or UK.
+
+**Answer:**
+```sql
+SELECT * FROM Customers
+WHERE Country NOT IN ('Germany', 'France', 'UK');
+```
+
+**Explanation:** NOT IN excludes rows matching any value in the list.
+
+---
+
+### Q50: EXISTS (find matching)
+**Question:** Find customers who have placed orders using EXISTS.
+
+**Answer:**
+```sql
+SELECT *
+FROM Customers c
+WHERE EXISTS (SELECT 1 FROM Orders o WHERE o.CustomerID = c.CustomerID);
+```
+
+**Explanation:** EXISTS checks if subquery returns any rows. Returns true/false without returning data.
+
+---
+
+### Q51: NOT EXISTS (find unmatched)
 **Question:** Find all customers who haven't placed any orders.
 
 **Answer:**
@@ -675,68 +861,13 @@ WHERE NOT EXISTS (
 );
 ```
 
-**Explanation:** NOT EXISTS returns true if subquery has no results. Efficient for finding unmatched records.
-
----
-
-### Q39: IN vs EXISTS comparison
-**Question:** Find customers who have placed orders using two methods.
-
-**Answer:**
-```sql
--- Method 1: IN
-SELECT *
-FROM Customers
-WHERE CustomerID IN (SELECT CustomerID FROM Orders);
-
--- Method 2: EXISTS (usually more efficient)
-SELECT *
-FROM Customers c
-WHERE EXISTS (SELECT 1 FROM Orders o WHERE o.CustomerID = c.CustomerID);
-```
-
-**Explanation:** EXISTS checks existence (returns true/false). IN checks membership in a list. EXISTS is often faster.
-
----
-
-### Q40: Multiple conditions with AND/OR
-**Question:** Find orders with status 'Completed' or 'Pending' AND amount > 100.
-
-**Answer:**
-```sql
-SELECT *
-FROM Orders
-WHERE (Status = 'Completed' OR Status = 'Pending')
-  AND Amount > 100;
-```
-
-**Explanation:** Use parentheses to group OR conditions. AND has higher precedence than OR.
-
----
-
-### Q41: CASE statement
-**Question:** Categorize employees as 'High', 'Medium', or 'Low' earners based on salary.
-
-**Answer:**
-```sql
-SELECT 
-  Name,
-  Salary,
-  CASE 
-    WHEN Salary > 100000 THEN 'High'
-    WHEN Salary > 50000 THEN 'Medium'
-    ELSE 'Low'
-  END as SalaryLevel
-FROM Employees;
-```
-
-**Explanation:** CASE evaluates conditions in order, returns first match. ELSE is the default.
+**Explanation:** NOT EXISTS returns true if subquery has no results. Efficient for finding unmatched records. Often faster than NOT IN.
 
 ---
 
 ## Self Joins
 
-### Q42: Find manager-employee relationships
+### Q52: Manager-employee relationship
 **Question:** Display each employee and their manager's name.
 
 **Answer:**
@@ -752,7 +883,7 @@ LEFT JOIN Employees m ON e.ManagerID = m.EmployeeID;
 
 ---
 
-### Q43: Find employees at same salary level
+### Q53: Find pairs with same value
 **Question:** Find pairs of employees earning the same salary.
 
 **Answer:**
@@ -772,7 +903,7 @@ INNER JOIN Employees e2 ON e1.Salary = e2.Salary
 
 ## Window Functions
 
-### Q44: Running total
+### Q54: Running total
 **Question:** Show cumulative sum of salaries as you go down the list.
 
 **Answer:**
@@ -788,7 +919,7 @@ FROM Employees;
 
 ---
 
-### Q45: Cumulative sum by department
+### Q55: Cumulative sum by group
 **Question:** Show running total of salaries within each department.
 
 **Answer:**
@@ -805,7 +936,7 @@ FROM Employees;
 
 ---
 
-### Q46: Lead/Lag functions
+### Q56: Lead/Lag functions
 **Question:** Show current salary, next higher salary, and next lower salary for each employee.
 
 **Answer:**
@@ -822,7 +953,7 @@ FROM Employees;
 
 ---
 
-### Q47: Percentage of total
+### Q57: Percentage of total
 **Question:** Calculate each employee's salary as a percentage of total salary.
 
 **Answer:**
@@ -838,139 +969,32 @@ FROM Employees;
 
 ---
 
-## DELETE Operations
-
-### Q48: Delete with WHERE clause
-**Question:** Delete all customers from 'USA' who are inactive.
-
-**Answer:**
-```sql
-DELETE FROM Customers
-WHERE Country = 'USA'
-  AND Status = 'Inactive';
-```
-
-**Explanation:** WHERE clause specifies which rows to delete. Without WHERE, all rows are deleted!
-
----
-
-### Q49: Delete based on another table
-**Question:** Delete orders from customers that don't exist in the Customers table.
-
-**Answer:**
-```sql
-DELETE FROM Orders
-WHERE CustomerID NOT IN (SELECT CustomerID FROM Customers);
-```
-
-**Explanation:** Use subquery to identify rows to delete. Prevents orphaned records.
-
----
-
-### Q50: Delete duplicate records
-**Question:** Keep only one record for each email, delete duplicates.
-
-**Answer:**
-```sql
-DELETE FROM Users
-WHERE ID NOT IN (
-  SELECT MIN(ID)
-  FROM Users
-  GROUP BY Email
-);
-```
-
-**Explanation:** Keep minimum ID per email group, delete all others.
-
----
-
-### Q51: Delete specific records
-**Question:** Delete the employee with the highest salary.
-
-**Answer:**
-```sql
-DELETE FROM Employees
-WHERE Salary = (SELECT MAX(Salary) FROM Employees);
-```
-
-**Explanation:** Subquery finds the max salary, DELETE removes matching row.
-
----
-
-### Q52: Delete with JOIN
-**Question:** Delete orders where the associated customer has been inactive for over a year.
-
-**Answer:**
-```sql
-DELETE o FROM Orders o
-INNER JOIN Customers c ON o.CustomerID = c.CustomerID
-WHERE c.LastActivityDate < DATEADD(YEAR, -1, GETDATE());
-```
-
-**Explanation:** JOIN identifies which rows to delete. Complex deletion with multiple table conditions.
-
----
-
-### Q53: Delete all records from a table
-**Question:** Clear all records from a temporary table.
-
-**Answer:**
-```sql
-DELETE FROM TempTable;
-```
-
-**Explanation:** DELETE without WHERE removes all rows. ⚠️ Be careful! Always backup first.
-
----
-
 ## Comparison Topics
 
-### Q54: TRUNCATE vs DELETE vs DROP
-**Question:** Explain the differences between TRUNCATE, DELETE, and DROP.
+### Q58: TRUNCATE vs DELETE
+**Question:** Explain the differences between TRUNCATE and DELETE.
 
 **Answer:**
 
-| Feature | DELETE | TRUNCATE | DROP |
-|---------|--------|----------|------|
-| **Type** | DML (Data) | DDL (Structure) | DDL (Structure) |
-| **Speed** | Slow | Fast | Very Fast |
-| **Space** | Frees gradually | Frees immediately | Removes entirely |
-| **WHERE** | ✓ Supported | ✗ NO WHERE | ✗ Removes table |
-| **Undo** | Logged (can rollback) | Not logged | Can't undo |
-| **Identity** | Continues from last | Resets to seed | N/A |
-| **Syntax** | `DELETE FROM table WHERE...` | `TRUNCATE TABLE table` | `DROP TABLE table` |
+| Feature | DELETE | TRUNCATE |
+|---------|--------|----------|
+| **Type** | DML (Data modification) | DDL (Data definition) |
+| **Speed** | Slower (row by row) | Faster (removes all at once) |
+| **WHERE clause** | ✓ Supported | ✗ NO WHERE clause |
+| **Space freed** | Gradually | Immediately |
+| **Logging** | Fully logged | Not logged |
+| **Rollback** | Yes (can undo) | Can't undo |
+| **Identity reset** | Continues from last value | Resets to seed |
+| **Syntax** | `DELETE FROM table WHERE...` | `TRUNCATE TABLE table` |
 
 **Explanation:**
-- **DELETE**: Removes rows, logged, slower, can use WHERE
+- **DELETE**: Removes specific rows, logged, slower, can use WHERE
 - **TRUNCATE**: Removes all rows at once, not logged, faster, resets identity
-- **DROP**: Removes entire table structure
+- **Best practice**: Use TRUNCATE for clearing entire table, DELETE for selective removal
 
 ---
 
-### Q55: When to use JOIN vs WHERE
-**Question:** When should you use INNER JOIN vs WHERE clause for joining?
-
-**Answer:**
-```sql
--- Method 1: Using WHERE (implicit join)
-SELECT a.Name, b.Name
-FROM TableA a, TableB b
-WHERE a.ID = b.ID;
-
--- Method 2: Using INNER JOIN (explicit join)
-SELECT a.Name, b.Name
-FROM TableA a
-INNER JOIN TableB b ON a.ID = b.ID;
-```
-
-**Explanation:**
-- **WHERE approach**: Works but mixes join logic with filtering
-- **INNER JOIN approach**: Clearer intent, easier to maintain, better for complex queries
-- **Best practice**: Use explicit JOIN syntax (INNER/LEFT/RIGHT/FULL)
-
----
-
-### Q56: IN vs EXISTS performance
+### Q59: IN vs EXISTS performance
 **Question:** Which is faster: IN with subquery or EXISTS?
 
 **Answer:**
@@ -985,128 +1009,38 @@ WHERE EXISTS (SELECT 1 FROM Orders o WHERE o.CustomerID = c.CustomerID);
 ```
 
 **Explanation:**
-- **IN**: Evaluates the entire subquery list before checking
-- **EXISTS**: Stops as soon as it finds one matching record
+- **IN**: Evaluates the entire subquery list before checking membership
+- **EXISTS**: Stops as soon as it finds one matching record (faster)
 - **Best practice**: Use EXISTS for better performance with large datasets
-- **Note**: Modern query optimizers may optimize these similarly
+- **Modern note**: Modern query optimizers may optimize these similarly
 
 ---
 
-### Q57: GROUP BY vs PARTITION BY
-**Question:** What's the difference between GROUP BY and PARTITION BY (window functions)?
+### Q60: GROUP BY vs PARTITION BY
+**Question:** What's the difference between GROUP BY and PARTITION BY?
 
 **Answer:**
 ```sql
 -- GROUP BY: Reduces rows (aggregation)
 SELECT Department, COUNT(*) as EmployeeCount
 FROM Employees
-GROUP BY Department;  -- Result: One row per department
+GROUP BY Department;  
+-- Result: One row per department
 
 -- PARTITION BY: Keeps all rows (window function)
 SELECT 
   Name,
   Department,
   COUNT(*) OVER (PARTITION BY Department) as DeptCount
-FROM Employees;  -- Result: All employee rows with count
+FROM Employees;  
+-- Result: All employee rows with count repeated
 ```
 
 **Explanation:**
-- **GROUP BY**: Combines rows, reduces result set
-- **PARTITION BY**: Divides rows into groups but returns all rows
-- **Use GROUP BY**: When you want aggregated summary
-- **Use PARTITION BY**: When you want original rows with group calculations
-
----
-
-### Q58: LEFT JOIN vs NOT IN for exclusion
-**Question:** Find customers with no orders using two methods.
-
-**Answer:**
-```sql
--- Method 1: LEFT JOIN with IS NULL
-SELECT c.CustomerID, c.CustomerName
-FROM Customers c
-LEFT JOIN Orders o ON c.CustomerID = o.CustomerID
-WHERE o.OrderID IS NULL;
-
--- Method 2: NOT IN
-SELECT * FROM Customers
-WHERE CustomerID NOT IN (SELECT CustomerID FROM Orders);
-
--- Method 3: NOT EXISTS (most efficient)
-SELECT * FROM Customers c
-WHERE NOT EXISTS (SELECT 1 FROM Orders WHERE CustomerID = c.CustomerID);
-```
-
-**Explanation:**
-- **Method 1 (LEFT JOIN)**: Clear and intuitive, easy to understand
-- **Method 2 (NOT IN)**: Simpler syntax but can be slow with NULLs
-- **Method 3 (NOT EXISTS)**: Most efficient, recommended for performance
-- **Best practice**: Use NOT EXISTS for better performance
-
----
-
-### Q59: HAVING vs WHERE
-**Question:** When do you use HAVING instead of WHERE?
-
-**Answer:**
-```sql
--- WRONG: WHERE can't use aggregates
--- SELECT Department, AVG(Salary)
--- FROM Employees
--- WHERE AVG(Salary) > 50000  ❌ ERROR!
-
--- CORRECT: HAVING for aggregate conditions
-SELECT Department, AVG(Salary) as AvgSalary
-FROM Employees
-GROUP BY Department
-HAVING AVG(Salary) > 50000;
-
--- WHERE filters rows BEFORE grouping
-SELECT Department, AVG(Salary) as AvgSalary
-FROM Employees
-WHERE Salary > 40000  -- Filter individual salaries
-GROUP BY Department
-HAVING COUNT(*) > 5;   -- Filter groups by count
-```
-
-**Explanation:**
-- **WHERE**: Filters rows BEFORE grouping/aggregation
-- **HAVING**: Filters groups AFTER aggregation
-- **Key difference**: WHERE can't use aggregate functions, HAVING can only
-
----
-
-### Q60: UNION vs UNION ALL
-**Question:** Explain the difference between UNION and UNION ALL.
-
-**Answer:**
-```sql
--- UNION: Removes duplicates (slower)
-SELECT City FROM Customers
-UNION
-SELECT City FROM Suppliers
-ORDER BY City;
-
--- UNION ALL: Keeps duplicates (faster)
-SELECT City FROM Customers
-UNION ALL
-SELECT City FROM Suppliers
-ORDER BY City;
-```
-
-**Result Example with data:
-- Customers cities: New York, London, Paris, London
-- Suppliers cities: London, Paris, Tokyo
-
-**UNION result:** New York, London, Paris, Tokyo (4 rows - duplicates removed)
-
-**UNION ALL result:** New York, London, Paris, London, London, Paris, Tokyo (7 rows - all kept)
-
-**Explanation:**
-- **UNION**: Automatically removes duplicate rows, requires sorting (slower)
-- **UNION ALL**: Keeps all rows including duplicates (faster)
-- **Best practice**: Use UNION ALL unless you specifically need to remove duplicates
+- **GROUP BY**: Combines rows, reduces result set to summary
+- **PARTITION BY**: Divides rows into groups but returns all rows with calculations
+- **Use GROUP BY**: When you want aggregated summary data
+- **Use PARTITION BY**: When you want original rows with group calculations added
 
 ---
 
@@ -1115,20 +1049,22 @@ ORDER BY City;
 Total queries to practice: **60 questions**
 
 ### By Category:
+- Basic SELECT & WHERE: 4
 - Basic Joins: 4
+- Aggregation with GROUP BY & HAVING: 6
+- DELETE Operations: 6
 - Finding Extremes: 7  
 - Duplicates & Unique: 5
-- Aggregation: 6
-- Ranking: 5
+- Ranking & Ordering: 5
 - String Operations: 5
 - Date Operations: 5
-- Complex Filtering: 4
+- Complex Filtering & Subqueries: 4
 - Self Joins: 2
 - Window Functions: 4
-- DELETE Operations: 6
-- Comparison Topics: 7
+- Comparison Topics: 2
 
 ### Key Points to Remember:
+✓ Start with simple SELECT and WHERE  
 ✓ Always use explicit JOIN syntax (INNER/LEFT/RIGHT)  
 ✓ Use WHERE to filter rows, HAVING to filter groups  
 ✓ EXISTS is faster than IN for large datasets  
