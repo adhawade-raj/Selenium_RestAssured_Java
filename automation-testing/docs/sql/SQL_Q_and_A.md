@@ -750,28 +750,22 @@ SELECT
 FROM Employees;
 ```
 
-**Explanation:** Window functions compute values across a "window" of rows. ORDER BY defines the window frame.
-
----
-
-### Q44: Cumulative sum by group
-**Question:** Show running total of salaries within each department.
-
-**Answer:**
-```sql
-SELECT 
-  Name,
-  Department,
-  Salary,
-  SUM(Salary) OVER (PARTITION BY Department ORDER BY EmployeeID) as DeptRunningTotal
-FROM Employees;
+**Sample Output:**
+```
+Name   | Salary | RunningTotal
+-------|--------|-------------
+John   | 50000  | 50000
+Alice  | 60000  | 110000
+Bob    | 55000  | 165000
+Carol  | 70000  | 235000
+Dave   | 80000  | 315000
 ```
 
-**Explanation:** PARTITION BY resets the window for each department.
+**Explanation:** Window functions compute values across a "window" of rows without reducing the result set. ORDER BY defines the window frame. In this example, each row shows the cumulative sum up to and including itself. Unlike GROUP BY (which reduces rows), window functions keep all original rows and add calculations.
 
 ---
 
-### Q45: Lead/Lag functions
+### Q44: Lead/Lag functions
 **Question:** Show current salary and next/previous employee's salary in order.
 
 **Answer:**
@@ -800,7 +794,7 @@ Carol       | 90000  | NULL             | 95000
 
 ## Theory & Comparisons
 
-### Q46 (Theory): What is a JOIN?
+### Q45 (Theory): What is a JOIN?
 **Question (Theory):** Explain what a JOIN is and name the different types of JOINs.
 
 **Answer:**
@@ -826,7 +820,7 @@ INNER JOIN Orders o ON c.CustomerID = o.CustomerID;
 
 ---
 
-### Q48 (Theory): Difference between JOIN conditions
+### Q46 (Theory): Difference between JOIN conditions
 **Question (Theory):** What's the difference between filtering in JOIN ON clause vs WHERE clause?
 
 **Answer:**
@@ -853,7 +847,7 @@ WHERE o.Amount > 100;
 
 ---
 
-### Q49 (Theory): WHERE vs HAVING
+### Q47 (Theory): WHERE vs HAVING
 **Question (Theory):** Explain the difference between WHERE and HAVING clauses.
 
 **Answer:**
@@ -881,7 +875,7 @@ HAVING AVG(Salary) > 50000;  -- Filter groups after aggregation
 
 ---
 
-### Q50 (Theory): IN vs EXISTS performance
+### Q48 (Theory): IN vs EXISTS performance
 **Question (Theory):** Which is faster for subqueries: IN or EXISTS?
 
 **Answer:**
@@ -904,7 +898,7 @@ WHERE EXISTS (SELECT 1 FROM Orders WHERE CustomerID = c.CustomerID);
 
 ---
 
-### Q51 (Theory): GROUP BY vs PARTITION BY
+### Q49 (Theory): GROUP BY vs PARTITION BY
 **Question (Theory):** What's the difference between GROUP BY and PARTITION BY (window functions)?
 
 **Answer:**
@@ -929,7 +923,7 @@ FROM Employees;
 
 ---
 
-### Q52 (Theory): DISTINCT vs GROUP BY
+### Q50 (Theory): DISTINCT vs GROUP BY
 **Question (Theory):** When would you use DISTINCT vs GROUP BY?
 
 **Answer:**
@@ -955,7 +949,7 @@ GROUP BY Country;
 
 ---
 
-### Q53 (Theory): Aggregate Functions - When to use each
+### Q51 (Theory): Aggregate Functions - When to use each
 **Question (Theory):** Explain the purpose and usage of COUNT, SUM, AVG, MIN, and MAX.
 
 **Answer:**
