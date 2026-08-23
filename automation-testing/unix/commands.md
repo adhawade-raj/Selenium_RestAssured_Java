@@ -47,6 +47,10 @@
 | Download file | curl -O URL | curl -O URL |
 | Show disk space | df -h | wmic logicaldisk get size,freespace,caption |
 | Show directory size | du -sh folder | dir /s folder |
-| Change permissions | chmod +x script.sh | icacls (different mechanism) |
+| Change permissions (execute) | chmod +x script.sh | icacls script.sh /grant Everyone:F |
+| Change permissions (read/write/execute) | chmod 755 file.txt | icacls file.txt /inheritance:r /grant Everyone:F |
+| Remove all permissions | chmod 000 file.txt | icacls file.txt /deny Everyone:(F) |
+| Add read permission | chmod +r file.txt | icacls file.txt /grant Everyone:R |
+| Add write permission | chmod +w file.txt | icacls file.txt /grant Everyone:W |
 | Run shell script | ./script.sh | Not directly supported |
 | Create symbolic link | ln -s target link | mklink link target |
