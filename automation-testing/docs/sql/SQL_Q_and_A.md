@@ -784,7 +784,17 @@ SELECT
 FROM Employees;
 ```
 
-**Explanation:** LEAD() gets next row value. LAG() gets previous row value.
+**Sample Output:**
+```
+Name        | Salary | NextHigherSalary | NextLowerSalary
+------------|--------|------------------|----------------
+John        | 120000 | 100000           | NULL
+Alice       | 100000 | 95000            | 120000
+Bob         | 95000  | 90000            | 100000
+Carol       | 90000  | NULL             | 95000
+```
+
+**Explanation:** LEAD() gets next row value. LAG() gets previous row value. First row has NULL for LAG, last row has NULL for LEAD.
 
 ---
 
@@ -973,17 +983,17 @@ FROM Employees;
 
 ## Quick Reference Table
 
-| Category | Key Queries | Use Case |
-|----------|------------|----------|
-| **SELECT** | SELECT col FROM table WHERE condition | Retrieve specific rows and columns |
-| **JOIN** | INNER/LEFT/RIGHT JOIN ON condition | Combine data from multiple tables |
-| **GROUP BY** | GROUP BY col HAVING aggregate() | Summarize data by groups |
-| **Aggregate** | COUNT, SUM, AVG, MIN, MAX | Calculate statistics |
-| **Subquery** | SELECT FROM (SELECT) | Nested queries for complex filtering |
-| **Window Functions** | SUM/RANK OVER (PARTITION BY) | Calculations across row windows |
-| **DELETE** | DELETE FROM WHERE condition | Remove specific rows with rollback |
-| **TRUNCATE** | TRUNCATE TABLE | Fast removal of all rows, identity resets |
-| **DROP** | DROP TABLE | Remove entire table structure |
-| **IN/EXISTS** | WHERE col IN (SELECT) / EXISTS | Check membership or existence |
-| **String** | CONCAT, SUBSTRING, UPPER, LOWER | Text manipulation |
-| **DISTINCT** | SELECT DISTINCT col | Remove duplicate values |
+| Category | Actual Query Example | Use Case |
+|----------|---------------------|----------|
+| **SELECT** | `SELECT Name, Salary FROM Employees WHERE Country='USA';` | Retrieve specific rows and columns |
+| **JOIN** | `SELECT c.Name, o.OrderID FROM Customers c INNER JOIN Orders o ON c.CustomerID = o.CustomerID;` | Combine data from multiple tables |
+| **GROUP BY** | `SELECT Department, COUNT(*) FROM Employees GROUP BY Department HAVING COUNT(*) > 5;` | Summarize data by groups |
+| **Aggregate** | `SELECT COUNT(*), SUM(Salary), AVG(Salary), MIN(Salary), MAX(Salary) FROM Employees;` | Calculate statistics |
+| **Subquery** | `SELECT * FROM Employees WHERE Department IN (SELECT Department FROM Managers);` | Nested queries for complex filtering |
+| **Window Functions** | `SELECT Name, Salary, SUM(Salary) OVER (PARTITION BY Department ORDER BY EmployeeID) as RunningTotal FROM Employees;` | Calculations across row windows |
+| **DELETE** | `DELETE FROM Employees WHERE Salary < 30000;` | Remove specific rows with rollback |
+| **TRUNCATE** | `TRUNCATE TABLE Employees;` | Fast removal of all rows, identity resets |
+| **DROP** | `DROP TABLE Employees;` | Remove entire table structure |
+| **IN/EXISTS** | `SELECT * FROM Customers WHERE EXISTS (SELECT 1 FROM Orders WHERE CustomerID = c.CustomerID);` | Check membership or existence |
+| **String** | `SELECT CONCAT(FirstName, ' ', LastName) as FullName, UPPER(City) FROM Customers;` | Text manipulation |
+| **DISTINCT** | `SELECT DISTINCT Country FROM Customers ORDER BY Country;` | Remove duplicate values |
