@@ -816,29 +816,6 @@ INNER JOIN Orders o ON c.CustomerID = o.CustomerID;
 
 ---
 
-### Q47 (Theory): DELETE vs TRUNCATE vs DROP
-**Question (Theory):** Explain the key differences between DELETE, TRUNCATE, and DROP commands.
-
-**Answer:**
-
-| Feature | DELETE | TRUNCATE | DROP |
-|---------|--------|----------|------|
-| **SQL Type** | DML (Data Modification) | DDL (Data Definition) | DDL |
-| **Speed** | Slow | Very fast | Very fast |
-| **WHERE clause** | ✓ Supported | ✗ Not supported | N/A |
-| **Space released** | Gradually | Immediately | Completely |
-| **Transaction log** | Fully logged | Minimal | Logged |
-| **Rollback** | ✓ Yes | ✗ No | ✗ No |
-| **Identity reset** | Continues | Resets to seed | Table removed |
-| **Triggers** | ✓ Fires | ✗ Don't fire | Don't fire |
-
-**Explanation:**
-- **DELETE**: Remove specific rows with WHERE. Can rollback. Fires triggers.
-- **TRUNCATE**: Remove all rows at once, faster, can't use WHERE, identity resets.
-- **DROP**: Remove entire table structure and data. Can't be undone.
-
----
-
 ### Q48 (Theory): Difference between JOIN conditions
 **Question (Theory):** What's the difference between filtering in JOIN ON clause vs WHERE clause?
 
@@ -994,33 +971,19 @@ FROM Employees;
 
 ---
 
-## Summary
+## Quick Reference Table
 
-**Total questions: 53**
-
-**Questions organized by difficulty:**
-- Basic SELECT & WHERE: 4
-- Basic Joins: 2
-- Aggregation with GROUP BY & HAVING: 5
-- DELETE Operations & Theory: 6
-- Finding Extremes: 5
-- Duplicates & Unique Records: 4
-- Ranking & Ordering: 4
-- String Operations: 4
-- Date Operations: 4
-- Complex Filtering & Subqueries: 4
-- Window Functions: 3
-- Theory & Comparisons: 8
-
-### Key Points to Remember:
-✓ Start with simple SELECT and WHERE  
-✓ Basic join syntax: `SELECT a.Name, b.Name FROM a, b WHERE a.ID = b.ID`  
-✓ Always use explicit JOIN syntax (INNER/LEFT/RIGHT) for clarity  
-✓ Use WHERE to filter rows, HAVING to filter groups  
-✓ EXISTS is faster than IN for large datasets  
-✓ Use TRUNCATE for fast table clear (no WHERE)  
-✓ DELETE for selective row removal with WHERE  
-✓ Window functions keep all rows, GROUP BY reduces  
-✓ ON clause affects join condition, WHERE affects final result  
-✓ Test all queries with LIMIT before running on large tables  
-✓ Always backup before DELETE or TRUNCATE  
+| Category | Key Queries | Use Case |
+|----------|------------|----------|
+| **SELECT** | SELECT col FROM table WHERE condition | Retrieve specific rows and columns |
+| **JOIN** | INNER/LEFT/RIGHT JOIN ON condition | Combine data from multiple tables |
+| **GROUP BY** | GROUP BY col HAVING aggregate() | Summarize data by groups |
+| **Aggregate** | COUNT, SUM, AVG, MIN, MAX | Calculate statistics |
+| **Subquery** | SELECT FROM (SELECT) | Nested queries for complex filtering |
+| **Window Functions** | SUM/RANK OVER (PARTITION BY) | Calculations across row windows |
+| **DELETE** | DELETE FROM WHERE condition | Remove specific rows with rollback |
+| **TRUNCATE** | TRUNCATE TABLE | Fast removal of all rows, identity resets |
+| **DROP** | DROP TABLE | Remove entire table structure |
+| **IN/EXISTS** | WHERE col IN (SELECT) / EXISTS | Check membership or existence |
+| **String** | CONCAT, SUBSTRING, UPPER, LOWER | Text manipulation |
+| **DISTINCT** | SELECT DISTINCT col | Remove duplicate values |
