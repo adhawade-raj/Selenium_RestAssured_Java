@@ -1,30 +1,46 @@
 # SQL Essential Queries - Q&A Format
 
-Complete collection of essential SQL queries with questions and answers organized from basic to advanced with theory explanations.
+Complete collection of essential SQL queries with questions and answers organized by topic with theory and practice questions integrated together.
 
-**Total questions: 53**
+---
 
-**Progression:** Basic → Intermediate → Advanced → Theory
+## Summary Table - Questions by Segment
+
+| Segment | Theory Questions | Practice Questions | Total |
+|---------|------------------|-------------------|-------|
+| **SELECT & WHERE** | 0 | 4 | 4 |
+| **JOINS** | 3 | 2 | 5 |
+| **GROUP BY & AGGREGATION** | 3 | 5 | 8 |
+| **EXTREMES & RANKING** | 0 | 7 | 7 |
+| **DUPLICATES & UNIQUE** | 0 | 4 | 4 |
+| **STRING OPERATIONS** | 0 | 4 | 4 |
+| **DATE OPERATIONS** | 0 | 4 | 4 |
+| **SUBQUERIES & FILTERING** | 2 | 3 | 5 |
+| **WINDOW FUNCTIONS** | 1 | 2 | 3 |
+| **DELETE/TRUNCATE/DROP** | 1 | 5 | 6 |
+| **COMPARISONS & BEST PRACTICES** | 2 | 0 | 2 |
+| **QUICK REFERENCE** | 0 | 1 | 1 |
+| **TOTAL** | **12** | **41** | **53** |
 
 ---
 
 ## Table of Contents
-1. [Basic SELECT & WHERE](#basic-select--where) - 4 questions
-2. [Basic Joins](#basic-joins) - 2 questions
-3. [Aggregation with GROUP BY & HAVING](#aggregation-with-group-by--having) - 5 questions
-4. [DELETE Operations & Theory](#delete-operations--theory) - 6 questions
-5. [Finding Extremes](#finding-extremes) - 5 questions
-6. [Duplicates & Unique Records](#duplicates--unique-records) - 4 questions
-7. [Ranking & Ordering](#ranking--ordering) - 4 questions
-8. [String Operations](#string-operations) - 4 questions
-9. [Date Operations](#date-operations) - 4 questions
-10. [Complex Filtering & Subqueries](#complex-filtering--subqueries) - 4 questions
-11. [Window Functions](#window-functions) - 3 questions
-12. [Theory & Comparisons](#theory--comparisons) - 8 questions
+1. [SELECT & WHERE](#select--where) - 4 questions
+2. [JOINS](#joins) - 5 questions (2 practice + 3 theory)
+3. [GROUP BY & AGGREGATION](#group-by--aggregation) - 8 questions (5 practice + 3 theory)
+4. [EXTREMES & RANKING](#extremes--ranking) - 7 questions
+5. [DUPLICATES & UNIQUE](#duplicates--unique) - 4 questions
+6. [STRING OPERATIONS](#string-operations) - 4 questions
+7. [DATE OPERATIONS](#date-operations) - 4 questions
+8. [SUBQUERIES & FILTERING](#subqueries--filtering) - 5 questions (3 practice + 2 theory)
+9. [WINDOW FUNCTIONS](#window-functions) - 3 questions (2 practice + 1 theory)
+10. [DELETE/TRUNCATE/DROP](#deletetruncatedrop) - 6 questions (5 practice + 1 theory)
+11. [COMPARISONS & BEST PRACTICES](#comparisons--best-practices) - 2 theory questions
+12. [QUICK REFERENCE](#quick-reference) - 1 table
 
 ---
 
-## Basic SELECT & WHERE
+## SELECT & WHERE
 
 ### Q1: Simple SELECT statement
 **Question:** Display all customer names from the Customers table.
@@ -84,7 +100,7 @@ WHERE Country = 'USA'
 
 ---
 
-## Basic Joins
+## JOINS
 
 ### Q5: Simple join (two tables)
 **Question:** Connect two tables (TableA and TableB) using their ID columns and display names from both.
@@ -120,7 +136,60 @@ LEFT JOIN Orders o ON c.CustomerID = o.CustomerID;
 
 ---
 
-## Aggregation with GROUP BY & HAVING
+### Q45 (Theory): What is a JOIN?
+**Question (Theory):** Explain what a JOIN is and name the different types of JOINs.
+
+**Answer:**
+
+A **JOIN** combines rows from two or more tables based on a related column between them.
+
+**Main Types of JOINs:**
+1. **INNER JOIN** - Returns only matching records from both tables
+2. **LEFT JOIN** - Returns all records from left table and matching records from right
+3. **RIGHT JOIN** - Returns matching records from left and all records from right
+4. **FULL OUTER JOIN** - Returns all records when match in either table
+5. **CROSS JOIN** - Returns Cartesian product (all combinations)
+
+**Example:**
+```sql
+-- INNER JOIN: Only customers with orders
+SELECT c.Name, o.OrderID
+FROM Customers c
+INNER JOIN Orders o ON c.CustomerID = o.CustomerID;
+```
+
+**Explanation:** Most basic syntax is simply: `SELECT a.Name, b.Name FROM a, b WHERE a.ID = b.ID`
+
+---
+
+### Q46 (Theory): Difference between JOIN conditions
+**Question (Theory):** What's the difference between filtering in JOIN ON clause vs WHERE clause?
+
+**Answer:**
+```sql
+-- Filter in ON (affects what gets joined)
+SELECT c.Name, o.OrderID
+FROM Customers c
+LEFT JOIN Orders o ON c.CustomerID = o.CustomerID 
+  AND o.Amount > 100;
+-- Result: All customers, but only orders > 100 (others are NULL)
+
+-- Filter in WHERE (affects final result)
+SELECT c.Name, o.OrderID
+FROM Customers c
+LEFT JOIN Orders o ON c.CustomerID = o.CustomerID
+WHERE o.Amount > 100;
+-- Result: Only customers WITH orders > 100 (LEFT JOIN becomes INNER)
+```
+
+**Explanation:**
+- **ON clause**: Determines which rows to join (happens before)
+- **WHERE clause**: Filters the joined result (happens after)
+- With LEFT/RIGHT JOIN, these produce different results!
+
+---
+
+## GROUP BY & AGGREGATION
 
 ### Q7: COUNT by group
 **Question:** Display each country and how many customers are from that country.
@@ -203,7 +272,87 @@ GROUP BY Department;
 
 ---
 
-## DELETE Operations & Theory
+### Q47 (Theory): WHERE vs HAVING
+**Question (Theory):** Explain the difference between WHERE and HAVING clauses.
+
+**Answer:**
+```sql
+-- WHERE: Filters BEFORE grouping (row level)
+SELECT Department, AVG(Salary)
+FROM Employees
+WHERE Salary > 30000  -- Filter individual rows first
+GROUP BY Department;
+
+-- HAVING: Filters AFTER grouping (group level)
+SELECT Department, AVG(Salary)
+FROM Employees
+GROUP BY Department
+HAVING AVG(Salary) > 50000;  -- Filter groups after aggregation
+
+-- WRONG: Can't use aggregate in WHERE
+-- SELECT Department, AVG(Salary) FROM Employees WHERE AVG(Salary) > 50000;
+```
+
+**Explanation:**
+- **WHERE**: Filters rows before GROUP BY. Can't use aggregate functions.
+- **HAVING**: Filters groups after GROUP BY. Can only use aggregate functions.
+- **Order**: WHERE → GROUP BY → HAVING
+
+---
+
+### Q50 (Theory): DISTINCT vs GROUP BY
+**Question (Theory):** When would you use DISTINCT vs GROUP BY?
+
+**Answer:**
+```sql
+-- DISTINCT: Remove duplicates (simple)
+SELECT DISTINCT Country
+FROM Customers;
+
+-- GROUP BY: Remove duplicates + can aggregate
+SELECT Country, COUNT(*) as Count
+FROM Customers
+GROUP BY Country;
+
+-- Performance: DISTINCT usually faster for simple cases
+-- GROUP BY needed when you need aggregates
+```
+
+**Explanation:**
+- **DISTINCT**: Remove duplicate rows, no aggregation
+- **GROUP BY**: Remove duplicates and allow aggregation (COUNT, SUM, AVG, etc.)
+- **Use DISTINCT**: For simple duplicate removal
+- **Use GROUP BY**: When you need aggregate functions with groups
+
+---
+
+### Q51 (Theory): Aggregate Functions - When to use each
+**Question (Theory):** Explain the purpose and usage of COUNT, SUM, AVG, MIN, and MAX.
+
+**Answer:**
+```sql
+SELECT 
+  COUNT(*) as TotalRows,           -- Number of rows
+  COUNT(DISTINCT Email) as UniqueEmails,  -- Non-NULL unique values
+  SUM(Salary) as TotalSalary,      -- Sum of values
+  AVG(Salary) as AverageSalary,    -- Average value
+  MIN(Salary) as MinimumSalary,    -- Lowest value
+  MAX(Salary) as MaximumSalary     -- Highest value
+FROM Employees;
+```
+
+**Explanation:**
+- **COUNT(\*)**: Total number of rows
+- **COUNT(column)**: Non-NULL values in column
+- **COUNT(DISTINCT col)**: Unique non-NULL values
+- **SUM()**: Total of all values
+- **AVG()**: Average of all values
+- **MIN()**: Lowest value
+- **MAX()**: Highest value
+
+---
+
+## DELETE/TRUNCATE/DROP
 
 ### Q12: Simple DELETE with WHERE
 **Question:** Delete all customers from the 'Inactive' status.
@@ -300,7 +449,7 @@ WHERE Salary = (SELECT MAX(Salary) FROM Employees);
 
 ---
 
-## Finding Extremes
+## EXTREMES & RANKING
 
 ### Q18: Maximum value
 **Question:** Get the highest salary from the Employees table.
@@ -398,7 +547,7 @@ ORDER BY Salary DESC;
 
 ---
 
-## Duplicates & Unique Records
+## DUPLICATES & UNIQUE
 
 ### Q23: Find duplicate records
 **Question:** Find all email addresses that appear more than once in the Users table.
@@ -461,8 +610,6 @@ ORDER BY CustomerCount DESC;
 **Explanation:** GROUP BY with COUNT shows frequency of each value.
 
 ---
-
-## Ranking & Ordering
 
 ### Q27: ORDER BY single column
 **Question:** List customers ordered by country alphabetically.
@@ -671,7 +818,7 @@ FROM Employees;
 
 ---
 
-## Complex Filtering & Subqueries
+## SUBQUERIES & FILTERING
 
 ### Q39: IN operator
 **Question:** Find customers from specific countries: Germany, France, and UK.
@@ -736,7 +883,30 @@ FROM Employees;
 
 ---
 
-## Window Functions
+### Q48 (Theory): IN vs EXISTS performance
+**Question (Theory):** Which is faster for subqueries: IN or EXISTS?
+
+**Answer:**
+```sql
+-- IN: Evaluates entire subquery list
+SELECT * FROM Customers
+WHERE CustomerID IN (SELECT CustomerID FROM Orders);
+
+-- EXISTS: Stops on first match (faster)
+SELECT * FROM Customers c
+WHERE EXISTS (SELECT 1 FROM Orders WHERE CustomerID = c.CustomerID);
+```
+
+**Explanation:**
+- **IN**: Evaluates all values in subquery list, then checks membership
+- **EXISTS**: Stops as soon as it finds one matching record
+- **Performance**: EXISTS typically faster, especially with large datasets
+- **Best practice**: Use EXISTS for better performance
+- **Modern note**: Query optimizers often optimize these identically now
+
+---
+
+## WINDOW FUNCTIONS
 
 ### Q43: Running total
 **Question:** Show cumulative sum of salaries as you go down the list.
@@ -792,112 +962,6 @@ Carol       | 90000  | NULL             | 95000
 
 ---
 
-## Theory & Comparisons
-
-### Q45 (Theory): What is a JOIN?
-**Question (Theory):** Explain what a JOIN is and name the different types of JOINs.
-
-**Answer:**
-
-A **JOIN** combines rows from two or more tables based on a related column between them.
-
-**Main Types of JOINs:**
-1. **INNER JOIN** - Returns only matching records from both tables
-2. **LEFT JOIN** - Returns all records from left table and matching records from right
-3. **RIGHT JOIN** - Returns matching records from left and all records from right
-4. **FULL OUTER JOIN** - Returns all records when match in either table
-5. **CROSS JOIN** - Returns Cartesian product (all combinations)
-
-**Example:**
-```sql
--- INNER JOIN: Only customers with orders
-SELECT c.Name, o.OrderID
-FROM Customers c
-INNER JOIN Orders o ON c.CustomerID = o.CustomerID;
-```
-
-**Explanation:** Most basic syntax is simply: `SELECT a.Name, b.Name FROM a, b WHERE a.ID = b.ID`
-
----
-
-### Q46 (Theory): Difference between JOIN conditions
-**Question (Theory):** What's the difference between filtering in JOIN ON clause vs WHERE clause?
-
-**Answer:**
-```sql
--- Filter in ON (affects what gets joined)
-SELECT c.Name, o.OrderID
-FROM Customers c
-LEFT JOIN Orders o ON c.CustomerID = o.CustomerID 
-  AND o.Amount > 100;
--- Result: All customers, but only orders > 100 (others are NULL)
-
--- Filter in WHERE (affects final result)
-SELECT c.Name, o.OrderID
-FROM Customers c
-LEFT JOIN Orders o ON c.CustomerID = o.CustomerID
-WHERE o.Amount > 100;
--- Result: Only customers WITH orders > 100 (LEFT JOIN becomes INNER)
-```
-
-**Explanation:**
-- **ON clause**: Determines which rows to join (happens before)
-- **WHERE clause**: Filters the joined result (happens after)
-- With LEFT/RIGHT JOIN, these produce different results!
-
----
-
-### Q47 (Theory): WHERE vs HAVING
-**Question (Theory):** Explain the difference between WHERE and HAVING clauses.
-
-**Answer:**
-```sql
--- WHERE: Filters BEFORE grouping (row level)
-SELECT Department, AVG(Salary)
-FROM Employees
-WHERE Salary > 30000  -- Filter individual rows first
-GROUP BY Department;
-
--- HAVING: Filters AFTER grouping (group level)
-SELECT Department, AVG(Salary)
-FROM Employees
-GROUP BY Department
-HAVING AVG(Salary) > 50000;  -- Filter groups after aggregation
-
--- WRONG: Can't use aggregate in WHERE
--- SELECT Department, AVG(Salary) FROM Employees WHERE AVG(Salary) > 50000;
-```
-
-**Explanation:**
-- **WHERE**: Filters rows before GROUP BY. Can't use aggregate functions.
-- **HAVING**: Filters groups after GROUP BY. Can only use aggregate functions.
-- **Order**: WHERE → GROUP BY → HAVING
-
----
-
-### Q48 (Theory): IN vs EXISTS performance
-**Question (Theory):** Which is faster for subqueries: IN or EXISTS?
-
-**Answer:**
-```sql
--- IN: Evaluates entire subquery list
-SELECT * FROM Customers
-WHERE CustomerID IN (SELECT CustomerID FROM Orders);
-
--- EXISTS: Stops on first match (faster)
-SELECT * FROM Customers c
-WHERE EXISTS (SELECT 1 FROM Orders WHERE CustomerID = c.CustomerID);
-```
-
-**Explanation:**
-- **IN**: Evaluates all values in subquery list, then checks membership
-- **EXISTS**: Stops as soon as it finds one matching record
-- **Performance**: EXISTS typically faster, especially with large datasets
-- **Best practice**: Use EXISTS for better performance
-- **Modern note**: Query optimizers often optimize these identically now
-
----
-
 ### Q49 (Theory): GROUP BY vs PARTITION BY
 **Question (Theory):** What's the difference between GROUP BY and PARTITION BY (window functions)?
 
@@ -920,58 +984,6 @@ FROM Employees;
 - **PARTITION BY**: Divides rows into groups but returns all rows
 - **Use GROUP BY**: For aggregated summary data
 - **Use PARTITION BY**: For original rows with group calculations
-
----
-
-### Q50 (Theory): DISTINCT vs GROUP BY
-**Question (Theory):** When would you use DISTINCT vs GROUP BY?
-
-**Answer:**
-```sql
--- DISTINCT: Remove duplicates (simple)
-SELECT DISTINCT Country
-FROM Customers;
-
--- GROUP BY: Remove duplicates + can aggregate
-SELECT Country, COUNT(*) as Count
-FROM Customers
-GROUP BY Country;
-
--- Performance: DISTINCT usually faster for simple cases
--- GROUP BY needed when you need aggregates
-```
-
-**Explanation:**
-- **DISTINCT**: Remove duplicate rows, no aggregation
-- **GROUP BY**: Remove duplicates and allow aggregation (COUNT, SUM, AVG, etc.)
-- **Use DISTINCT**: For simple duplicate removal
-- **Use GROUP BY**: When you need aggregate functions with groups
-
----
-
-### Q51 (Theory): Aggregate Functions - When to use each
-**Question (Theory):** Explain the purpose and usage of COUNT, SUM, AVG, MIN, and MAX.
-
-**Answer:**
-```sql
-SELECT 
-  COUNT(*) as TotalRows,           -- Number of rows
-  COUNT(DISTINCT Email) as UniqueEmails,  -- Non-NULL unique values
-  SUM(Salary) as TotalSalary,      -- Sum of values
-  AVG(Salary) as AverageSalary,    -- Average value
-  MIN(Salary) as MinimumSalary,    -- Lowest value
-  MAX(Salary) as MaximumSalary     -- Highest value
-FROM Employees;
-```
-
-**Explanation:**
-- **COUNT(\*)**: Total number of rows
-- **COUNT(column)**: Non-NULL values in column
-- **COUNT(DISTINCT col)**: Unique non-NULL values
-- **SUM()**: Total of all values
-- **AVG()**: Average of all values
-- **MIN()**: Lowest value
-- **MAX()**: Highest value
 
 ---
 
