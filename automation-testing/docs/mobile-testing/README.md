@@ -118,13 +118,6 @@ Mobile testing covers multiple dimensions:
 - **Device Lab Management**: Maintain and update device infrastructure
 - **Feedback Loop**: Collaborate between QA, development, and product teams
 
-## Next Steps
-
-- [Appium Setup and Configuration](./appium-setup.md) *(Coming Soon)*
-- [Android Testing Guide](./android-testing.md) *(Coming Soon)*
-- [iOS Testing Guide](./ios-testing.md) *(Coming Soon)*
-- [Code Examples and Snippets](./code-examples.md) *(Coming Soon)*
-
 ---
 
 **Note**: This document provides a high-level overview of mobile testing. Detailed implementation guidance using Appium and code examples will be added in subsequent documentation.
