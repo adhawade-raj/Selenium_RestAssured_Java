@@ -11,39 +11,40 @@ A practical collection of commonly used SQL queries and concepts.
 5. [HAVING](#5-having)
 6. [WHERE vs HAVING](#6-where-vs-having)
 7. [INNER JOIN](#7-inner-join)
-8. [LEFT JOIN and Unmatched Records](#8-left-join-and-unmatched-records)
-9. [Multiple Table JOIN](#9-multiple-table-join)
-10. [ON vs WHERE](#10-on-vs-where)
-11. [Highest and Lowest Salary](#11-highest-and-lowest-salary)
-12. [Second Highest and Second Lowest Salary](#12-second-highest-and-second-lowest-salary)
-13. [Nth Highest and Nth Lowest Salary](#13-nth-highest-and-nth-lowest-salary)
-14. [Top N and Bottom N Records](#14-top-n-and-bottom-n-records)
-15. [Highest Salary per Department](#15-highest-salary-per-department)
-16. [Second Highest Salary per Department](#16-second-highest-salary-per-department)
-17. [Employees Above Average Salary](#17-employees-above-average-salary)
-18. [Duplicate Values](#18-duplicate-values)
-19. [Duplicate Records](#19-duplicate-records)
-20. [Identify Duplicate Rows](#20-identify-duplicate-rows)
-21. [NULL Handling](#21-null-handling)
-22. [IN, NOT IN and EXISTS](#22-in-not-in-and-exists)
-23. [NOT EXISTS / Missing Records](#23-not-exists--missing-records)
-24. [Subquery](#24-subquery)
-25. [Correlated Subquery](#25-correlated-subquery)
-26. [CASE Statement](#26-case-statement)
-27. [String Queries](#27-string-queries)
-28. [Date Queries](#28-date-queries)
-29. [ROW_NUMBER, RANK and DENSE_RANK](#29-row_number-rank-and-dense_rank)
-30. [Latest Record per Group](#30-latest-record-per-group)
-31. [Previous and Next Record](#31-previous-and-next-record)
-32. [Running Total](#32-running-total)
-33. [UNION vs UNION ALL](#33-union-vs-union-all)
-34. [DELETE, TRUNCATE and DROP](#34-delete-truncate-and-drop)
-35. [Employees Without Department](#35-employees-without-department)
-36. [Customers Without Orders](#36-customers-without-orders)
-37. [Orders Without Valid Customers](#37-orders-without-valid-customers)
-38. [Employees Earning More Than Manager](#38-employees-earning-more-than-manager)
-39. [Same Salary Records](#39-same-salary-records)
-40. [Practical Data Validation Query](#40-practical-data-validation-query)
+8. [Simple Join (Implicit Join)](#8-simple-join-implicit-join)
+9. [LEFT JOIN and Unmatched Records](#9-left-join-and-unmatched-records)
+10. [Multiple Table JOIN](#10-multiple-table-join)
+11. [ON vs WHERE](#11-on-vs-where)
+12. [Highest and Lowest Salary](#12-highest-and-lowest-salary)
+13. [Second Highest and Second Lowest Salary](#13-second-highest-and-second-lowest-salary)
+14. [Nth Highest and Nth Lowest Salary](#14-nth-highest-and-nth-lowest-salary)
+15. [Top N and Bottom N Records](#15-top-n-and-bottom-n-records)
+16. [Highest Salary per Department](#16-highest-salary-per-department)
+17. [Second Highest Salary per Department](#17-second-highest-salary-per-department)
+18. [Employees Above Average Salary](#18-employees-above-average-salary)
+19. [Duplicate Values](#19-duplicate-values)
+20. [Duplicate Records](#20-duplicate-records)
+21. [Identify Duplicate Rows](#21-identify-duplicate-rows)
+22. [NULL Handling](#22-null-handling)
+23. [IN, NOT IN and EXISTS](#23-in-not-in-and-exists)
+24. [NOT EXISTS / Missing Records](#24-not-exists--missing-records)
+25. [Subquery](#25-subquery)
+26. [Correlated Subquery](#26-correlated-subquery)
+27. [CASE Statement](#27-case-statement)
+28. [String Queries](#28-string-queries)
+29. [Date Queries](#29-date-queries)
+30. [ROW_NUMBER, RANK and DENSE_RANK](#30-row_number-rank-and-dense_rank)
+31. [Latest Record per Group](#31-latest-record-per-group)
+32. [Previous and Next Record](#32-previous-and-next-record)
+33. [Running Total](#33-running-total)
+34. [UNION vs UNION ALL](#34-union-vs-union-all)
+35. [DELETE, TRUNCATE and DROP](#35-delete-truncate-and-drop)
+36. [Employees Without Department](#36-employees-without-department)
+37. [Customers Without Orders](#37-customers-without-orders)
+38. [Orders Without Valid Customers](#38-orders-without-valid-customers)
+39. [Employees Earning More Than Manager](#39-employees-earning-more-than-manager)
+40. [Same Salary Records](#40-same-salary-records)
+41. [Practical Data Validation Query](#41-practical-data-validation-query)
 
 ---
 
@@ -192,7 +193,36 @@ INNER JOIN returns only matching records.
 
 ---
 
-## 8. LEFT JOIN and Unmatched Records
+## 8. Simple Join (Implicit Join)
+
+**Q8. How do you perform a simple join using comma-separated syntax?**
+
+Simple join using comma-separated tables (Cartesian product with WHERE condition):
+
+```sql
+SELECT e.Name,
+       e.Salary,
+       d.DepartmentName
+FROM Employees e, Departments d
+WHERE e.DepartmentID = d.DepartmentID;
+```
+
+Multiple table join:
+
+```sql
+SELECT e.Name,
+       d.DepartmentName,
+       l.LocationName
+FROM Employees e, Departments d, Locations l
+WHERE e.DepartmentID = d.DepartmentID
+AND d.LocationID = l.LocationID;
+```
+
+**Note:** This syntax produces a Cartesian product of all rows first, then filters with WHERE. It's functionally equivalent to INNER JOIN but less efficient. Prefer explicit JOIN syntax for clarity and performance.
+
+---
+
+## 9. LEFT JOIN and Unmatched Records
 
 **Q8. How do you find employees who don't have a department?**
 
@@ -216,7 +246,7 @@ ON e.DepartmentID = d.DepartmentID;
 
 ---
 
-## 9. Multiple Table JOIN
+## 10. Multiple Table JOIN
 
 **Q9. How do you join three tables?**
 
@@ -233,7 +263,7 @@ ON d.LocationID = l.LocationID;
 
 ---
 
-## 10. ON vs WHERE
+## 11. ON vs WHERE
 
 **Q10. What is the difference between ON and WHERE in a JOIN?**
 
@@ -263,7 +293,7 @@ With an outer JOIN, these can produce different results.
 
 ---
 
-## 11. Highest and Lowest Salary
+## 12. Highest and Lowest Salary
 
 **Q11. How do you find the highest and lowest salary and the corresponding employees?**
 
@@ -305,7 +335,7 @@ WHERE Salary = (
 
 ---
 
-## 12. Second Highest and Second Lowest Salary
+## 13. Second Highest and Second Lowest Salary
 
 **Q12. How do you find the second highest and second lowest salary?**
 
@@ -363,7 +393,7 @@ WHERE Salary = (
 
 ---
 
-## 13. Nth Highest and Nth Lowest Salary
+## 14. Nth Highest and Nth Lowest Salary
 
 **Q13. How do you find the Nth highest and Nth lowest salary?**
 
