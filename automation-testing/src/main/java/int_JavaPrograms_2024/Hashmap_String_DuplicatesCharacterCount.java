@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class String_DuplicatesCharacterUsingHashmap {
+public class Hashmap_String_DuplicatesCharacterCount {
 
 	public static void main(String[] args) {
 		
