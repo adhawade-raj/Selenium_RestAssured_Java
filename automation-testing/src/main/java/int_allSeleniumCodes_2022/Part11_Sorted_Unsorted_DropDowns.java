@@ -30,8 +30,8 @@ public class Part11_Sorted_Unsorted_DropDowns {
 		List<WebElement> options = select.getOptions();
 		
 		
-		ArrayList originalList = new ArrayList();
-		ArrayList tempList = new ArrayList();
+		ArrayList<String> originalList = new ArrayList<>();
+		ArrayList<String> tempList = new ArrayList<>();
 		
 		for(WebElement option : options)
 		{

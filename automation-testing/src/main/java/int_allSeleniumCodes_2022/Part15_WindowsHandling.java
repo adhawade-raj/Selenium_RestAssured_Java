@@ -36,7 +36,7 @@ public class Part15_WindowsHandling {
 	System.out.println("Parent WindowId is:"+parenWindowID);
 	System.out.println("Parent WindowId is:"+childWindowId);
 	
-	List<String> windowsList = new ArrayList(windowsHandles);
+	List<String> windowsList = new ArrayList<>(windowsHandles);
 String parentWindow =	windowsList.get(0);
 String childWindow = windowsList.get(1);
 System.out.println("--------------------------------");
