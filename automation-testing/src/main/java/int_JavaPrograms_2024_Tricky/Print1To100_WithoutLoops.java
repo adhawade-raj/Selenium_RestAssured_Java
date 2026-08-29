@@ -33,7 +33,7 @@ public class Print1To100_WithoutLoops {
 	
 	/**
 	 * Approach1 in generic way
-	 * @param num
+	 * @param
 	 */
 	public static void printNumber(int strtNum, int endNum) {
 		if(strtNum<=endNum) {
