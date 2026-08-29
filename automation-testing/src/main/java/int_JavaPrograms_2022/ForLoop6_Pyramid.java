@@ -1,6 +1,6 @@
 package int_JavaPrograms_2022;
 
-public class ForLoop7_Pyramid {
+public class ForLoop6_Pyramid {
 
 	public static void main(String[] args) {
 for(int i=0; i<5; i++)

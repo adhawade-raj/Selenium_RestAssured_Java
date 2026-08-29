@@ -1,6 +1,6 @@
 package int_JavaPrograms_2022;
 
-public class ForLoop6_4thQuadrant {
+public class ForLoop4_4thQuadrant {
 
 	public static void main(String[] args) {
 
