@@ -243,7 +243,7 @@ public class RestClient {
 					.post(serviceURL)
 				.then().log().all()
 					.assertThat()
-						.statusCode(APIHttpStatus.OK_200.getCode())
+						.statusCode(200)
 						.extract().path("access_token");
 					
 				System.out.println("access token: " + accessToken);
