@@ -22,7 +22,7 @@
         <lombok.version>1.18.30</lombok.version>
         <extentreports.version>5.1.1</extentreports.version>
         <poi.version>5.2.5</poi.version>
-        <selenium.version>4.11.0</selenium.version>
+        <selenium.version>4.17.0</selenium.version>
         <junit.jupiter.version>5.10.0</junit.jupiter.version>
         <cucumber.version>7.14.0</cucumber.version>
         <wiremock.version>2.35.1</wiremock.version>
@@ -186,6 +186,27 @@
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
+        </dependency>
+
+        <!-- Gson for JSON handling -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+
+        <!-- CommonsIO for file operations -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+
+        <!-- Appium Java Client for Mobile Testing -->
+        <dependency>
+            <groupId>io.appium</groupId>
+            <artifactId>java-client</artifactId>
+            <version>9.1.0</version>
         </dependency>
 
     </dependencies>
