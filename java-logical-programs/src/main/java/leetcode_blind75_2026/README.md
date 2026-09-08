@@ -1,5 +1,7 @@
 # leetcode_blind75_2026
 
+Reference video: https://www.youtube.com/watch?v=PieZjz2Pyhw&t=212s
+
 Quick navigation for the Blind 75 practice set in this package.
 
 | Part | Problem | Solution class |
