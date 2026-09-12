@@ -202,6 +202,39 @@ public class Chapter3_KeyboardHandling {
                 .sendKeys(value);
     }
 
+    public void pressNumbers() {
+
+        AndroidDriver androidDriver =
+                (AndroidDriver) driver;
+
+        androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_1));
+        androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_2));
+        androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_3));
+        androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_4));
+        androidDriver.pressKey(new KeyEvent(AndroidKey.DIGIT_5));
+    }
+
+    public void pressNumber(int number) {
+        AndroidDriver androidDriver =
+                (AndroidDriver) driver;
+
+        AndroidKey key = switch (number) {
+            case 0 -> AndroidKey.DIGIT_0;
+            case 1 -> AndroidKey.DIGIT_1;
+            case 2 -> AndroidKey.DIGIT_2;
+            case 3 -> AndroidKey.DIGIT_3;
+            case 4 -> AndroidKey.DIGIT_4;
+            case 5 -> AndroidKey.DIGIT_5;
+            case 6 -> AndroidKey.DIGIT_6;
+            case 7 -> AndroidKey.DIGIT_7;
+            case 8 -> AndroidKey.DIGIT_8;
+            case 9 -> AndroidKey.DIGIT_9;
+            default -> throw new IllegalArgumentException("Invalid digit");
+        };
+
+        androidDriver.pressKey(new KeyEvent(key));
+    }
+
 
     /*
      * ============================================================
