@@ -7,7 +7,7 @@ import java.time.Duration;
 
 public class BrowserHandling {
 
-    static WebDriver driver;
+    protected static WebDriver driver;
 
     /** Launches ChromeDriver, sets timeouts and returns a singleton driver instance. */
     public static WebDriver launchDriver() {
