@@ -17,7 +17,7 @@ public class BubbleSort_NumbersInAscendingOrder {
 	    int temp;
 	    for(int i=0;i<arr.length;i++)
 	    {
-		for(int j=1;j<arr.length-1;j++)
+		for(int j=1;j<arr.length;j++)
 		{
 //			unless and until condition does not becomes false or arr length is finished
 //			this will keep on excecuting
