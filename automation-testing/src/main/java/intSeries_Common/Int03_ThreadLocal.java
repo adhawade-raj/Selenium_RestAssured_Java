@@ -2,6 +2,9 @@ package intSeries_Common;
 
 public class Int03_ThreadLocal {
 
+    // ThreadLocal is mainly used when you are running something in parallel
+    // and each thread needs its own separate data/object.
+
     private ThreadLocal<String> threadLocal = new ThreadLocal<>();
 
     /**
