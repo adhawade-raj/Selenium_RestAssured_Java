@@ -1,4 +1,4 @@
-package int_appium;
+package intSeries_Common;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
@@ -9,7 +9,7 @@ import io.appium.java_client.ios.options.XCUITestOptions;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Int01_DriverInitialization {
+public class Int01_Appium_DriverInitialization {
 
     public AppiumDriver getDriver(String platform) throws MalformedURLException {
 

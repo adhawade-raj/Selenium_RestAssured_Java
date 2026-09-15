@@ -1,4 +1,4 @@
-package int_rest_assured;
+package intSeries_Common;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
@@ -7,7 +7,7 @@ import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
 
-public class Int01_SessionTimeout {
+public class Int02_API_SessionTimeout {
 
     public class RequestSpec {
 
