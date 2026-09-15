@@ -35,12 +35,32 @@
 
 **Java Code for Selenium (Browser Parameters):**
 ```java
-// Import: org.openqa.selenium.chrome.ChromeOptions
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
-String browser = System.getProperty("browser");
-ChromeOptions options = new ChromeOptions();
-if (Boolean.parseBoolean(System.getProperty("headless"))) {
-    options.addArguments("--headless");
+public class BrowserSetup {
+    public static WebDriver setupBrowser() {
+        String browser = System.getProperty("browser", "chrome").toLowerCase();
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false"));
+        
+        if ("chrome".equals(browser)) {
+            ChromeOptions options = new ChromeOptions();
+            if (headless) {
+                options.addArguments("--headless");
+            }
+            return new ChromeDriver(options);
+        } else if ("firefox".equals(browser)) {
+            FirefoxOptions options = new FirefoxOptions();
+            if (headless) {
+                options.addArguments("--headless");
+            }
+            return new FirefoxDriver(options);
+        }
+        return null;
+    }
 }
 ```
 
@@ -58,9 +78,32 @@ if (Boolean.parseBoolean(System.getProperty("headless"))) {
 
 **Java Code for Appium (Platform Parameters):**
 ```java
-String platform = System.getProperty("platform");
-String suite = System.getProperty("suite");
-AppiumDriver driver = getDriver(platform);
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.ios.IOSDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class AppiumSetup {
+    public static AppiumDriver<?> setupDriver(String platform) throws Exception {
+        String platformType = System.getProperty("platform", "android").toLowerCase();
+        String suite = System.getProperty("suite", "smoke");
+        
+        if ("android".equals(platformType)) {
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability("platformName", "Android");
+            caps.setCapability("automationName", "UiAutomator2");
+            caps.setCapability("app", "/path/to/app.apk");
+            return new AndroidDriver(caps);
+        } else if ("ios".equals(platformType)) {
+            DesiredCapabilities caps = new DesiredCapabilities();
+            caps.setCapability("platformName", "iOS");
+            caps.setCapability("automationName", "XCUITest");
+            caps.setCapability("app", "/path/to/app.ipa");
+            return new IOSDriver(caps);
+        }
+        return null;
+    }
+}
 ```
 
 ---
